@@ -1,9 +1,5 @@
-group 'com.imesaros.bookssumaries'
-version '1.0-SNAPSHOT'
-
 apply plugin: 'groovy'
 apply plugin: 'java'
-apply plugin: "ikakara.awsutil.lambda"
 
 sourceCompatibility = 1.8
 
@@ -20,3 +16,6 @@ dependencies {
             [group: 'org.spockframework', name: 'spock-core', version: '1.0-groovy-2.4'],
     )
 }
+
+group 'com.imesaros.bookssumaries'
+version '1.0-SNAPSHOT'
