@@ -1,4 +1,4 @@
 rootProject.name = 'Books Summaries'
 
-include 'summaries/CrackingTheTechnicalInterviewEbook', 'summaries/TheAlgorithmDesignManual'
+include 'summaries/CrackingTheTechnicalInterview', 'summaries/CrackingTheTechnicalInterviewEbook', 'summaries/TheAlgorithmDesignManual'
 
