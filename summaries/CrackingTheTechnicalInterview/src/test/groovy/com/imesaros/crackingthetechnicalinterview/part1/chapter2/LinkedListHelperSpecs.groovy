@@ -52,10 +52,11 @@ class LinkedListHelperSpecs extends Specification {
         }
 
         where:
-        root1                       | root2                          | expected
-        createLinkedList([3, 1, 5]) | createLinkedList([5, 9, 2])    | createLinkedList([8, 0, 8])
-        createLinkedList([3, 1, 5]) | createLinkedList([5, 9, 4])    | createLinkedList([8, 0, 0, 1])
-        createLinkedList([3, 1, 5]) | createLinkedList([5, 9, 4, 1]) | createLinkedList([8, 0, 0, 2])
+        root1                       | root2                                | expected
+        createLinkedList([3, 1, 5]) | createLinkedList([5, 9, 2])          | createLinkedList([8, 0, 8])
+        createLinkedList([3, 1, 5]) | createLinkedList([5, 9, 4])          | createLinkedList([8, 0, 0, 1])
+        createLinkedList([3, 1, 5]) | createLinkedList([5, 9, 4, 1])       | createLinkedList([8, 0, 0, 2])
+        createLinkedList([3, 1, 5]) | createLinkedList([5, 9, 4, 1, 1, 1]) | createLinkedList([8, 0, 0, 2, 1, 1])
     }
 
     private static LinkedListNode createLinkedList(List<Integer> integers) {

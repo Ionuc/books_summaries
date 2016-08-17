@@ -78,15 +78,15 @@ public class LinkedListHelper
             root2 = root2.getNext();
             root = root.getNext();
         }
-        if (root1 != null || root2 != null){
+        if (root1 != null || root2 != null)
+        {
             addRemainingElements(root, root1, carry);
             addRemainingElements(root, root2, carry);
         }
-        else if (carry >0)
+        else if (carry > 0)
         {
             LinkedListNode node = new LinkedListNode(carry);
             root.setNext(node);
-            root = node;
         }
 
         return rootResult;
@@ -94,18 +94,22 @@ public class LinkedListHelper
 
     private static void addRemainingElements(LinkedListNode root, LinkedListNode remaining, int carry)
     {
-        if (remaining != null)
+        if (remaining == null)
+        {
+            return;
+        }
+        while (remaining != null)
         {
             LinkedListNode node = new LinkedListNode((remaining.getItem() + carry) % 10);
-            carry = (remaining.getItem() + carry) % 10;
+            carry = (remaining.getItem() + carry) / 10;
             root.setNext(node);
             root = root.getNext();
+            remaining = remaining.getNext();
         }
         if (carry > 0)
         {
             LinkedListNode node = new LinkedListNode(carry);
             root.setNext(node);
-            root = node;
         }
     }
 }
