@@ -1,6 +1,5 @@
-package com.imesaros.crackingthetechnicalinterview.part1
+package com.imesaros.crackingthetechnicalinterview.part1.chapter4
 
-import com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTree
 import spock.lang.Specification
 
 import java.util.function.Consumer
