@@ -12,28 +12,10 @@ class StackWithLinkedListNodeSpecs extends Specification {
         stack.push(5)
         stack.push(7)
 
-        when:
-        Integer result = stack.pop()
-
-        then:
-        result == 7
-
-        when:
-        result = stack.pop()
-
-        then:
-        result == 5
-
-        when:
-        result = stack.pop()
-
-        then:
-        result == 3
-
-        when:
-        result = stack.pop()
-
-        then:
-        result == null
+        expect:
+        stack.pop() == 7
+        stack.pop() == 5
+        stack.pop() == 3
+        stack.pop() == null
     }
 }

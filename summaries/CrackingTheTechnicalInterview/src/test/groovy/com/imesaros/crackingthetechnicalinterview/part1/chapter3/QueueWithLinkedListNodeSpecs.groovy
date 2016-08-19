@@ -12,28 +12,10 @@ class QueueWithLinkedListNodeSpecs extends Specification {
         queue.enqueue(5)
         queue.enqueue(7)
 
-        when:
-        Integer result = queue.dequeue()
-
-        then:
-        result == 3
-
-        when:
-        result = queue.dequeue()
-
-        then:
-        result == 5
-
-        when:
-        result = queue.dequeue()
-
-        then:
-        result == 7
-
-        when:
-        result = queue.dequeue()
-
-        then:
-        result == null
+        expect:
+        queue.dequeue() == 3
+        queue.dequeue() == 5
+        queue.dequeue() == 7
+        queue.dequeue() == null
     }
 }
