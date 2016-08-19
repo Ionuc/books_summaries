@@ -24,28 +24,4 @@ public class LinkedListNode
     {
         this.next = next;
     }
-
-    public void appendToTail(int d)
-    {
-        LinkedListNode node = new LinkedListNode(d);
-        LinkedListNode h = this;
-        while (h.next != null)
-        {
-            h = h.next;
-        }
-        h.next = node;
-    }
-
-    public LinkedListNode remove(LinkedListNode head, int i)
-    {
-        if (head == null)
-        {
-            return null;
-        }
-        while (head.next != null && head.item != i)
-        {
-            head = head.next;
-        }
-        return head;
-    }
 }

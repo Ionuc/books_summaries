@@ -2,6 +2,10 @@ package com.imesaros.crackingthetechnicalinterview.part1.chapter3;
 
 import com.imesaros.crackingthetechnicalinterview.part1.chapter2.LinkedListNode;
 
+/**
+ * Problem 3.0
+ * Implement a custom stack
+ */
 public class StackWithLinkedListNode
 {
     LinkedListNode top = null;

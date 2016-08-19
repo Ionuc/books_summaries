@@ -5,6 +5,31 @@ import java.util.Map;
 
 public class LinkedListHelper
 {
+
+    public void appendToTail(LinkedListNode head, int d)
+    {
+        LinkedListNode node = new LinkedListNode(d);
+        LinkedListNode h = head;
+        while (h.getNext() != null)
+        {
+            h = h.getNext();
+        }
+        h.setNext(node);
+    }
+
+    public LinkedListNode remove(LinkedListNode head, int i)
+    {
+        if (head == null)
+        {
+            return null;
+        }
+        while (head.getNext() != null && head.getItem() != i)
+        {
+            head = head.getNext();
+        }
+        return head;
+    }
+
     /**
      * Write code to remove duplicates from an unsorted linked list.
      * FOLLOW UP
