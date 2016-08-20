@@ -4,8 +4,7 @@ import spock.lang.Specification
 
 import java.util.function.Consumer
 
-import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeHelper.insert
-import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeHelper.isBalanced
+import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeHelper.*
 import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeTraversal.traverInOrder
 
 class BinaryTreeHelperSpecs extends Specification {
@@ -62,5 +61,26 @@ class BinaryTreeHelperSpecs extends Specification {
         new BinaryTree(3, new BinaryTree(2), null)                          | true
         new BinaryTree(3, new BinaryTree(2), new BinaryTree(4))             | true
         new BinaryTree(3, new BinaryTree(2, new BinaryTree(1), null), null) | false
+    }
+
+    def 'should create balanced binary search tree from array'() {
+
+        when:
+        BinaryTree root = createBinarySearchTree(integers.toArray(new Integer[integers.size()]))
+
+        then:
+        isBalanced(root)
+        traverInOrder(root, consumer)
+        list == integers
+
+        where:
+        integers << [
+                [1],
+                [1, 2],
+                [1, 2, 3],
+                [1, 2, 3, 4],
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5, 6]
+        ]
     }
 }

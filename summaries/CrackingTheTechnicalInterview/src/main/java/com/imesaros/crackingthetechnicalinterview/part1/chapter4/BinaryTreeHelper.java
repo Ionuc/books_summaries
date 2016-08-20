@@ -48,4 +48,24 @@ public class BinaryTreeHelper {
         }
         return 1 + Math.max(getMaxDepth(root.getLeft()), getMaxDepth(root.getRight()));
     }
+
+    /**
+     * Problem 4.3
+     * Given a sorted (increasing order) array, write an algorithm to create a binary tree with
+     * minimal height.
+     */
+    public static BinaryTree createBinarySearchTree(Integer[] values) {
+        return createBinarySearchTree(values, 0, values.length - 1);
+    }
+
+    private static BinaryTree createBinarySearchTree(Integer[] values, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        int middle = (start + end) / 2;
+        BinaryTree binaryTree = new BinaryTree(values[middle],
+                createBinarySearchTree(values, start, middle - 1),
+                createBinarySearchTree(values, middle + 1, end));
+        return binaryTree;
+    }
 }
