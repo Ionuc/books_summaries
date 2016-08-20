@@ -5,6 +5,7 @@ import spock.lang.Specification
 import java.util.function.Consumer
 
 import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeHelper.insert
+import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeHelper.isBalanced
 import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeTraversal.traverInOrder
 
 class BinaryTreeHelperSpecs extends Specification {
@@ -47,6 +48,19 @@ class BinaryTreeHelperSpecs extends Specification {
         11    | [2, 4, 6, 8, 10, 11, 12, 14]
         13    | [2, 4, 6, 8, 10, 12, 13, 14]
         15    | [2, 4, 6, 8, 10, 12, 14, 15]
+    }
 
+    def 'should test if a binary tree is balanced or not'() {
+        expect:
+        isBalanced(root) == expected
+
+        where:
+        root                                                                | expected
+        null                                                                | true
+        new BinaryTree(3)                                                   | true
+        new BinaryTree(3, null, new BinaryTree(4))                          | true
+        new BinaryTree(3, new BinaryTree(2), null)                          | true
+        new BinaryTree(3, new BinaryTree(2), new BinaryTree(4))             | true
+        new BinaryTree(3, new BinaryTree(2, new BinaryTree(1), null), null) | false
     }
 }
