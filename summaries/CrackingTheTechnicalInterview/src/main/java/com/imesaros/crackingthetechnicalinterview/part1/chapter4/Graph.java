@@ -35,4 +35,8 @@ public class Graph {
     public Map<String, GraphNode> getNodes() {
         return nodes;
     }
+
+    public boolean contains(GraphNode node) {
+        return node != null && nodes.containsKey(node.getIdentifier());
+    }
 }

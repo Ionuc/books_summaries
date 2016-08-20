@@ -6,8 +6,10 @@ import java.util.function.Consumer;
 import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.GraphState.NOT_VISITED;
 import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.GraphState.VISITED;
 
-public class GraphTraversal {
+public final class GraphTraversal {
 
+    private GraphTraversal(){
+    }
     /**
      * Problem 4.0
      */
