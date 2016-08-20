@@ -4,10 +4,10 @@ import spock.lang.Specification
 
 import java.util.function.Consumer
 
-import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.GraphHelper.bfs
-import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.GraphHelper.dfs
+import static GraphTraversal.bfs
+import static GraphTraversal.dfs
 
-class GraphHelperSpecs extends Specification {
+class GraphTraversalSpecs extends Specification {
 
     List<String> list = new ArrayList<>()
     Consumer<String> consumer = { value -> list.add(value); };

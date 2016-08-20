@@ -4,7 +4,8 @@ import spock.lang.Specification
 
 import java.util.function.Consumer
 
-import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeHelper.*
+import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeHelper.insert
+import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.BinaryTreeTraversal.traverInOrder
 
 class BinaryTreeHelperSpecs extends Specification {
 
@@ -27,33 +28,6 @@ class BinaryTreeHelperSpecs extends Specification {
 
     List<Integer> list = new ArrayList<>()
     Consumer<Integer> consumer = { value -> list.add(value); }
-
-    def 'should travers in IN ORDER'() {
-        when:
-        traverInOrder(root, consumer)
-
-        then:
-        List<Integer> expected = [2, 4, 6, 8, 10, 12, 14]
-        list == expected
-    }
-
-    def 'should travers in PRE ORDER'() {
-        when:
-        traverPreOrder(root, consumer)
-
-        then:
-        List<Integer> expected = [8, 4, 2, 6, 12, 10, 14]
-        list == expected
-    }
-
-    def 'should travers in POST ORDER'() {
-        when:
-        traverPostOrder(root, consumer)
-
-        then:
-        List<Integer> expected = [2, 6, 4, 10, 14, 12, 8]
-        list == expected
-    }
 
     def 'should insert new value'() {
         when:

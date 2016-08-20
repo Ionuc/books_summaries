@@ -6,8 +6,11 @@ import java.util.function.Consumer;
 import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.GraphState.NOT_VISITED;
 import static com.imesaros.crackingthetechnicalinterview.part1.chapter4.GraphState.VISITED;
 
-public class GraphHelper {
+public class GraphTraversal {
 
+    /**
+     * Problem 4.0
+     */
     public static void dfs(Graph graph, String startIdentifier, Consumer<String> consumer) {
         GraphNode start = graph.getNodes().get(startIdentifier);
         dfs(start, graph.getNodes(), consumer);
@@ -32,6 +35,9 @@ public class GraphHelper {
         }
     }
 
+    /**
+     * Problem 4.0
+     */
     public static void bfs(Graph graph, String startIdentifier, Consumer<String> consumer) {
         GraphNode start = graph.getNodes().get(startIdentifier);
         bfs(start, graph.getNodes(), consumer);
