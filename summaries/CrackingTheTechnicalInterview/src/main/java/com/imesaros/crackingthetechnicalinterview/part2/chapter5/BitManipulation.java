@@ -16,7 +16,7 @@ public class BitManipulation {
 
         int left = max - ((1 << j) - 1);
 
-        int right = (1  << i) - 1;
+        int right = (1 << i) - 1;
 
         int mask = left ^ right;
 
@@ -24,5 +24,49 @@ public class BitManipulation {
         return (n & mask) | (m << i);
     }
 
+    /**
+     * Problem 2
+     * Given a (decimal - e.g. 3.72) number that is passed in as a string, print the binary representation.
+     * If the number can not be represented accurately in binary, print “ERROR”
+     */
+    public static String createBinaryRepresentation(String sValue) {
+        Float fValue = Float.parseFloat(sValue);
+        Integer iValue = fValue.intValue();
+        fValue -= iValue;
 
+        String tails = "";
+        if (fValue > 0) {
+            String error = "ERROR";
+            tails = binaryRepresentationForFloating(fValue, error);
+            if (tails.equals(error)) {
+                return error;
+            }
+        }
+        String head = binaryRepresentationForInteger(iValue);
+        return head + (tails.equals("") ? tails : "." + tails);
+    }
+
+    private static String binaryRepresentationForFloating(Float value, String error) {
+        String result = "";
+        int intValue;
+        while (value != 0) {
+            if (result.length() > 32) {
+                return error;
+            }
+            value *= 2;
+            intValue = value.intValue();
+            result += intValue;
+            value -= intValue;
+        }
+        return result;
+    }
+
+    private static String binaryRepresentationForInteger(Integer value) {
+        String result = "";
+        while (value != 0) {
+            result = value % 2 + result;
+            value /= 2;
+        }
+        return result;
+    }
 }
