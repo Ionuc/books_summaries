@@ -3,7 +3,7 @@ package com.imesaros.crackingthetechnicalinterview.part2.chapter5;
 public class BitManipulation {
 
     /**
-     * Problem 1
+     * Problem 5.1
      * You are given two 32-bit numbers, N and M, and two bit positions, i and j. Write a
      * method to set all bits between i and j in N equal to M (e.g., M becomes a substring of
      * N located at i and starting at j).
@@ -25,7 +25,7 @@ public class BitManipulation {
     }
 
     /**
-     * Problem 2
+     * Problem 5.2
      * Given a (decimal - e.g. 3.72) number that is passed in as a string, print the binary representation.
      * If the number can not be represented accurately in binary, print “ERROR”
      */
@@ -68,5 +68,32 @@ public class BitManipulation {
             value /= 2;
         }
         return result;
+    }
+
+    /**
+     * Problem 5.5
+     * Write a function to determine the number of bits required to convert integer A to
+     * integer B.
+     * Input: 31, 14
+     * Output: 2
+     */
+    public static int nrBitsToConvert(int from, int to) {
+        int count = 0;
+        int c = from ^ to;
+        while (c != 0) {
+            count += c & 1;
+            c = c >> 1;
+        }
+        return count;
+    }
+
+
+    /**
+     * Problem 5.6
+     * Write a program to swap odd and even bits in an integer with as few instructions as
+     * possible (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, etc).
+     */
+    public static int swapOddWithEven(int nr) {
+        return ((nr & 0xAA) >> 1) | ((nr & 0x55) << 1);
     }
 }
