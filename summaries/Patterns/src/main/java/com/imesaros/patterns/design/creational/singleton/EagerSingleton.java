@@ -1,8 +1,10 @@
 package com.imesaros.patterns.design.creational.singleton;
 
-/**
- * Created by imesaros on 5/23/2017.
- */
-public class EagerSingleton
+public class EagerSingleton implements Singleton
 {
+    private static final Student INSTANCE = new Student();
+
+    public Student getInstance(){
+        return INSTANCE;
+    }
 }
