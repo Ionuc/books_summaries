@@ -6,9 +6,6 @@ import com.imesaros.patterns.design.behavioral.mediator.User
 import com.imesaros.patterns.design.behavioral.mediator.UserImpl
 import spock.lang.Specification
 
-/**
- * Created by imesaros on 6/12/2017.
- */
 class MediatorSpec extends Specification{
 
     public static void main(String[] args) {
