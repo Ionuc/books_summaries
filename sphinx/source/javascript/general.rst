@@ -126,5 +126,50 @@ Equality
        "" == 0: true
        "" === 0: false
 
+Comments
+--------
+
+    .. code-block:: python
+       :linenos:
+
+    - // single comment line
+
+
+    .. code-block:: python
+       :linenos:
+
+       /* multiple
+       Comments
+       Lines */
+
+    - alert(“Hello world”) // comments can be appended to the end of line
+
+Variables
+---------
+    - Are declared with var keyword
+    - Don’t have a type until a value is assigned and at that point the type is inferred
+    - If keyword var is omitted, then the scope of the variable is global
+
+    .. code-block:: python
+       :linenos:
+
+       var streetNumber = 49;
+       var streetName = "Brunswick";
+       write(typeof streetNumber + " " + streetNumber);
+       write(typeof streetName + " " + streetName);
+
+       function add(first, second) {
+         a = first;
+         return a + second;
+       }
+
+       write (" 1 + 2 = " + add(1,2));
+       write ( " a: "+ a);
+       write ("54 + 18 = " + add(54, 18))
+       write(" a: " + a)
+
+       if (!window.a){
+         write("a is undefined");
+       }
 
 :ref:`Go Back <javascript-label>`.
