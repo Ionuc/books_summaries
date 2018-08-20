@@ -9,3 +9,4 @@ General
 
     tools/index.rst
     testing.rst
+    dns.rst
