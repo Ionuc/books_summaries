@@ -12,3 +12,4 @@ Javascript
     closure.rst
     error-handling.rst
     functions.rst
+    engine/index.rst

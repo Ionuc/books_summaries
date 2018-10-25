@@ -132,7 +132,9 @@ Mocking Functions and Modules
 Snapshot Testing
 ----------------
     - a Snapshot is a JSON-based record of a component's output
-    - htese test are committed along with other componets
+    - these test are committed along with other componets
+    - the first time toMatchSnapshot() is called, a snapshot is created
+    - each subsequence time, the new snapshot is compared with the old one
 
         .. code-block:: python
            :linenos:
