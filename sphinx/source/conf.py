@@ -51,9 +51,9 @@ source_suffix = ['.rst']
 master_doc = 'index'
 
 # General information about the project.
-project = u'Internship'
-copyright = u'Ullink'
-author = u'Ullink'
+project = u'Ionuc Theory'
+copyright = u'Ionut Mesaros'
+author = u'Ionut Mesaros'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -120,7 +120,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Internshipdoc'
+htmlhelp_basename = 'IonucTheory'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -147,7 +147,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Internship.tex', u'Internship Documentation',
+    (master_doc, 'IonucTheory.tex', u'Ionuc Theory Documentation',
      u'Ionut Mesaros', 'manual'),
 ]
 
@@ -157,7 +157,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'internship', u'Internship Documentation',
+    (master_doc, 'IonucTheory', u'Ionuc Theory Documentation',
      [author], 1)
 ]
 
@@ -168,8 +168,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Internship', u'Internship Documentation',
-     author, 'Internship', 'One line description of project.',
+    (master_doc, 'IonucTheory', u'Ionuc Theory Documentation',
+     author, 'Ionuc Theory', 'One line description of project.',
      'Miscellaneous'),
 ]
 
