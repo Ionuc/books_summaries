@@ -16,4 +16,5 @@ Welcome to Ionut's documentation!
     javascript/index.rst
     python/index.rst
     frameworks/index.rst
+    os/index.rst
 
