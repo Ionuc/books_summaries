@@ -8,6 +8,7 @@ JavaScript Libraries
     :caption: Contents:
 
     jest.rst
+    react/index.rst
 
 
 :ref:`Go Back <frameworks-libraries-label>`.
