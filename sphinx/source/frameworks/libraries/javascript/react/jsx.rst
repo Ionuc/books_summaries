@@ -1,4 +1,4 @@
-.. _frameworks-libraries-javascript-jest-label:
+.. _react-jsx-label:
 
 JSX
 =====
