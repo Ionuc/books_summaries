@@ -19,6 +19,8 @@ React
     components.rst
     state-lifecycle.rst
     event-handling.rst
+    conditional-rendering.rst
+    lists-and-keys.rst
 
 
 :ref:`Go Back <frameworks-libraries-javascript-label>`.
