@@ -21,6 +21,8 @@ React
     event-handling.rst
     conditional-rendering.rst
     lists-and-keys.rst
+    forms.rst
+    lifting-state-up.rst
 
 
 :ref:`Go Back <frameworks-libraries-javascript-label>`.
