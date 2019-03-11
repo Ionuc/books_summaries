@@ -23,6 +23,7 @@ React
     lists-and-keys.rst
     forms.rst
     lifting-state-up.rst
+    composition-vs-inheritance.rst
 
 
 :ref:`Go Back <frameworks-libraries-javascript-label>`.
