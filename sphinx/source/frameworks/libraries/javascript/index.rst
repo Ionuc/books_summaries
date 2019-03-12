@@ -9,6 +9,7 @@ JavaScript Libraries
 
     jest.rst
     react/index.rst
+    babel/index.rst
 
 
 :ref:`Go Back <frameworks-libraries-label>`.
