@@ -13,3 +13,4 @@ Javascript
     error-handling.rst
     functions.rst
     engine/index.rst
+    ES2015.rst
