@@ -60,6 +60,6 @@ Keys
     - it is not recommanded to be used the index for keys if the order of items may change
     - if you choose not to assing an explicit key to list items then React will default to using indexes as keys
     - keys make sens in the context of the surrounding array
-    - keys must only bu unique amoung siblings
+    - keys must only by unique amoung siblings
 
 :ref:`Go Back <react-label>`.

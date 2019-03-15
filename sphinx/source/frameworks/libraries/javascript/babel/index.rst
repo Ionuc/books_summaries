@@ -9,7 +9,7 @@ Babel
 
     introduction.rst
     usage-guide.rst
-
+    configuration.rst
 
 
 :ref:`Go Back <frameworks-libraries-javascript-label>`.
