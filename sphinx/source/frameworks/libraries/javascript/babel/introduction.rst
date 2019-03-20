@@ -48,11 +48,11 @@ Type Annotations
                 this.greeting = greeting;
             }
 
-Pluggable
----------
-    - is build out of plugins
+Plugis & Presets
+----------------
+    - babel is build out of plugins
+    - a plugin is just a small JavaSCript function that instruct Babel on how to carry out transformations to the code 
     - you can compose your own transformaton pipeline using existing plugins or write your own
-    - a plugin is just a function 
 
     .. code-block:: python
         :linenos:
@@ -70,5 +70,8 @@ Pluggable
         }
 
     - a plugin can be create on the fly with astexplorer.net or use generator-babel-plugin to generate a plugin template.
+    - a preset is a pre-determined set of plugins in order to not add them manually
+    - just like plugins, you cna create your own presets to share any combination of plugins you need
+    - an example would be : "@babel/preset-env" which includes all plugins to support modern JavaSCript(ES2015, ES2016, etc).
 
 :ref:`Go Back <babel-label>`.

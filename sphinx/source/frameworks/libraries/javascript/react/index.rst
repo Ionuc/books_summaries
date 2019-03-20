@@ -21,9 +21,16 @@ React
     event-handling.rst
     conditional-rendering.rst
     lists-and-keys.rst
+    fragments.rst
     forms.rst
     lifting-state-up.rst
     composition-vs-inheritance.rst
+    code-splitting.rst
+    context.rst
+    error-boundaries.rst
+    higher-order-components.rst
+    refs-and-DOM.rst
+    forwarding-refs.rst
 
 
 :ref:`Go Back <frameworks-libraries-javascript-label>`.
