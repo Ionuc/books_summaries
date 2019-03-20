@@ -1,4 +1,12 @@
 rootProject.name = 'Books Summaries'
 
-include 'summaries/CrackingTheTechnicalInterview', 'summaries/CrackingTheTechnicalInterviewEbook', 'summaries/TheAlgorithmDesignManual', 'summaries/UllinkInterview', 'summaries/Patterns'
+String[] projects = [
+        'summaries/CrackingTheTechnicalInterview',
+        'summaries/CrackingTheTechnicalInterviewEbook',
+        'summaries/TheAlgorithmDesignManual',
+        'summaries/UllinkInterview',
+        'summaries/Patterns',
+        'summaries/GeeksforGeeks'
+]
 
+include projects
