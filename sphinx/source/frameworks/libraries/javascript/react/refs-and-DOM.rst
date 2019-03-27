@@ -242,4 +242,11 @@ Callback Refs
             }
         }
 
+Caveats with callback refs
+--------------------------
+    - if the ref callback is defined as an inline function, it will get called twice during updates, first with null and then
+      again with the DOM element
+
+    - this is because a new instance of the function is created with each render, so React needs to clear the old ref and set
+      up the new one
 :ref:`Go Back <react-label>`.
