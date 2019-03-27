@@ -7,10 +7,11 @@ Javascript
     :maxdepth: 2
     :caption: Contents:
 
-    general.rst
     types/index.rst
+    general.rst
     closure.rst
     error-handling.rst
     functions.rst
     engine/index.rst
+    gc.rst
     ES2015.rst
