@@ -241,4 +241,194 @@ Copying by reference
     - one of the fundamental differences of objects vs primitives is that they are stored and copied "by reference"
     - 2 objects are equal only if they are the same objects
 
+Object to primitive conversion
+------------------------------
+    - there are cases when objects are threaded with primitive operators
+    - there are special mehtods in objects that do the conversion
+    - for objects there is no to-boolean coversion because all abjects are true in a boolean context
+    - there is only string and number conversions
+
+    - ToPrimitive:
+        - when an object is used in the contex where a primitive is required, it's converted to a primitive value using
+          the "ToPrimitive" algorithm which is using "hints". There are 3 hints:
+
+            - string: when an operator expects a string, for object-to-string conversions
+            - number: when an operator expects a number
+            - default: when the oeprator is not sure what type to expect because the operator can be applied for both string
+              and number
+
+        - in practice, all built-in objects except for one case (Date) implement "default" conversion the same way as "number"
+        - to do the conversion, JavaScript tries to find and call three object methods:
+            - call obj[Symbol.toPrimitive](hint) if the method exists
+            - otherwise if hint is string try:
+                - obj.toString() and obj.valueOf()
+            - otherwise if hint is number or default try:
+                - obj.valueOf() and obj.toString
+
+    - Symbol.toPrimitive:
+        - there is a symbol named "Symbol.toPrimitive"
+
+        .. code-block:: python
+            :linenos:
+
+            let user = {
+                name: "John",
+                money: 1000,
+
+                [Symbol.toPrimitive](hint) {
+                    alert(`hint: ${hint}`);
+                    return hint == "string" ? `{name: "${this.name}"}` : this.money;
+                }
+            };
+
+            // conversions demo:
+            alert(user); // hint: string -> {name: "John"}
+            alert(+user); // hint: number -> 1000
+            alert(user + 500); // hint: default -> 1500
+
+    - toString/valueOf
+        - these are methods existing a long time ago
+        - they provide an alternative "old-style" way to implement the conversion
+        - if there's no Symbol.toPrimitive, then JavaScript tries to find them an the order:
+            - toString -> valueOf for String hint
+            - valueOf -> toString oterwise
+
+        .. code-block:: python
+            :linenos:
+
+            let user = {
+                name: "John",
+                money: 1000,
+
+                // for hint="string"
+                toString() {
+                    return `{name: "${this.name}"}`;
+                },
+
+                // for hint="number" or "default"
+                valueOf() {
+                    return this.money;
+                }
+            };
+
+            alert(user); // toString -> {name: "John"}
+            alert(+user); // valueOf -> 1000
+            alert(user + 500); // valueOf -> 1500
+
+Constructor
+-----------
+    - the regular "{}" syntax allows to create one object
+    - but often we need to create multiple similar objects
+    - constructor functions are technically regular functions
+    - there are 2 convertions though:
+        - they are named with capital letter first
+        - they should be executed only with "new" operator
+
+    .. code-block:: python
+        :linenos:
+
+        function User(name) {
+            this.name = name;
+            this.isAdmin = false;
+        }
+
+        let user = new User("Jack");
+
+        alert(user.name); // Jack
+        alert(user.isAdmin); // false
+
+    - when a function is executed with new, it does the following steps:
+        - a new empty object is created an assigned to this
+        - the function body executes. Usually it modified this, ads new properties to it
+        - the value of this is returned
+    - in other words, new User() does something like this:
+
+    .. code-block:: python
+        :linenos:
+
+        function User(name) {
+          // this = {};  (implicitly)
+
+          // add properties to this
+          this.name = name;
+          this.isAdmin = false;
+
+          // return this;  (implicitly)
+        }
+
+        // te result of new User("Jack) is similar with:
+        let user = {
+            name: "Jack",
+            isAdmin: false
+        };
+
+    - any function can be used as a constructor, meaninig any function can be run with new and it will execute the algorithm above
+
+    - Dual-syntax constructor:new.target
+        - inside a function we can check whether it was called with new or without it using a special new.target property:
+            - empty for regular calls
+            - equals the function for "new" call
+
+        .. code-block:: python
+            :linenos:
+
+            function User() {
+                alert(new.target);
+            }
+
+            // without "new":
+            User(); // undefined
+
+            // with "new":
+            new User(); // function User { ... }
+
+        - this can be used to allow both new and regular to work the same
+
+        .. code-block:: python
+            :linenos:
+
+            function User(name) {
+                if (!new.target) { // if you run me without new
+                    return new User(name); // ...I will add new for you
+                }
+
+                this.name = name;
+            }
+
+            let john = User("John"); // redirects call to new User
+            alert(john.name); // John
+
+    - Return from constructors
+        - usually constructors do not have a return statement
+        - if there is a reutrn statement then the rule is:
+            - if return is called with object, the it is returned instead of this
+            - if return is called with a primitive, it's ignored
+        - in other words, return with an object returns that object, in all other cases "this" is returned
+
+    - Methods in constructor
+        - using constructor functions to create objects gives a great deal of lfexibility
+        - we can add ot this not only properties, but aslo methods
+
+        .. code-block:: python
+            :linenos:
+
+            function User(name) {
+                this.name = name;
+
+                this.sayHi = function() {
+                    alert( "My name is: " + this.name );
+                };
+            }
+
+            let john = new User("John");
+
+            john.sayHi(); // My name is: John
+
+            /*
+            john = {
+                name: "John",
+                sayHi: function() { ... }
+            }
+            */
+
 :ref:`Go Back <javascript-types-label>`.

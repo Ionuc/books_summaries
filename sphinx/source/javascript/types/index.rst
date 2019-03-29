@@ -13,7 +13,8 @@ Types
     date.rst
     null.rst
     undefined.rst
-    objects.rst
     symbol.rst
+    objects.rst
+    methods-of-primitives.rst
 
 :ref:`Go Back <javascript-label>`.
