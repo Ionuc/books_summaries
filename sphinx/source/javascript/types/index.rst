@@ -9,12 +9,10 @@ Types
 
     strings.rst
     numbers.rst
-    array.rst
-    date.rst
     null.rst
     undefined.rst
     symbol.rst
-    objects.rst
     methods-of-primitives.rst
+    objects/index.rst
 
 :ref:`Go Back <javascript-label>`.

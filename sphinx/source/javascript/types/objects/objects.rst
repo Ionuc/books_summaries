@@ -1,4 +1,4 @@
-.. _javascript-objects-label:
+.. _javascript-type-objects-objects-label:
 
 Objects
 =======
@@ -431,4 +431,4 @@ Constructor
             }
             */
 
-:ref:`Go Back <javascript-types-label>`.
+:ref:`Go Back <javascript-types-objects-label>`.

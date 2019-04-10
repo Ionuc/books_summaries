@@ -1,4 +1,4 @@
-.. _javascript-date-label:
+.. _javascript-type-objects-date-label:
 
 Date
 ====
@@ -11,4 +11,4 @@ Date
 
        Var birthday = new Date(2019, 10, 26);
 
-:ref:`Go Back <javascript-types-label>`.
+:ref:`Go Back <javascript-types-objects-label>`.
