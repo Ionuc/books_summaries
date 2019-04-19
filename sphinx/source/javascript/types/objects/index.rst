@@ -11,5 +11,6 @@ Objects
     array.rst
     date.rst
     iterable.rst
+    map-set.rst
 
 :ref:`Go Back <javascript-types-label>`.

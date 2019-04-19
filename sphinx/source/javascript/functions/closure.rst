@@ -1,4 +1,4 @@
-.. _javascript-closure-label:
+.. _javascript-functions-closure-label:
 
 Closure
 =======
@@ -31,4 +31,4 @@ Closure
        //Output:
        abc
 
-:ref:`Go Back <javascript-label>`.
+:ref:`Go Back <javascript-functions-label>`.

@@ -9,9 +9,8 @@ Javascript
 
     types/index.rst
     general.rst
-    closure.rst
     error-handling.rst
-    functions.rst
+    functions/index.rst
     this.rst
     engine/index.rst
     gc.rst
