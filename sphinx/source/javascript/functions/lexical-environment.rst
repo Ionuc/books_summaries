@@ -2,7 +2,7 @@
 
 Lexical environment
 ===================
-    - in JavaScript, every running function, code block and the script asa whole have an internal (hidden) object called
+    - in JavaScript, every running function, code block and the script as a whole have an internal (hidden) object called
       the Lexical Environment
 
     - the Lexical Environment object consist of 2 parts:

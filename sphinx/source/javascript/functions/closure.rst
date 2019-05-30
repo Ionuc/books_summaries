@@ -8,7 +8,6 @@ Closure
     - The inner function have access to all variables that are in scope when is declared
     - nested functions can be returned
 
-
     .. code-block:: python
         :linenos:
 

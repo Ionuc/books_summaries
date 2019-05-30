@@ -10,6 +10,8 @@ Functions
     general.rst
     rest-parameters-and-spread.rst
     closure.rst
+    new-function-syntax.rst
+    lexical-environment.rst
 
 
 :ref:`Go Back <javascript-label>`.

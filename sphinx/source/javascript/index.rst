@@ -16,3 +16,4 @@ Javascript
     lexical-environment.rst
     gc.rst
     ES2015.rst
+    global.rst
