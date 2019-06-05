@@ -12,6 +12,8 @@ Functions
     closure.rst
     new-function-syntax.rst
     lexical-environment.rst
+    decorators.rst
+    binding.rst
 
 
 :ref:`Go Back <javascript-label>`.
