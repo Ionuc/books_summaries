@@ -13,7 +13,6 @@ Javascript
     functions/index.rst
     this.rst
     engine/index.rst
-    lexical-environment.rst
     gc.rst
     ES2015.rst
     global.rst

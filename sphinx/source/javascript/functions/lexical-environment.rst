@@ -15,7 +15,7 @@ Variables
       "to get or change a property of that object"
     - the property is set when the line es executed
 
-    .. image:: ../images/javascript/lexical-environment/variable.png
+    .. image:: ../../images/javascript/lexical-environment/variable.png
         :align: center
 
     - from the picture above it can be see that when the execution is started, there is created an empty Environment Record which
@@ -29,7 +29,7 @@ Function declaration
     - for top-level functions, it means the moment when the script is started
     - that is why we can call a function declaration before it is defined
 
-    .. image:: ../images/javascript/lexical-environment/function.png
+    .. image:: ../../images/javascript/lexical-environment/function.png
         :align: center
 
 Inner and outer Lexical Environment
@@ -53,7 +53,7 @@ Inner and outer Lexical Environment
         - the outer one (global):
             - it has the phrase and function itself.
 
-    .. image:: ../images/javascript/lexical-environment/inner-function-1.png
+    .. image:: ../../images/javascript/lexical-environment/inner-function-1.png
         :align: center
 
     - when the code wants to access a variable, the inner Lexical Environment is searched first, then the outer and os on, until 
@@ -61,7 +61,7 @@ Inner and outer Lexical Environment
     - wihtout "use strict", an assignment to an undefined variable created a new global variable (for backwards compatbility)
     - in the example above, it will be :
 
-    .. image:: ../images/javascript/lexical-environment/inner-function-2.png
+    .. image:: ../../images/javascript/lexical-environment/inner-function-2.png
         :align: center
 
     - because of this, a function gets outer variables as they are now,it used the most recent values
@@ -85,15 +85,46 @@ Nested Functions
     - in other words, a function is "imprinted" with a refenrece to the Lexical Environment where it was born. [[Environmen]] is 
       the hidden function property that has that reference.
 
-    .. image:: ../images/javascript/lexical-environment/nested-1.png
+    .. image:: ../../images/javascript/lexical-environment/nested-1.png
         :align: center
+
+The new Function
+----------------
+    - usually, a function remembers where it was born in the special property [[Environment]], by referencing the Lexical 
+      Environment from where it's created
+    - but when a function is created using new Function, its [[Environment]] reference the global one, not the curent Lexical 
+      Environment
+
+    .. code-block:: python
+        :linenos:
+
+        function getFunc() {
+            let value = "test";
+            let func = new Function('alert(value)');
+            return func;
+        }
+
+        getFunc()(); // error: value is not defined
+
+    - compared with the normal one:
+
+    .. code-block:: python
+        :linenos:
+
+        function getFunc() {
+            let value = "test";
+            let func = function() { alert(value); };
+            return func;
+        }
+
+        getFunc()(); // "test", from the Lexical Environment of getFunc
 
 Code blocks and loops, IIFE
 ----------------------------
     - a Lexical Environment exists for any code block
     - it can be created when an if is found:
 
-        .. image:: ../images/javascript/lexical-environment/code-block-if.png
+        .. image:: ../../images/javascript/lexical-environment/code-block-if.png
             :align: center
 
         - when the execution gets into the if, the new "if-only" Lexical Environment is created.
@@ -225,6 +256,6 @@ Real-life optimizations
         }
 
         let g = f();
-g();
+        g();
 
 :ref:`Go Back <javascript-label>`.

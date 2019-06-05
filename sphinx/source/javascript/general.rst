@@ -85,25 +85,103 @@ Variables
     - If keyword var is omitted, then the scope of the variable is global
 
     .. code-block:: python
-       :linenos:
+        :linenos:
 
-       var streetNumber = 49;
-       var streetName = "Brunswick";
-       write(typeof streetNumber + " " + streetNumber);
-       write(typeof streetName + " " + streetName);
+        var streetNumber = 49;
+        var streetName = "Brunswick";
+        write(typeof streetNumber + " " + streetNumber);
+        write(typeof streetName + " " + streetName);
 
-       function add(first, second) {
-         a = first;
-         return a + second;
-       }
+        function add(first, second) {
+            a = first;
+            return a + second;
+        }
 
-       write (" 1 + 2 = " + add(1,2));
-       write ( " a: "+ a);
-       write ("54 + 18 = " + add(54, 18))
-       write(" a: " + a)
+        write (" 1 + 2 = " + add(1,2));
+        write ( " a: "+ a);
+        write ("54 + 18 = " + add(54, 18))
+        write(" a: " + a)
 
-       if (!window.a){
-         write("a is undefined");
-       }
+        if (!window.a){
+            write("a is undefined");
+        }
+
+The old "var"
+-------------
+    - it behaves similar to "let", it declares a variable
+
+    .. code-block:: python
+        :linenos:
+
+        function sayHi() {
+          var phrase = "Hello"; // local variable, "var" instead of "let"
+
+          alert(phrase); // Hello
+        }
+
+        sayHi();
+
+        alert(phrase); // Error, phrase is not defined
+
+    - here are some differences:
+        - var does not have block scope:
+            - "var" variables are either function wide or global
+            - if a code block is inside a function, then "var" variables becomes a function-level variables
+
+        .. code-block:: python
+            :linenos:
+
+            if (true) {
+              var test = true; // use "var" instead of "let"
+            }
+
+            alert(test); // true, the variable lives after if
+
+
+        .. code-block:: python
+            :linenos:
+
+            for (var i = 0; i < 10; i++) {
+              // ...
+            }
+
+            alert(i); // 10, "i" is visible after loop, it's a global variable
+
+    - "var" are processed at the function start:
+        - "var" variables are defined from the beginning of the function, no matter where the definition is
+        - this can be haotic
+        - this code below:
+
+        .. code-block:: python
+            :linenos:
+
+            function sayHi() {
+                phrase = "Hello";
+                alert(phrase);
+                var phrase;
+            }
+
+        is technically the same as:
+
+        .. code-block:: python
+            :linenos:
+
+            function sayHi() {
+                var phrase;
+                phrase = "Hello";
+                alert(phrase);
+            }
+        and even with this code, where block from if will not be executed:
+
+        .. code-block:: python
+            :linenos:
+
+            function sayHi() {
+                phrase = "Hello"; // (*)
+                if (false) {
+                    var phrase;
+                }
+                alert(phrase);
+            }
 
 :ref:`Go Back <javascript-label>`.
