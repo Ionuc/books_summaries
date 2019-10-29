@@ -1,0 +1,45 @@
+.. _javascript-functions-general-label:
+
+Functions
+=========
+    - Functions can be invoked
+    - There are multiple ways to declare a function:
+        - Standard declaration:
+            - function square(x){ return x*x;}
+            - square(7) => 49
+        - Named and assigned function
+            - Var squareFunc = function square(x) {return x*x;}
+            - The function it will be called by the variable name and not by the function name
+            - squareFunc(7) => 49
+        - Anonymous and assigned function
+            - Var square = function (x) {return x*x’}
+            - It debug mode there will be no name on the stack trace
+        - Anonymous and immediately invoked:
+            - (function(x){return x*x;})(numberToSquare);
+<<<<<<< HEAD:sphinx/source/javascript/functions/general.rst
+=======
+    - Passing more parameters to a function will ignore the extra parameters
+    - passing less parameters to a function will force the other parameters to be undefined
+>>>>>>> Update javascript files:sphinx/source/javascript/functions.rst
+    - It does not allow the function overloading. The last function will remain
+
+    .. code-block:: python
+       :linenos:
+
+       Function add(num, num2, num3) {
+           Return num + num2 + num3;
+       }
+       Function add(num, num2) {
+           Return num + num2;
+       }
+       write (add(6,7)); // 13
+       write(add(6,7,8); // 13
+
+Function Overriding
+-------------------
+    - Functions cannot be overloaded
+    - Provide parameter flexibility, passing too many or too few will not cause an error:
+        - extra parameters are ignored, missing parameters are initialized with undefined
+    - Object parameters are passed by reference and primitive parameters are passed by value
+
+:ref:`Go Back <javascript-functions-label>`.
