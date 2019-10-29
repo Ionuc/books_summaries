@@ -9,5 +9,6 @@ Java 9
 
     repl.rst
     factory-methods.rst
+    private-methods-interface.rst
 
 :ref:`Go Back <java-label>`.
