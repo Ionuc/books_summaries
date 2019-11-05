@@ -17,4 +17,5 @@ Welcome to Ionut's documentation!
     python/index.rst
     frameworks/index.rst
     os/index.rst
+    seo/index.rst
 
