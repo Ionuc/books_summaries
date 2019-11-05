@@ -8,6 +8,7 @@ Java 9
     :caption: Contents:
 
     repl.rst
+    module-system.rst
     factory-methods.rst
     private-methods-interface.rst
 
