@@ -1,7 +1,7 @@
 .. _java9-module-system-label:
 
-Java 9
-======
+Module System
+=============
     - one of the big java 8 feature is the Module System, a part of Jigsaw Project
     - it was introduced:
         - Modular JDK
@@ -20,4 +20,4 @@ Java 9
     tenets-modularity.rst
     module.rst
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java9-label>`.

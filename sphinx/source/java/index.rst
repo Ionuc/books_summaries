@@ -13,6 +13,7 @@ Java
     string/index.rst
     jvm/index.rst
     java8/index.rst
+    java9/index.rst
     static.rst
     object.rst
     general.rst
