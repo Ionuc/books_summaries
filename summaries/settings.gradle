@@ -1,0 +1,13 @@
+rootProject.name = 'Summaries'
+
+String[] projects = [
+        'CrackingTheTechnicalInterview',
+        'CrackingTheTechnicalInterviewEbook',
+        'TheAlgorithmDesignManual',
+        'UllinkInterview',
+        'Patterns',
+        'GeeksforGeeks',
+        'Java'
+]
+
+include projects

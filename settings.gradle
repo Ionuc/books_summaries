@@ -1,12 +1,7 @@
-rootProject.name = 'Books Summaries'
+rootProject.name = 'Books'
 
 String[] projects = [
-        'summaries/CrackingTheTechnicalInterview',
-        'summaries/CrackingTheTechnicalInterviewEbook',
-        'summaries/TheAlgorithmDesignManual',
-        'summaries/UllinkInterview',
-        'summaries/Patterns',
-        'summaries/GeeksforGeeks'
+        'summaries'
 ]
 
 include projects
