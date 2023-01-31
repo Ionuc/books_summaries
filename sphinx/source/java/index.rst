@@ -12,8 +12,6 @@ Java
     memory-management/index.rst
     string/index.rst
     jvm/index.rst
-    java8/index.rst
-    java9/index.rst
     static.rst
     object.rst
     general.rst
@@ -21,3 +19,6 @@ Java
     inner-classes.rst
     serialization.rst
     controlling-app-execution.rst
+    java8/index.rst
+    java9/index.rst
+    java10/index.rst
