@@ -23,3 +23,4 @@ Java
     java9/index.rst
     java10/index.rst
     java11/index.rst
+    java12/index.rst
