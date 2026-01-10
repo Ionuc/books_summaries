@@ -12,4 +12,4 @@ Performance Features
     flight_recorder_java11.rst
 
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java11-label>`.

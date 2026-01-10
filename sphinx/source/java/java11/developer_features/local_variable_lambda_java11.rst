@@ -18,4 +18,4 @@ Local Variable Syntax fir Lambda
             assertThat(resultString).isEqualTo("JAVA, KOTLIN");
 
 
-:ref:`Go Back <java11-label>`.
+:ref:`Go Back <java11-developer-features-label>`.

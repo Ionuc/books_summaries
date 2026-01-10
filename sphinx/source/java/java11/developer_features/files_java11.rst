@@ -13,4 +13,4 @@ Files
             assertThat(fileContent).isEqualTo("Sample text");
 
 
-:ref:`Go Back <java11-label>`.
+:ref:`Go Back <java11-developer-features-label>`.
