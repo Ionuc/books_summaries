@@ -8,6 +8,7 @@ Welcome to Ionut's documentation!
     :caption: Contents:
 
     general/index.rst
+    software_developer_approach/index.rst
     principals/index.rst
     oop/index.rst
     patterns/index.rst
