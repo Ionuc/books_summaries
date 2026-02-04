@@ -12,7 +12,7 @@ Dynamic CDS Archives
         - to archive could be used to share metadata between JVMs
 
     - With dynamic archiving, JDK 13 has simplified this process. Now we can generate a shared archive at the time the application is exiting
-    - to enable applications to create a dynamic shared archive on top of the default system archive, we need to add an option -XX:ArchiveClassesAtExit and specify the archive name as argument:
+    - to enable applications to create a dynamic shared archive on top of the default system archive, we need to add an option -XX:ArchiveClassesAtExit and specify the archive name as argument: 
 
 
     .. code-block:: python

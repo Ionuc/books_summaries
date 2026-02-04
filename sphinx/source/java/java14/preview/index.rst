@@ -1,14 +1,14 @@
-.. _java13-preview-label:
+.. _java14-preview-label:
 
-Java 13 Preview Changes
+Java 14 Preview Changes
 =======================
 
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
 
-    switch_expression_java13.rst
-    text_blocks_java13.rst
+    pattern_matching_java14.rst
+    record_java14.rst
 
 
 :ref:`Go Back <java14-label>`.
