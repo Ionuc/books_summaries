@@ -9,6 +9,7 @@ Welcome to Ionut's documentation!
 
     general/index.rst
     software_developer_approach/index.rst
+    observability/index.rst
     db/index.rst
     principals/index.rst
     oop/index.rst
