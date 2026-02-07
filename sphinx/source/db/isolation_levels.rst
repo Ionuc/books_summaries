@@ -15,7 +15,7 @@ Isolation Levels
 +==================+============+=======================+===============+
 | READ_UNCOMMITTED | allowed    | allowed               | allowed       |
 +------------------+------------+-----------------------+---------------+
-| READ_COMMITTED   | prevented   | allowed              | allowed       |
+| READ_COMMITTED   | prevented  | allowed               | allowed       |
 +------------------+------------+-----------------------+---------------+
 | REPEATABLE_READ  | prevented  | prevented             | allowed       |
 +------------------+------------+-----------------------+---------------+

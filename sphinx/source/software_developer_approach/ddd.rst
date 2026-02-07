@@ -11,7 +11,7 @@ What is Domain-Driven Design
         - This refers to the specific subject area or problem that the software system aims to address
         - For instance, in a banking application, the domain involves concepts like accounts, transactions, customers, and relevant banking regulations
     - Driven
-        - |Driven" means that the design of the software system is influenced by the features and needs of the domain
+        - Driven" means that the design of the software system is influenced by the features and needs of the domain
         - This indicates that design choices are based on a solid understanding of the domain, rather than just technical aspects or implementation details
     - Design
         - is the process of making a plan or blueprint of a software system
