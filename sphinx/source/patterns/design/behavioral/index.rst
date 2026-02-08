@@ -11,7 +11,8 @@ Behavioral
     :maxdepth: 2
     :caption: Contents:
 
-    strategy.rst
-    visitor.rst
+    strategy_design_pattern.rst
+    visitor_design_pattern.rst
+    observer_design_pattern.rst
 
 :ref:`Go Back <patterns-label>`.
