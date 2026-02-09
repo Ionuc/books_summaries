@@ -13,5 +13,6 @@ Data Base
     multi_version_concurrency_control.rst
     partitioning_sharding.rst
     replication.rst
+    postgresql/index.rst
 
 :ref:`Go Back <index-label>`.
