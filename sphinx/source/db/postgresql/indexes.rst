@@ -45,6 +45,7 @@ GiST index
 - allows various search strategies such as nearest-neighbor and partial match search
 
 SP-SiST index
+-------------
 - are useful for indexing data with hierarchical structures or complex data types
 - partition the index space into non-overlaping regions, oferring efficient search capabilities for specialized data strucutres
 

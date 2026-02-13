@@ -198,4 +198,5 @@ Write Skew
 - If write skew is permitted, Alice and Bob disjoint writes will proceed, therefore breaking the guarantee that Post and PostDetails should always be in sync.
 - with ProstgreSQL, read skew is solved from SERIALIZABLE mode
 
+
 :ref:`Go Back <db-label>`.
