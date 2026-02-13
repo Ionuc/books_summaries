@@ -8,6 +8,7 @@ Patterns
     :caption: Contents:
 
     architectural/index.rst
+    microservices/index.rst
     design/index.rst
 
 :ref:`Go Back <index-label>`.
