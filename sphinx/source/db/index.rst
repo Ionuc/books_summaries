@@ -14,5 +14,6 @@ Database
     partitioning_sharding.rst
     replication.rst
     postgresql/index.rst
+    orm/index.rst
 
 :ref:`Go Back <index-label>`.
