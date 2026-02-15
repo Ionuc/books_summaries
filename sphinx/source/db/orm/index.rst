@@ -82,6 +82,45 @@ ORM Relationships
        :align: center
 
 
+Performance Considerations
+--------------------------
+- Performance:
+    - N_+ 1 Query Problem:
+        - loading a collection of objects can result in one wuery for the parent and N additional queries for each child:
+            - use eager loading with join fetches
+            - implement batch fetching strategies
+    - lazy loading:
+        - defers loading of related objects until they'are explicity accessed
+            - help avoid loading unnecessary data
+            - be caution of session bounderies
+    - Caching:
+        - ORM provides multiple levels of caching to improve performance:
+            - First-level (session) cache
+            - SEcond-level (application) cache
+    - Query Optimization
+        - ORMs may generte suboptimal SQL for complex operations
+            - use native queries for complex operations
+            - monitor and analyze generted SQL
+
+ORM Best Practices
+------------------
+- Database DEsign First
+    - design your database schema before implementing ORM entities
+        - ensure proper data modeling
+        - prevents performance issues later
+- Monitor Generated SQL:
+    - regularly check the SQL queries your ORM genertes
+        - use logging frameworks to campture queries
+        - optimize inefficient queries
+- Use Transactions
+    - wrap related operations in transactions to maintain data integrity
+        - ensure atomicity of operations
+        - prevents partial updates
+- Batch Operations
+    - use batch processing for bulk operations
+        - reduces database round trips
+        - significantly improves performance
+
 Advantages
 ----------
 - abstraction: ORM hides the complexity of SQL allowing developers to work with familiar object-oriented cod
@@ -98,7 +137,7 @@ Disadvantages
 -------------
 - Learning how to use ORM tools can be time consuming.
 - They are likely not going to perform better when very complex queries are involved.
-- ORMs are generally slower than using SQL.
+- Performance:
 
 .. toctree::
     :maxdepth: 2
