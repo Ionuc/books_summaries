@@ -11,4 +11,4 @@ Java 13 Preview Changes
     text_blocks_java13.rst
 
 
-:ref:`Go Back <java14-label>`.
+:ref:`Go Back <java13-label>`.
