@@ -1,0 +1,14 @@
+.. _stability_microservices_patterns-label:
+
+Stability Microservices Patterns
+================================
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
+
+    retry_pattern.rst
+    rate_limiting.rst
+
+
+:ref:`Go Back <microservices_patterns-label>`.
