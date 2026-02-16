@@ -151,5 +151,14 @@ Method of Data Partitioning
    :align: center
 
 
+- Pros:
+    - Even Data Distribution: Ensures near-uniform distribution of records across partitions.
+    - Simple Implementation: Very easy to implement; no hashing or key logic required.
+    - Good Load Balancing: Works well for write-heavy workloads and parallel processing.
+
+Const:
+    - Inefficient Lookups: Poor performance for key-based or range queries.
+    - No Data Locality: Related records may be spread across different partitions.
+    - Limited Query Optimization: Not suitable for analytical queries that depend on grouping or ranges.
 
 :ref:`Go Back <db-label>`.

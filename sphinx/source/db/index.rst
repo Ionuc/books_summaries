@@ -15,5 +15,6 @@ Database
     replication.rst
     postgresql/index.rst
     orm/index.rst
+    security/index.rst
 
 :ref:`Go Back <index-label>`.

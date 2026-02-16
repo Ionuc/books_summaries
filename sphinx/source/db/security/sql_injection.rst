@@ -76,5 +76,64 @@ Types of SQL injections
     - would rely on the database server’s ability to make DNS or HTTP requests to deliver data to an attacker
     - example : the case with Microsoft SQL Server’s xp_dirtree command, which can be used to make DNS requests to a server an attacker controls
 
+Mitigating SQL Injection
+------------------------
+1. Parameter Binding
+    - never use input data to build queries directly
+    - always using parameter binding to create SQL
+
+
+    .. code-block:: python
+       :linenos:
+
+       algorithm FixedLoginFormHandler(username, password):
+            // INPUT
+            //    username, password = login data from an HTML form
+            // OUTPUT
+            //    authOk (boolean) = authentication status
+            //    UserId = user ID
+            //    FullName = the name of the user
+
+            passwd_hash <- md5 of password
+            sql <- "select id,fullname from users where passwordHash = :bPass and userName = :bUser"
+
+            statement <- database.prepare(sql)
+            statement.bind_parameter('bPass', passwd_hash)
+            statement.bind_parameter('bUser', username)
+            statement.execute()
+
+            result <- statement.fetch_all_data()
+
+            if result is an error:
+                return false, null, null
+            else:
+                return true, result[id], result[fullname]
+
+    - Instead of executing the SQL directly what happens is:
+        - The prepare command sends the SQL template to the database. Based on this template, the database engine parses the command, generates, and caches its execution plan.
+        - The bindParam command informs about the parameters it shall use. The database can establish other data access strategies
+        - Execute command, asks the database to execute the query
+        - Fetch the data
+
+    - advantages:
+        - Subsequent uses of the same prepared SQL statement, even with different parameters, will reutilize the cached execution plan
+
+2. Input Form validation and Excaping
+    - it is strongly advised to properly validate all input data against the expected boundaries and content
+    - For instance:
+        - for numbers, check if they are only decimal characters and within boundaries
+        - For regular text, check if there are any only alphanumeric, and so on
+
+3. Stored Procedures
+    - the use of Stored procedures also separates the SQL query parameters from the statements
+    - This happens because the parameters are sent to the database as function parameters so the database shall not mix them with the statement
+
+4. Least Privilege
+    - the queries are executed using the application’s database access privileges
+    - One way to mitigate the risks of this behavior is to adjust the application database service accounts to the minimum required access level
+
+5. Web-application Firewalls
+    - is a software solution that operates on the OSI application layer.
+    - That means that it inspects all aspects of the application data flow
 
 :ref:`Go Back <security-db-label>`.

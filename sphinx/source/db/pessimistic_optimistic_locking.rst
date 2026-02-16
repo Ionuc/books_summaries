@@ -22,6 +22,12 @@ Pessimistic Locking
         - Different Granularities: 
             - Pessimistic locking can operate at various granularities, such as database-level locks, table-level locks, row-level locks, or even finer-grained locks at the column level
 
+    - there are 2 types of pessimistic locking:
+        - Shared Lock:
+            - A shared lock allows multiple transactions to read the same data concurrently but prevents them from updating it
+        - Exclusive Lock:
+            - An exclusive lock restricts access to data to a single transaction, preventing other transactions from reading or updating it
+
     - Pros:
         - Ensures data consistency by preventing concurrent modifications that could lead to inconsistencies
         - Straightforward approach to managing concurrent access

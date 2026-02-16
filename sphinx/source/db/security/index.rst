@@ -7,7 +7,7 @@ Security Issues with Database
     :maxdepth: 2
     :caption: Contents:
 
-    postgresql_general.rst
-    indexes.rst
+    sql_injection.rst
+
 
 :ref:`Go Back <db-label>`.
