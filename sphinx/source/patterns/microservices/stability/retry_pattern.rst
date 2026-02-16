@@ -12,7 +12,8 @@ Retry Pattern
         :align: center
 
 
-How is working:
+How it workes
+-------------
 1. Initial Request: When a microservice makes a request to another service, it may encounter transient errors due to issues like network interruptions or momentary service unavailability.
 2. Retry Logic: If the initial request fails, the Retry Pattern triggers a retry mechanism. This involves automatically resending the request a specified number of times. The retry attempts are made according to a defined strategy, which may include constant, incremental, or exponential backoff periods between retries.
 3. Backoff Strategy: To prevent overwhelming the system or causing further issues, retries are spaced out using a backoff strategy. Constant backoff uses a fixed delay between retries, while exponential backoff increases the delay progressively with each retry. Jitter (randomized delay) can also be added to spread out retry attempts and reduce the risk of multiple services retrying simultaneously.
@@ -47,7 +48,7 @@ Advantages
 - resilience to fluctuations
 
 Challanges
----------
+----------
 - retry storms:
     - When many services retry simultaneously, it can lead to a surge of requests that exacerbates the problem rather than alleviating it
     - Use exponential backoff and jitter to spread out retry attempts and prevent simultaneous retries

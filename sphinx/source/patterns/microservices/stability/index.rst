@@ -9,6 +9,8 @@ Stability Microservices Patterns
 
     retry_pattern.rst
     rate_limiting.rst
+    throtelling.rst
+    circuit_breaker.rst
 
 
 :ref:`Go Back <microservices_patterns-label>`.
