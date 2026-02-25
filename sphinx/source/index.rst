@@ -21,4 +21,5 @@ Welcome to Ionut's documentation!
     frameworks/index.rst
     os/index.rst
     seo/index.rst
+    rest/index.rst
 

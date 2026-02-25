@@ -10,3 +10,4 @@ General
     tools/index.rst
     testing.rst
     dns.rst
+    feature_flags.rst
