@@ -1,3 +1,4 @@
+.. _general-dns-label:
 
 
 DNS
@@ -53,4 +54,5 @@ Resource Records
     - SRV
     - MX
     - NAPTR
-    
+
+:ref:`Go Back <general-label>`.
