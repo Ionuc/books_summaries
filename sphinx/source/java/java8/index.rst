@@ -3,10 +3,6 @@
 Java 8
 ======
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-
-    input-output-with-stream.rst
+:ref:`Input Output Streams <java-io-streams-input-output-label>`.
 
 :ref:`Go Back <java-label>`.

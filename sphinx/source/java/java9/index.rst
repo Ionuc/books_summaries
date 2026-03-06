@@ -8,7 +8,6 @@ Java 9
     :caption: Contents:
 
     repl.rst
-    module-system/index.rst
     reactive-streams.rst
     stream-api.rst
     private-methods-interface.rst
@@ -17,5 +16,8 @@ Java 9
     factory-methods.rst
     anonymous-class-diamond-operator.rst
     completable-future-api.rst
+Features
+--------
+:ref:`Java Module Systems <java-module-system-label>`.
 
 :ref:`Go Back <java-label>`.
