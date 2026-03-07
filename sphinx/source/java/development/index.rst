@@ -13,7 +13,7 @@ Java Development features
     io-streams/index.rst
     string/index.rst
     keywords/index.rst
-    generics.rst
+    generics/index.rst
     serialization.rst
 
 :ref:`Go Back <java-label>`.

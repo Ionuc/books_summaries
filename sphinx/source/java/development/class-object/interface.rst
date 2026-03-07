@@ -1,14 +1,16 @@
-.. _java9-private-methods-interface:
+.. _java-development-class-object-interface:
 
-Private Methods in Interface
-============================
+Interface
+=========
 
+
+Private methods
+---------------
     - with java 8 we can provide method implementation in Interface using default and static methods
     - private methods were introduced to avoid redundant code and more re-usability
     - it was introduced private method and private static methods.
 
-Java 7 interface
-----------------
+- with Java 7:
     - in Java 7 or earlier, an interface can have only 2 kinds of things:
         - constant variables
         - abstract methods
@@ -28,8 +30,7 @@ Java 7 interface
             void logFatal(String message);
         }
 
-Java 8 interface
-----------------
+- with Java 8
     - it was introduced default public methods and static public methods, this means we can have:
         - constant variables
         - abstract methods
@@ -71,8 +72,7 @@ Java 8 interface
             // Any other abstract, default, static methods
         }
 
-Java 9
-------
+- with Java 9
     - it was introduced private methods and private static methods, this means we can have:
         - constant variables
         - abstract methods
@@ -114,14 +114,12 @@ Java 9
             // Any other abstract, static, default methods
         }
 
-Rules to define private methods
---------------------------------
+- Rules to define private methods
     - no private and abstract modifiers together => will result in compile error
     - private methods must contain body
 
-Why do we need private methods in Interface ?
----------------------------------------------
+- Why do we need private methods in Interface ?
     - no need to write duplicate code
     - we got the choice to expose only our intended methods implementations to clients
 
-:ref:`Go Back <java9-label>`.
+:ref:`Go Back <java-development-class-object-label>`.

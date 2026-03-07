@@ -1,4 +1,4 @@
-.. _generics:
+.. _java-development-generics-generics-label:
 Generics
 ========
     - the JVM has no idea about generics
@@ -109,4 +109,4 @@ PECS
         -  But there are no guarantees what type of object you may read from this list.
     - If you need to both read from and write to a list, you need to declare it exactly with no wildcards, e.g. List<Integer>.
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java-development-generics-label>`.

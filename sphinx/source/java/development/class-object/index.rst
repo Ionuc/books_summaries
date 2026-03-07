@@ -9,5 +9,6 @@ Class and Objects
 
     object.rst
     inner-classes.rst
+    interface.rst
 
 :ref:`Go Back <java-development-label>`.
