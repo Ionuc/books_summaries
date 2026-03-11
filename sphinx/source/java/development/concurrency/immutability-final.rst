@@ -1,4 +1,4 @@
-.. _immutability-final:
+.. _java-development-concurrency-immutability-final-label:
 
 Immutability and Final keyword
 ==============================
@@ -23,4 +23,4 @@ Final on class
     - the corresponding class cannot be extended
 
 
-:ref:`Go Back <java-concurrency-label>`.
+:ref:`Go Back <java-development-concurrency-label>`.

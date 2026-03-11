@@ -1,4 +1,4 @@
-.. _java-io-streams-input-output-label:
+.. _java-development-streams-input-output-label:
 
 Input and Output with Streans and Files
 =======================================
@@ -138,7 +138,7 @@ Common Input/OutputStream Derived Classes
 
     - FileInputStream and FileOutputStream allows to create stream over files
 
-    .. image:: ../../../images/java/development/io-streams/input-output-strea-common-input-output-stream.png
+    .. image:: ../../../images/java/development/streams/input-output-streams/input-output-strea-common-input-output-stream.png
         :align: center
 
 Common Reader/Write Derived Classes
@@ -167,7 +167,7 @@ Common Reader/Write Derived Classes
 
     - FileReader and FileWriter allows as to have file-based content with a reader and writer over top of those
 
-    .. image:: ../../../images/java/development/io-streams/input-output-strea-common-reader-writer.png
+    .. image:: ../../../images/java/development/streams/input-output-streams/input-output-strea-common-reader-writer.png
         :align: center
 
 Stream Cleanup
@@ -256,4 +256,4 @@ File Systems
         - Static FileSystem factory methods
         - Open or create a file System : newFileSystem()
 
-:ref:`Go Back <java-development-io-streams-label>`.
+:ref:`Go Back <java-development-streams-label>`.

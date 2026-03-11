@@ -1,4 +1,4 @@
-.. _java9-reactive-streams:
+.. _java-streams-reactive-streams:
 
 Reactive Streams
 ================
@@ -18,14 +18,14 @@ Java 9 Reactive Streams
     - there should be a Publisher and a Subscriber. The Publisher publishes the stream of
       data and the Subscriber consumes the data
 
-    .. image:: ../../images/java/java9/reactive-streams-1.png
+    .. image:: ../../../images/java/development/streams/reactive-streams/reactive-streams-1.png
         :align: center
 
     - Sometimes we have to transform the data between Publisher and Subscriber. Processor is the entity
       sitting between the end publisher and subscriber to transform the data received from publisher so
       that subscriber can understand it. We can have a chain of processors
 
-    .. image:: ../../images/java/java9/reactive-streams-2.png
+    .. image:: ../../../images/java/development/streams/reactive-streams/reactive-streams-2.png
         :align: center
 
 Java 9 Flow API
@@ -39,7 +39,7 @@ Java 9 Flow API
     - Java 9 Flow API subscriber can request for N items while subscribing to the publisher. Then the items are
       pushed from publisher to subscriber until there are no more items left to push or some error occurs.
 
-    .. image:: ../../images/java/java9/reactive-streams-3.png
+    .. image:: ../../../images/java/development/streams/reactive-streams/reactive-streams-3.png
         :align: center
 
 Java 9 Flow API Classes and Interfaces
@@ -75,4 +75,4 @@ Java 9 Flow API Classes and Interfaces
           closed. It uses Executor framework We will use this class in reactive stream examples to add subscriber and
           then submit items to them.
 
-:ref:`Go Back <java9-label>`.
+:ref:`Go Back <java-development-streams-label>`.

@@ -11,5 +11,6 @@ Java Tools
     memory-management/index.rst
     module-system/index.rst
     controlling-app-execution.rst
+    repl.rst
 
 :ref:`Go Back <java-label>`.

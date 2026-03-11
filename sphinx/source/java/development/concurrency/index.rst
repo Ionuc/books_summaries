@@ -13,5 +13,7 @@ Concurrency
     synchronizing-data.rst
     thread-pool.rst
     thread-problems.rst
+    process-api.rst
+    completable-future.rst
 
 :ref:`Go Back <java-development-label>`.

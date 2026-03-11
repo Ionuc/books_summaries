@@ -1,9 +1,9 @@
-.. _java9-repl:
+.. _java-tools-repl-label:
 
 REPL
 ====
 
-    - Oracle Corp introduced a new tool called "jshell"
+    - with Java 9, Oracle Corp introduced a new tool called "jshell"
     - it is used to execute and test any Java Constructs like class, interface, enum, object,
       statements
 
@@ -11,4 +11,4 @@ REPL
         :linenos:
 
 
-:ref:`Go Back <java9-label>`.
+:ref:`Go Back <java-tools-label>`.

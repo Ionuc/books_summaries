@@ -1,11 +1,15 @@
-.. _java9-stream-api:
+.. _java-development-streams-api-label:
 
-Stream APi Improvements
-=======================
-
+Stream APi
+==========
+    - it was introduced with Java 8
     - A Stream is a sequence of elements and supports a set of aggregate operations on them easily
     - It supports those operations either in sequential or parallel way depends on our requirements
     - operations in stream can be done in lazy and parallel way
+
+
+Java 9 improvements
+-------------------
     - useful new methods were added to Stream api:
         - dropDown (default method)
         - takeWhile (default method)
@@ -103,4 +107,4 @@ Stream API dropWhile Method
         9
         10
 
-:ref:`Go Back <java9-label>`.
+:ref:`Go Back <java-development-streams-label>`.
