@@ -213,4 +213,46 @@ Running multiple Futures in parallel
 - The CompletableFuture.join() method is similar to the get method, but it throws an unchecked exception in case the Future does not complete normally.
 - This makes it possible to use it as a method reference in the Stream.map() method.
 
+Handling errors
+---------------
+- Instead of catching an exception in a syntactic block, the CompletableFuture class allows us to handle it in a special handle method.
+- This method receives two parameters: a result of a computation (if it finished successfully) and the exception thrown (if some computation step did not complete normally).
+
+
+   .. code-block:: python
+        :linenos:
+
+        String name = null;
+        // ...
+
+        CompletableFuture<String> completableFuture
+          =  CompletableFuture.supplyAsync(() -> {
+              if (name == null) {
+                  throw new RuntimeException("Computation error!");
+              }
+              return "Hello, " + name;
+          }).handle((s, t) -> s != null ? s : "Hello, Stranger!");
+
+        assertEquals("Hello, Stranger!", completableFuture.get());
+
+
+- if we want ti complete with exception, we can use completeExceptionally:
+
+
+   .. code-block:: python
+        :linenos:
+
+
+        CompletableFuture<String> completableFuture = new CompletableFuture<>();
+
+        // ...
+
+        completableFuture.completeExceptionally(
+          new RuntimeException("Calculation failed!"));
+
+        // ...
+
+        completableFuture.get(); // ExecutionException
+
+
 :ref:`Go Back <java-development-concurrency-label>`.
