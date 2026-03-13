@@ -14,6 +14,8 @@ Features
 
 :ref:`Interface - Private methods <java-development-class-object-interface>`
 
+:ref:`Optional <java-development-datastructure-optional-label>`
+
 - Tools
 
 :ref:`Go Back <java-label>`.

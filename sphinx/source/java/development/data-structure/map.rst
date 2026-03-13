@@ -51,10 +51,9 @@ Map Data Structures
         :align: center
 
 
-Immutable Map and Map.Entry with Java 9
----------------------------------------
-
-    - above are examples how to create a new Map:
+Java 9 improvements
+-------------------
+    - above are examples how to create a new Immutable Map and Map.Entry:
 
     .. code-block:: python
         :linenos:
@@ -103,6 +102,20 @@ Immutable Map and Map.Entry with Java 9
         :linenos:
 
         Map.Entry<Integer,String> immutableMapEntry1 = Map.entry(1,"one")
+
+Java 10 improvements
+--------------------
+    - copyOf() was introuced to create a unmodifiable copy of a Map
+
+
+    .. code-block:: python
+        :linenos:
+        
+        @Test(expected = UnsupportedOperationException.class)
+        public void whenModifyCopyOfMap_thenThrowsException() {
+            Map<Integer, Integer> copyMap = Map.copyOf(someIntMap);
+            copyMap.put(4,4);
+        }
 
 
 :ref:`Go Back <java-development-data-structures-label>`.

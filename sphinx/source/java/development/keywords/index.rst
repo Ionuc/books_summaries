@@ -8,5 +8,6 @@ Java Development Keywords
     :caption: Contents:
 
     static.rst
+    var.rst
 
 :ref:`Go Back <java-development-label>`.

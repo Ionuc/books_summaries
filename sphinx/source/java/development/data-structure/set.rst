@@ -44,10 +44,10 @@ Set Data Structures
             - extends SortedSet
             - provides ways to move through the order
 
-Immutable Sets with Java 9
---------------------------
+Java 9 improvements
+-------------------
 
-    - above are examples how to create a new Set:
+    - above are examples how to create a new Immutable Set:
     .. code-block:: python
         :linenos:
 
@@ -82,5 +82,20 @@ Immutable Sets with Java 9
         Set<String[]> set= Set.<String[]>of(nameArr);
 
     - the characteristics of immutable set are the same as immutable lists
+
+Java 10 improvements
+--------------------
+    - copyOf() was introuced to create a unmodifiable copy of a Set
+
+
+    .. code-block:: python
+        :linenos:
+        
+        @Test(expected = UnsupportedOperationException.class)
+        public void whenModifyCopyOfSet_thenThrowsException() {
+            Set<Integer> copySet = Set.copyOf(someIntSet);
+            copySet.add(4);
+        }
+
 
 :ref:`Go Back <java-development-data-structures-label>`.

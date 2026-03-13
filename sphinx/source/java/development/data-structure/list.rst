@@ -31,10 +31,10 @@ List Data Structures
         :align: center
 
 
-Immutable Lists (java 9)
-------------------------
+Java 9 improvements
+-------------------
 
-    - above are examples how to create a new List:
+    - above are examples how to create a new Immutable List:
 
     .. code-block:: python
         :linenos:
@@ -79,5 +79,21 @@ Immutable Lists (java 9)
         - if we try to perform add/delete/update operations on them => UnsupportedOpperationException
         - they don't allow null element => will result in NullPointerException
         - they are serializable of all elements are serializable
+
+Java 10 improvements
+--------------------
+    - copyOf() was introuced to create a unmodifiable copy of a List
+
+
+    .. code-block:: python
+        :linenos:
+        
+        @Test(expected = UnsupportedOperationException.class)
+        public void whenModifyCopyOfList_thenThrowsException() {
+            List<Integer> copyList = List.copyOf(someIntList);
+            copyList.add(4);
+        }
+
+
 
 :ref:`Go Back <java-development-data-structures-label>`.

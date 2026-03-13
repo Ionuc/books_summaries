@@ -1,16 +1,17 @@
-.. _java10_local_variable_type:
+.. _java-development-keywords-var-label:
 
-Local Variable Type
-===================
+Variable Type
+=============
+    - var keyword is introduced with Java 10
 
-    - untile Java 9, the type of the variable must be explcitily set, else the compiler will not validate the code
+    - untile Java 10, the type of the variable must be explcitily set, else the compiler will not validate the code
 
     .. code-block:: python
            :linenos:
 
-           String message = "Untile java 9";
+           String message = "Untile java 10";
 
-    - with Java 9, the type of the variable can be replaced wtih "var"
+    - with Java 10, the type of the variable can be replaced wtih "var"
 
 
     .. code-block:: python
@@ -110,4 +111,4 @@ Cases when "var" can be used, but it is not ok
             obj = new Object(); // error: Object cannot be converted to <anonymous Object>
 
 
-:ref:`Go Back <java10-label>`.
+:ref:`Go Back <java-development-keywords-label>`.

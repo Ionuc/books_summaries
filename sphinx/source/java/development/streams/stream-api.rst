@@ -17,7 +17,6 @@ Java 9 improvements
         - ofNullable (static method)
 
 Stream API takeWhile() method
------------------------------
     - returns longest prefix elements which matches the Predicate condition
     - It behaves differently for Ordered and Unordered Streams
 
@@ -58,7 +57,6 @@ Stream API takeWhile() method
 
 
 Stream API dropWhile Method
----------------------------
     - dropWhile() Method drops the longest prefix elements which matches the Predicate and returns the rest of elements
     - It behaves differently for Ordered and Unordered Streams
 
@@ -106,5 +104,21 @@ Stream API dropWhile Method
         8
         9
         10
+
+Java 10 improvements
+--------------------
+    - java.util.stream.Collectors has a new method toUnmodifiableList(), toUnmodifiableSet(), toUnmodifiableMap() to collect a Stream into an unmodifiable collection
+
+    .. code-block:: python
+           :linenos:
+
+           @Test(expected = UnsupportedOperationException.class)
+           public void whenModifyToUnmodifiableList_thenThrowsException() {
+              List<Integer> evenList = someIntList.stream()
+                    .filter(i -> i % 2 == 0)
+                    .collect(Collectors.toUnmodifiableList());
+              evenList.add(4);
+           }
+
 
 :ref:`Go Back <java-development-streams-label>`.
