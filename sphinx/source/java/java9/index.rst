@@ -3,13 +3,6 @@
 Java 9
 ======
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-
-    completable-future-api.rst
-
-
 Features
 --------
 
@@ -31,6 +24,7 @@ Features
 
 :ref:`Try with Resource improvement<java-development-error-handling-try-with-resource-label>`
 
+:ref:`Improvement for CompleataleFuture<java-development-concurrency-completale-future-label>`
 
 
 - Tools

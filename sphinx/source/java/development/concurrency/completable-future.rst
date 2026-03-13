@@ -236,7 +236,7 @@ Handling errors
         assertEquals("Hello, Stranger!", completableFuture.get());
 
 
-- if we want ti complete with exception, we can use completeExceptionally:
+- if we want to complete with exception, we can use completeExceptionally:
 
 
    .. code-block:: python
@@ -253,6 +253,52 @@ Handling errors
         // ...
 
         completableFuture.get(); // ExecutionException
+
+
+Async methods
+-------------
+- Most methods of the fluent API in the CompletableFuture class have two additional variants with the Async postfix
+- These methods are usually intended for running a corresponding execution step in another thread.
+- The methods without the Async postfix run the next execution stage using a calling thread
+- In contrast, the Async method without the Executor argument runs a step using the common fork/join pool implementation of Executor that is accessed with the ForkJoinPool.commonPool(), as long as parallelism > 1
+- Finally, the Async method with an Executor argument runs a step using the passed Executor
+
+
+   .. code-block:: python
+        :linenos:
+
+        CompletableFuture<String> completableFuture  
+          = CompletableFuture.supplyAsync(() -> "Hello");
+
+        CompletableFuture<String> future = completableFuture
+          .thenApplyAsync(s -> s + " World");
+
+        assertEquals("Hello World", future.get());
+
+
+Java 9 features
+---------------
+- Java 9 introduced new instance methods that improve flexibility and ease of use when working with asynchronous computing:
+    - Executor defaultExecutor()
+    - CompletableFuture<U> newIncompleteFuture()
+    - CompletableFuture<T> copy():
+        - The copy() method returns a new CompletableFuture. This new CompletableFuture completes normally if the original CompletableFuture completes normally. If the original completes with an exception, then the new one also completes with an exception. In this case, it completes with a CompletionException that contains the original exception as its cause.
+    - CompletionStage<T> minimalCompletionStage()
+        - The minimalCompletionStage() method returns a new CompletionStage which behaves in the same way as described by the copy method, however, such a new instance throws UnsupportedOperationException in every attempt to retrieve or set the resolved value
+    - CompletableFuture<T> completeAsync(Supplier<? extends T> supplier, Executor executor)
+    - CompletableFuture<T> completeAsync(Supplier<? extends T> supplier)
+        - The completeAsync() method should be used to complete the CompletableFuture asynchronously using the value given by the Supplier provided
+    - CompletableFuture<T> orTimeout(long timeout, TimeUnit unit)
+        - The orTimeout()  method is used to automatically complete the CompletableFuture with a TimeoutException if not completed with a specified timeout period:
+    - CompletableFuture<T> completeOnTimeout(T value, long timeout, TimeUnit unit)
+        - The completeOnTimeout() completes the CompletableFuture normally with the specified value unless it’s completed before the specified timeout
+
+- Java 9 enhancements also added support for creating and managing instances of  CompletableFuture with static utility methods:
+    - Executor delayedExecutor(long delay, TimeUnit unit, Executor executor)
+    - Executor delayedExecutor(long delay, TimeUnit unit)
+    - <U> CompletionStage<U> completedStage(U value)
+    - <U> CompletionStage<U> failedStage(Throwable ex)
+    - <U> CompletableFuture<U> failedFuture(Throwable ex)
 
 
 :ref:`Go Back <java-development-concurrency-label>`.
