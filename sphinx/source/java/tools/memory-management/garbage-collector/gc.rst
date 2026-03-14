@@ -75,7 +75,9 @@ Java Collectors
         :ref:`The parallel collector <java-tools-memory-management-garbage-collector-gc-parallel-collector-label>`.
 
     - Garbage First Collector
-         :ref:`Garbage First collector <java-tools-memory-management-garbage-collector-gc-g1-collector-label>`.
+        :ref:`Garbage First collector <java-tools-memory-management-garbage-collector-gc-g1-collector-label>`.
 
+    - Shenandoah GC
+        :ref:`Shenandoah GC <java-tools-memory-management-garbage-collector-gc-shenandoah-gc-label>`.
 
 :ref:`Go Back <java-tools-memory-management-garbage-collector-label>`.

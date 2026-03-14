@@ -1,10 +1,12 @@
-.. _java11_not_predicate:
+.. _java-development-function-predicate-label:
 
-Not Predicate
-=============
+Predicate
+=========
 
-    - A static not method has been added to the Predicate interface. We can use it to negate an existing predicate, much like the negate method:
 
+Java 11 improvement
+-------------------
+- A static not method has been added to the Predicate interface. We can use it to negate an existing predicate, much like the negate method:
 
 
     .. code-block:: python
@@ -17,4 +19,4 @@ Not Predicate
             assertThat(withoutBlanks).containsExactly("Java", "Kotlin");
 
 
-:ref:`Go Back <java11-developer-features-label>`.
+:ref:`Go Back <java-development-function-label>`.

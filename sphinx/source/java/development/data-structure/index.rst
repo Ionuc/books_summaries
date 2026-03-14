@@ -61,5 +61,6 @@ Concurrent Collections
     queue.rst
     data-structures.rst
     optional.rst
+    collection.rst
 
 :ref:`Go Back <java-development-label>`.

@@ -11,6 +11,7 @@ Java Development features
     data-structure/index.rst
     concurrency/index.rst
     streams/index.rst
+    function/index.rst
     string/index.rst
     keywords/index.rst
     generics/index.rst

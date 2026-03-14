@@ -7,13 +7,27 @@ Developer Features
     :maxdepth: 2
     :caption: Contents:
 
-    string_java11.rst
-    files_java11.rst
-    collection_java11.rst
-    not_predicate_java11.rst
-    local_variable_lambda_java11.rst
     nest_based_access_java.rst
     running_java_files.rst
+
+Features
+--------
+
+- Development
+
+:ref:`String <java-development-string-label>`.
+
+:ref:`Files <java-development-streams-input-output-label>`.
+
+:ref:`Collection interface <java-development-data-structure-collection-label>`.
+
+:ref:`Var <java-development-keywords-var-label>`.
+
+:ref:`Predicate <java-development-function-predicate-label>`.
+
+
+
+- Tools
 
 
 :ref:`Go Back <java11-label>`.

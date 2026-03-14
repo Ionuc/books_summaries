@@ -111,4 +111,21 @@ Cases when "var" can be used, but it is not ok
             obj = new Object(); // error: Object cannot be converted to <anonymous Object>
 
 
+Java 11 improvement
+-------------------
+- Support for using the local variable syntax (var keyword) in lambda parameters was added in Java 11. 
+- We can make use of this feature to apply modifiers to our local variables, like defining a type annotation
+
+
+
+    .. code-block:: python
+           :linenos:
+
+            List<String> sampleList = Arrays.asList("Java", "Kotlin");
+            String resultString = sampleList.stream()
+                .map((@Nonnull var x) -> x.toUpperCase())
+                .collect(Collectors.joining(", "));
+            assertThat(resultString).isEqualTo("JAVA, KOTLIN");
+
+
 :ref:`Go Back <java-development-keywords-label>`.
