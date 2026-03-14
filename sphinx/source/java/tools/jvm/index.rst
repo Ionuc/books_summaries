@@ -11,5 +11,6 @@ JVM
     jit.rst
     java-intepretor.rst
     class-loaders.rst
+    class-data-sharing.rst
 
 :ref:`Go Back <java-tools-label>`.

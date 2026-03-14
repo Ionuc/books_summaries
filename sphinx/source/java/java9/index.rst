@@ -33,6 +33,7 @@ Features
 
 :ref:`REPL <java-tools-repl-label>`
 
+:ref:`Default G1 Collector <java-tools-memory-management-garbage-collector-gc-g1-collector-label>`
 
 
 

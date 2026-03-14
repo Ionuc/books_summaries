@@ -3,13 +3,6 @@
 Java 10
 =======
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-
-    container_awareness_java10.rst
-    performance_improvements_java10.rst
-
 Features
 --------
 
@@ -30,6 +23,13 @@ Features
 
 
 - Tools
+
+:ref:`G1 Collector <java-tools-memory-management-garbage-collector-gc-g1-collector-label>`
+
+:ref:`Class Data Sharing <java-tools-jvm-class-data-sharing-label>`
+
+:ref:`Class Data Sharing <java-tools-jvm-jvm-label>`
+
 
 
 :ref:`Go Back <java-label>`.

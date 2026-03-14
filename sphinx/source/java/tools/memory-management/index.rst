@@ -8,7 +8,7 @@ Memory Management
     :caption: Contents:
 
     memory-type.rst
-    gc.rst
     string-pool.rst
+    garbage-collector/index.rst
 
 :ref:`Go Back <java-tools-label>`.
