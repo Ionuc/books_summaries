@@ -105,20 +105,5 @@ Stream API dropWhile Method
         9
         10
 
-Java 10 improvements
---------------------
-    - java.util.stream.Collectors has a new method toUnmodifiableList(), toUnmodifiableSet(), toUnmodifiableMap() to collect a Stream into an unmodifiable collection
 
-    .. code-block:: python
-           :linenos:
-
-           @Test(expected = UnsupportedOperationException.class)
-           public void whenModifyToUnmodifiableList_thenThrowsException() {
-              List<Integer> evenList = someIntList.stream()
-                    .filter(i -> i % 2 == 0)
-                    .collect(Collectors.toUnmodifiableList());
-              evenList.add(4);
-           }
-
-
-:ref:`Go Back <java-development-streams-label>`.
+:ref:`Go Back <java-development-streams-api-label>`.

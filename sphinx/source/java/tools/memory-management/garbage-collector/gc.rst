@@ -80,4 +80,8 @@ Java Collectors
     - Shenandoah GC
         :ref:`Shenandoah GC <java-tools-memory-management-garbage-collector-gc-shenandoah-gc-label>`.
 
+    - Epsilon GC
+        :ref:`Epsilon GC <java-tools-memory-management-garbage-collector-epsilon-collector-label>`.
+   
+
 :ref:`Go Back <java-tools-memory-management-garbage-collector-label>`.

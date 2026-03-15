@@ -13,5 +13,6 @@ Garbage Collectors
     g1-gc.rst
     shenandoah-gc.rst
     zgc.rst
+    epsilon-gc.rst
 
 :ref:`Go Back <java-tools-memory-management-label>`.

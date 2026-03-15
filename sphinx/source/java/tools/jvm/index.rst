@@ -12,5 +12,7 @@ JVM
     java-intepretor.rst
     class-loaders.rst
     class-data-sharing.rst
+    java_flight_record.rst
+    instruction-set/index.rst
 
 :ref:`Go Back <java-tools-label>`.

@@ -1,9 +1,12 @@
-.. _java12_compact_number_formatting:
+.. _java-development-number-format-label:
 
-Compact Number Formatting
-=========================
+Number Format
+=============
 
-    - a new number formatting was added : CompactNumberFormat
+
+Java 12 improvement
+-------------------
+- a new number formatting was added : CompactNumberFormat
     - it’s designed to represent a number in a shorter form, based on the patterns provided by a given locale
 
     .. code-block:: python
@@ -35,5 +38,4 @@ Compact Number Formatting
 
 
 
-
-:ref:`Go Back <java12-developer-features-label>`.
+:ref:`Go Back <java-development-function-label>`.

@@ -3,10 +3,8 @@
 Java 10
 =======
 
-Features
---------
-
-- Development
+Development Features
+--------------------
 
 :ref:`Variable Type <java-development-keywords-var-label>`.
 
@@ -21,8 +19,8 @@ Features
 :ref:`Improvements Optional <java-development-datastructure-optional-label>`
 
 
-
-- Tools
+Tools Features
+--------------
 
 :ref:`G1 Collector <java-tools-memory-management-garbage-collector-gc-g1-collector-label>`
 
