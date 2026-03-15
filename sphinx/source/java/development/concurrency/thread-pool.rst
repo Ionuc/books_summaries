@@ -1,4 +1,4 @@
-.. _thread-pool:
+.. _java-development-concurrency-thread-pool:
 
 Thread Pool Executor
 ====================
@@ -88,4 +88,5 @@ Executors types
     - single thread
     - sheduled
 
-:ref:`Go Back <java-concurrency-label>`.
+
+:ref:`Go Back <java-development-concurrency-label>`.

@@ -1,4 +1,4 @@
-.. _synchronize-locks:
+.. _java-development-concurrency-synchronize-locks:
 
 Synchronize and Locks
 =====================
@@ -162,4 +162,5 @@ ReetrantReadWriteLock
             }
         }
 
-:ref:`Go Back <java-concurrency-label>`.
+
+:ref:`Go Back <java-development-concurrency-label>`.

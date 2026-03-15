@@ -150,4 +150,4 @@ When not to use
 - Complex Data Consistency Needs: Managing consistency across multiple events can become challenging, especially when coordinating data between different services or systems.
 - Performance Sensitivity: Replaying events to rebuild the state can slow down performance in applications where quick data retrieval is essential.
 
-:ref:`Go Back <design-patterns-behavioral-label>`.
+:ref:`Go Back <patterns-architectural-label>`.

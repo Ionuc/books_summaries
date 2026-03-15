@@ -3,13 +3,6 @@
 Developer Features
 ==================
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-
-    nest_based_access_java.rst
-    running_java_files.rst
-
 Features
 --------
 
@@ -25,9 +18,12 @@ Features
 
 :ref:`Predicate <java-development-function-predicate-label>`.
 
+:ref:`Inner class <java-development-class-object-inner-classes>`.
 
 
 - Tools
+
+:ref:`Java Interpretor <java-tools-jvm--intepretor>`.
 
 
 :ref:`Go Back <java11-label>`.

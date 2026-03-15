@@ -133,4 +133,4 @@ Best practices for CQRS
     - CQRS adds some complexity, so it’s best suited for systems with high read and write demands or complex business rules
     - For simpler systems, CQRS might be overkill and add unnecessary development overhead.
 
-:ref:`Go Back <design-patterns-behavioral-label>`.
+:ref:`Go Back <patterns-architectural-label>`.

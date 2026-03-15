@@ -32,7 +32,7 @@ The simple explanation of the pattern is in four steps.
 2. Message Relay reads the OUTBOX table record, processes it, and prepares the message that should be published to the Message Broker.
 3. Message Relay publishes the prepared message in point 2.
 
-    .. image:: ../../images/patterns/microservices/saga/architectural_overview.png
+    .. image:: ../../images/patterns/microservices/transactional_outbox/architectural_overview.png
         :align: center
 
 Participants

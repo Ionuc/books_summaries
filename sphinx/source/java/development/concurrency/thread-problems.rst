@@ -1,4 +1,4 @@
-.. _thread-problems:
+.. _java-development-concurrency-thread-problems:
 
 Thread problems
 ===============
@@ -65,4 +65,5 @@ Starvation
         - due to Scheduler
         - due to lack of resources
 
-:ref:`Go Back <java-concurrency-label>`.
+
+:ref:`Go Back <java-development-concurrency-label>`.

@@ -1,4 +1,4 @@
-.. _java-intepretor:
+.. _java-tools-jvm--intepretor:
 
 Java Interpretor
 ================
@@ -37,5 +37,28 @@ Java Interpretor
 
         - This is then concatenated to the various entries in the CLASSPATH. That’s where it looks for the .class file with the name corresponding
           to the class you’re trying to create. (It also searches some standard directories relative to where the Java interpreter resides.)
+
+Java 11 improvement
+-------------------
+    - a major change in this version is that we don’t need to compile the Java source files with javac explicitly anymore
+
+
+    .. code-block:: python
+           :linenos:
+
+            $ javac HelloWorld.java
+            $ java HelloWorld 
+            Hello Java 8!
+
+
+    - Instead, we can directly run the file using the java command:
+
+
+    .. code-block:: python
+           :linenos:
+
+            $ java HelloWorld.java
+            Hello Java 11!
+
 
 :ref:`Go Back <java-jvm-label>`.
