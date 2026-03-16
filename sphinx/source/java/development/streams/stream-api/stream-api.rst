@@ -1,7 +1,7 @@
-.. _java-development-streams-api-label:
+.. _java-development-streams-api-streams-label:
 
-Stream APi
-==========
+Stream
+======
     - it was introduced with Java 8
     - A Stream is a sequence of elements and supports a set of aggregate operations on them easily
     - It supports those operations either in sequential or parallel way depends on our requirements

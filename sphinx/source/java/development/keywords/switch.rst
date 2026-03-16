@@ -1,8 +1,10 @@
-.. _java12_switch_expression:
+.. _java-development-keywords-switch-label:
 
-Switch Expressions (Preview)
-============================
+Switch keyword
+==============
 
+Java 12 Improvement (preview)
+-----------------------------
     - are more compact and readable
     - remove the need for break statements. The code execution will not fall through after the first match
     - we can assign a switch statement directly to the variable.
@@ -41,4 +43,4 @@ Switch Expressions (Preview)
 
 
 
-:ref:`Go Back <java12-preview-label>`.
+:ref:`Go Back <java-development-keywords-label>`.

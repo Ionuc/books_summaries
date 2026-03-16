@@ -1,4 +1,4 @@
-.. _java-development-streams-api-label:
+.. _java-development-streams-api-collectors-label:
 
 Stream Collectors
 =================
@@ -233,6 +233,78 @@ Custom Collectors
     - T – the type of objects that will be available for collection
     - A – the type of a mutable accumulator object
     - R – the type of a final result
+
+
+Java 9 improvements
+-------------------
+
+- Collectors.filtering()
+    - The Collectors.filtering() is similar to the Stream.filter().It’s used for filtering input elements but used for different scenarios
+    - the filter() method from the Stream API is used in the stream chain whereas this new filtering() method is a collector that was designed to be used along with groupingBy().
+    - difference between Stream.filter:
+        - With Stream.filter(), the values are filtered first and then it’s grouped. In this way, the values which are filtered out are gone and there is no trace of it
+        - If we need a trace then we would need to group first and then apply filtering which actually the Collectors.filtering() does.
+    - Collectors.filtering() takes a function for filtering the input elements and a collector to collect the filtered elements:
+
+
+    .. code-block:: python
+           :linenos:
+
+            @Test
+            public void givenList_whenSatifyPredicate_thenMapValueWithOccurences() {
+                List<Integer> numbers = List.of(1, 2, 3, 5, 5);
+
+                Map<Integer, Long> result = numbers.stream()
+                        .filter(val -> val > 3)
+                        .collect(Collectors.groupingBy(i -> i, Collectors.counting()));
+
+                assertEquals(1, result.size());
+                assertEquals(2, result.get(5));
+
+                result = numbers.stream()
+                        .collect(Collectors.groupingBy(i -> i,
+                                Collectors.filtering(val -> val > 3, Collectors.counting())));
+
+                assertEquals(4, result.size());
+                assertEquals(0, result.get(1));
+                assertEquals(0, result.get(2));
+                assertEquals(0, result.get(3));
+                assertEquals(2, result.get(5));
+            }
+
+
+- Collectors.flatMapping()
+    - The Collectors.flatMapping() is similar to Collectors.mapping() but has a more fine-grained objective
+    - Both the collectors take a function and a collector where the elements are collected but flatMapping() function accepts a Stream of elements which is then accumulated by the collector.
+    - Collectors.flatMapping() lets us skip intermediate collection and write directly to a single container which is mapped to that group defined by the Collectors.groupingBy():
+
+
+    .. code-block:: python
+           :linenos:
+
+            @Test
+            public void givenListOfBlogs_whenAuthorName_thenMapAuthorWithComments() {
+                Blog blog1 = new Blog("1", "Nice", "Very Nice");
+                Blog blog2 = new Blog("2", "Disappointing", "Ok", "Could be better");
+                List<Blog> blogs = List.of(blog1, blog2);
+                    
+                Map<String,  List<List<String>>> authorComments1 = blogs.stream()
+                 .collect(Collectors.groupingBy(Blog::getAuthorName, 
+                   Collectors.mapping(Blog::getComments, Collectors.toList())));
+                   
+                assertEquals(2, authorComments1.size());
+                assertEquals(2, authorComments1.get("1").get(0).size());
+                assertEquals(3, authorComments1.get("2").get(0).size());
+
+                Map<String, List<String>> authorComments2 = blogs.stream()
+                  .collect(Collectors.groupingBy(Blog::getAuthorName, 
+                    Collectors.flatMapping(blog -> blog.getComments().stream(), 
+                    Collectors.toList())));
+
+                assertEquals(2, authorComments2.size());
+                assertEquals(2, authorComments2.get("1").size());
+                assertEquals(3, authorComments2.get("2").size());
+            }
 
 
 Java 10 improvements

@@ -2,6 +2,7 @@
 
 Shenandoah Garbage Collector
 ============================
+- it was first implemented as experimental feature sin Java 12 and released in Java 15.
 - is a low-latency garbage collector introduced by Red Hat for OpenJDK and designed to keep pause times consistently under 10 ms
 - To achieve this, most GC operations—including object evacuation—run concurrently with application threads
 - Because moving objects during runtime is complex, Shenandoah uses read barriers to ensure references remain valid even if an object has been relocated

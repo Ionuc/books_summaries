@@ -12,5 +12,6 @@ Java Tools
     module-system/index.rst
     controlling-app-execution.rst
     repl.rst
+    microbenchmark.rst
 
 :ref:`Go Back <java-label>`.

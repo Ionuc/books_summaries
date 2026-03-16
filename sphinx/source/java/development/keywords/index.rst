@@ -9,5 +9,7 @@ Java Development Keywords
 
     static.rst
     var.rst
+    switch.rst
+    instance-of.rst
 
 :ref:`Go Back <java-development-label>`.

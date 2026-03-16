@@ -42,5 +42,15 @@ Java 10 improvements
             $ java -Xshare:on -XX:+UseAppCDS -XX:SharedArchiveFile=hello.jsa -cp hello.jar HelloWorld
 
 
+Java 12 improvement
+-------------------
+- The change that came with Java 12 is that the CDS archive is enabled by default. To run programs with CDS turned off we need to set the Xshare flag to off:
+
+
+    .. code-block:: python
+           :linenos:
+
+            java -Xshare:off HelloWorld.java
+
 
 :ref:`Go Back <java-tools-jvm-label>`.
