@@ -11,6 +11,51 @@ Garbage Collector
         - Generational GC
         - Memory Compaction
 
+Concepts
+--------
+- Memory management
+    - Physical memory is the RAM that our hardware provides
+    - The operating system (OS) allocates virtual memory space for each application.
+    - we store virtual memory in physical memory, and the OS is responsible for maintaining the mapping between the two. This mapping usually involves hardware acceleration.
+
+- Multi-Mapping
+    - Multi-mapping means that there are specific addresses in the virtual memory, which points to the same address in physical memory
+    - Since applications access data through virtual memory, they know nothing about this mechanism (and they don’t need to).
+    - Effectively, we map multiple ranges of the virtual memory to the same range in the physical memory
+
+
+  .. image:: ../../../../images/java/tools/memory-management/garbage-collector/gc-multi-mapping.png
+        :align: center
+
+
+- Relocation
+    - Since we use dynamic memory allocation, the memory of an average application becomes fragmented over time.
+    - It’s because when we free up an object in the middle of the memory, a gap of free space remains there
+    - Over time, these gaps accumulate, and our memory will look like a chessboard made of alternating areas of free and used space.
+    - we could try to fill these gaps with new objects. To do this, we should scan the memory for free space that’s big enough to hold our object. Doing this is an expensive operation, especially if we have to do it each time we want to allocate memory.
+    - The other strategy is to frequently relocate objects from fragmented memory areas to free areas in a more compact format
+    - To be more effective, we split the memory space into blocks. We relocate all objects in a block or none of them. This way, memory allocation will be faster since we know there are whole empty blocks in the memory.
+
+- Garbage Collection
+    - When we create a Java application, we don’t have to free the memory we allocated, because garbage collectors do it for us
+    - In summary, GC watches which objects can we reach from our application through a chain of references and frees up the ones we can’t reach.
+    - A GC needs to track the state of the objects in the heap space to do its work.
+
+GC Phase Properties
+-------------------
+- GC phases can have different properties:
+
+    - a parallel phase can run on multiple GC threads
+    - a serial phase runs on a single thread
+    - a stop-the-world phase can’t run concurrently with application code
+    - a concurrent phase can run in the background, while our application does its work
+    - an incremental phase can terminate before finishing all of its work and continue it later
+
+- all of the above techniques have their strengths and weaknesses:
+    - A serial implementation of this phase requires 1% of the overall CPU performance and runs for 1000ms
+    - In contrast, a parallel implementation utilizes 30% of CPU and completes its work in 50ms.
+
+
 Generetional GC
 ---------------
 - Most modern JVMs use a generational GC strategy

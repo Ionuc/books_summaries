@@ -18,5 +18,6 @@ Java Development features
     error-handling/index.rst
     serialization.rst
     number/index.rst
+    socket/index.rst
 
 :ref:`Go Back <java-label>`.

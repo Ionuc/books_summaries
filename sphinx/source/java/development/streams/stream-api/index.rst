@@ -7,7 +7,7 @@ Java Streams API
     :maxdepth: 2
     :caption: Contents:
 
-    stream-api.rst
+    streams.rst
     collectors.rst
 
 :ref:`Go Back <java-development-label>`.

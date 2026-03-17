@@ -3,13 +3,24 @@
 Java 13
 ========
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
+Development Features
+--------------------
 
-    developer_features/index.rst
-    preview/index.rst
-    jvm/index.rst
+:ref:`Nio Sockets <java-development-socket-nio-label>`
+
+
+Tools Features
+--------------
+
+:ref:`CDS <java-tools-jvm-class-data-sharing-label>`
+
+
+Preview Features
+----------------
+
+:ref:`Switch <java-development-keywords-switch-label>`
+
+:ref:`String <java-development-string-label>`
 
 
 :ref:`Go Back <java-label>`.

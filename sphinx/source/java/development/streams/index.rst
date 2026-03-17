@@ -7,7 +7,7 @@ Java Streams
     :maxdepth: 2
     :caption: Contents:
 
-    stream-api.rst
+    stream-api/index.rst
     input-output-with-stream.rst
     reactive-streams.rst
 
