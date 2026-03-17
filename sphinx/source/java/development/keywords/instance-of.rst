@@ -29,5 +29,37 @@ Java 12 Improvement (preview)
             }
 
 
+Java 14 improvements
+--------------------
+- with traditional instance-of:
+
+
+    .. code-block:: python
+           :linenos:
+
+            if (animal instanceof Cat) {
+                Cat cat = (Cat) animal;
+                cat.meow();
+               // other cat operations
+            } else if (animal instanceof Dog) {
+                Dog dog = (Dog) animal;
+                dog.woof();
+                // other dog operations
+            }
+
+            // More conditional statements for different animals
+
+- with the new way:
+
+
+    .. code-block:: python
+           :linenos:
+
+            if (animal instanceof Cat cat) {
+                cat.meow();
+            } else if(animal instanceof Dog dog) {
+                dog.woof();
+            }
+
 
 :ref:`Go Back <java-development-keywords-label>`.

@@ -1,16 +1,14 @@
-.. _java14_records:
+.. _java-development-class-object-records:
 
-Records
-=======
-
-    - was introduced to reduce boilerplate code in data model POJOs
-    - the simple declaration will automatically add a constructor(), getters(), equals(), hasCode() and toString() methods
+Record class
+============
+- was introduced to reduce boilerplate code in data model POJOs
+- the simple declaration will automatically add a constructor(), getters(), equals(), hasCode() and toString() methods
 
     .. code-block:: python
            :linenos:
 
             public record User(int id, String password) { };
-
 
 
     .. code-block:: python
@@ -37,4 +35,4 @@ Records
 
 
 
-:ref:`Go Back <java14-preview-label>`.
+:ref:`Go Back <java-development-class-object-label>`.

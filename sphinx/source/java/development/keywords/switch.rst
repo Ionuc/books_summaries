@@ -68,5 +68,9 @@ Java 13 Improvements
                 assertEquals(16, result);
             }
 
+Java 14 Improvements
+--------------------
+- switch expressions have been standardized so that they are part and parcel of the development kit.
+- What this effectively means is that this feature can now be used in production code, and not just in the preview mode to be experimented with by developers.
 
 :ref:`Go Back <java-development-keywords-label>`.

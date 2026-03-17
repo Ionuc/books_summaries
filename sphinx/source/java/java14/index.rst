@@ -15,22 +15,21 @@ Java 14
 Development Features
 --------------------
 
-:ref:`Nio Sockets <java-development-socket-nio-label>`
+:ref:`Switch <java-development-keywords-switch-label>`
 
 
 Tools Features
 --------------
 
-:ref:`CDS <java-tools-jvm-class-data-sharing-label>`
-
 
 Preview Features
 ----------------
 
-:ref:`Switch <java-development-keywords-switch-label>`
+:ref:`Text Blocks <java-development-string-text-blocks>`
 
-:ref:`String <java-development-string-label>`
+:ref:`Instance-of pattern matching <java-development-keywords-instance-of-label>`
 
+:ref:`Records <java-development-class-object-records>`
 
 
 :ref:`Go Back <java-label>`.
