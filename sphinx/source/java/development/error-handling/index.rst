@@ -8,5 +8,6 @@ Error handling
     :caption: Contents:
 
     try-with-resource.rst
+    npe.rst
 
 :ref:`Go Back <java-development-label>`.

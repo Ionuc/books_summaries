@@ -3,23 +3,23 @@
 Java 14
 ========
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-
-    features_caried/index.rst
-    preview/index.rst
-    developer_features/index.rst
-    memory/index.rst
 
 Development Features
 --------------------
 
 :ref:`Switch <java-development-keywords-switch-label>`
 
+:ref:`NPE Enhance <java-development-error-handling-npe-label>`
+
 
 Tools Features
 --------------
+
+:ref:`Foreign Api Access <java-tools-memory-management-memory-foreign-api-access-label>`
+
+:ref:`Jlink <java-tools-jvm-jlink-label>`
+
+:ref:`ZCG <java-tools-memory-management-garbage-collector-gc-zgc-gc-label>`
 
 
 Preview Features

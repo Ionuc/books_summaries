@@ -1,9 +1,9 @@
-.. _java14_foreign_memory:
+.. _java-tools-memory-management-memory-foreign-api-access-label:
 
-Foreign Memory Access API
+Foreign Api Memory Access
 =========================
 
-    - allows Java programs to access foreign memory, such as native memory, outside the heap in a safe and efficient manner
+- allows Java programs to access foreign memory, such as native memory, outside the heap in a safe and efficient manner
     - built upon three main abstractions of MemorySegment, MemoryAddress and MemoryLayout, this API is a safe way to access both heap and non-heap memory.
 
 Old ways to access native memory
@@ -136,6 +136,3 @@ MemorySegment
                 RandomAccessFile file = new RandomAccessFile("/tmp/memory.txt", "rw");
                 FileChannel fc = file.getChannel();
                 MemorySegment memorySegment = fc.map(READ_WRITE, 0, 200, arena);
-
-
-:ref:`Go Back <java14-memory-label>`.

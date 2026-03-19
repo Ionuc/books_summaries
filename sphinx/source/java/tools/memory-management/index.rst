@@ -10,5 +10,6 @@ Memory Management
     memory-type.rst
     string-pool.rst
     garbage-collector/index.rst
+    foreign-api-access.rst
 
 :ref:`Go Back <java-tools-label>`.
