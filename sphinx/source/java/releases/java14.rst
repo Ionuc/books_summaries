@@ -1,4 +1,4 @@
-.. _java14-label:
+.. _java-releases-14-label:
 
 Java 14
 ========

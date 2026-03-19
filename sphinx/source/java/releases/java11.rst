@@ -1,4 +1,4 @@
-.. _java11-label:
+.. _java-releases-11-label:
 
 Java 11
 ========
@@ -30,4 +30,5 @@ Tools Features
 
 :ref:`Java Flight Recorder <java-tools-jvm-instruction-set-constant-dynamic-label>`.
 
-:ref:`Go Back <java-label>`.
+
+:ref:`Go Back <java-releases-label>`.

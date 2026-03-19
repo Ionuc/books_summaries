@@ -1,4 +1,4 @@
-.. _java10-label:
+.. _java-releases-10-label:
 
 Java 10
 =======
