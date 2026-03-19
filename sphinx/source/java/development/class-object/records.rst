@@ -225,4 +225,59 @@ Static Variables & Methods
             }
 
 
+Restrictions
+------------
+- A record does not have an extends clause, not even its implicit superclass Record.
+    - The superclass of a record is always java.lang.Record, similar to how the superclass of an enum is always java.lang.Enum
+- A record is implicitly final, and cannot be abstract
+    - These restrictions emphasize that the API of a record is defined solely by its state description, and cannot be enhanced later by another class or record
+- A record cannot explicitly declare instance fields, and cannot contain instance initializers
+    - These restrictions ensure that the record header alone defines the state of a record value
+- The implicitly declared fields corresponding to the record components of a record class are final and moreover are not modifiable via reflection
+- Any explicit declarations of a member that would otherwise be automatically derived must match the type of the automatically derived member exactly,
+- A record cannot declare native methods
+    - If a record could declare a native method, then the behavior of the record would by definition depend on external state rather than the record's explicit state
+
+
+A record behaves like a normal class
+------------------------------------
+- A record is instantiated with the new keyword.
+- A record can be declared top level or nested, and can be generic
+- A record can declare static methods, static fields, and static initializers.
+- A record can declare instance methods. 
+    - a record can explicitly declare public accessor methods which correspond to components, and can also declare other instance methods.
+- A record can implement interfaces
+    - a record cannot specify a superclass (because that would mean inherited state, beyond the state described in the header),
+- A record can declare nested types, including nested records. 
+    - If a record is itself nested, then it is implicitly static;
+- A record, and the components in its state description, can be annotated.
+    - The annotations are propagated to the automatically derived fields, methods, and constructor parameters.
+
+
+Records and Sealed Types
+------------------------
+- Records work well with sealed types 
+
+
+    .. code-block:: python
+           :linenos:
+
+
+            public sealed interface Expr permits ConstantExpr, PlusExpr, TimesExpr, NegExpr {...}
+
+            public record ConstantExpr(int i)       implements Expr {...}
+            public record PlusExpr(Expr a, Expr b)  implements Expr {...}
+            public record TimesExpr(Expr a, Expr b) implements Expr {...}
+            public record NegExpr(Expr e)           implements Expr {...}
+
+
+Local records
+-------------
+- Local records are a particular case of nested records
+- Like all nested records, local records are implicitly static.
+- This means that their own methods cannot access any variables of the enclosing method;
+    - in turn, this avoids capturing an immediately enclosing instance which would silently add state to the record
+- The fact that local records are implicitly static is in contrast to local classes, which are not implicitly static.
+    - In fact, local classes are never static -- implicitly or explicitly -- and can always access variables in the enclosing method.
+
 :ref:`Go Back <java-development-class-object-label>`.
