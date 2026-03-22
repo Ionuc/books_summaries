@@ -11,5 +11,6 @@ Java Development Keywords
     var.rst
     switch.rst
     instance-of.rst
+    sealed.rst
 
 :ref:`Go Back <java-development-label>`.

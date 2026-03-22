@@ -116,7 +116,7 @@ equals()
 
 
 hashCode()
----------
+----------
 - Our hashCode method returns the same value for two Person objects if all of the field values for both objects match
 
 
@@ -279,5 +279,22 @@ Local records
     - in turn, this avoids capturing an immediately enclosing instance which would silently add state to the record
 - The fact that local records are implicitly static is in contrast to local classes, which are not implicitly static.
     - In fact, local classes are never static -- implicitly or explicitly -- and can always access variables in the enclosing method.
+
+Java 16 Improvements
+--------------------
+- With the release of Java 16, we can now define records as class members of inner classes
+
+
+
+    .. code-block:: python
+           :linenos:
+
+
+            class OuterClass {
+                class InnerClass {
+                    Book book = new Book("Title", "author", "isbn");
+                }
+            }
+
 
 :ref:`Go Back <java-development-class-object-label>`.

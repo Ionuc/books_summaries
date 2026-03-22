@@ -1,12 +1,13 @@
-.. _java-development-number-label:
+.. _java-development-format-label:
 
-Numbers
-=======
+Format
+======
 
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
 
     number-format.rst
+    date-time-format.rst
 
 :ref:`Go Back <java-development-label>`.

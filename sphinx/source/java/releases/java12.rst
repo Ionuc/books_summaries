@@ -6,7 +6,7 @@ Java 12
 Development Features
 --------------------
 
-:ref:`Compact NumberFormat <java-development-number-format-label>`
+:ref:`Compact NumberFormat <java-development-format-number-format-label>`
 
 :ref:`Files <java-development-streams-input-output-label>`
 
@@ -33,4 +33,4 @@ Preview Features
 :ref:`Instance-of <java-development-keywords-instance-of-label>`
 
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java-releases-label>`.

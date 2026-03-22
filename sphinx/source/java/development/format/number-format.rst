@@ -1,4 +1,4 @@
-.. _java-development-number-format-label:
+.. _java-development-format-number-format-label:
 
 Number Format
 =============

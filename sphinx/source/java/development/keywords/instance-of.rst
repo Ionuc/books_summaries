@@ -62,4 +62,22 @@ Java 14 improvements
             }
 
 
+Java 15 improvements
+--------------------
+- We can also combine the new binding variable with conditional statements:
+
+
+    .. code-block:: python
+           :linenos:
+
+            if (person instanceof Employee employee && employee.getYearsOfService() > 5) {
+                //...
+            }
+
+
+Java 16 Improvements
+--------------------
+- now it is part of production code
+
+
 :ref:`Go Back <java-development-keywords-label>`.

@@ -36,4 +36,8 @@ Java 14 improvements
            -XX:+ShowCodeDetailsInExceptionMessages
 
 
+Java 15 Improvement
+-------------------
+- now it is enabled by default
+
 :ref:`Go Back <java-development-error-handling-label>`.

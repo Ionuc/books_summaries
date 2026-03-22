@@ -9,6 +9,7 @@ JVM
 
     jvm.rst
     jit.rst
+    jlink.rst
     java-intepretor.rst
     class-loaders.rst
     class-data-sharing.rst

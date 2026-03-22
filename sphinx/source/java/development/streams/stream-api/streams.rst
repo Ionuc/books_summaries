@@ -425,4 +425,18 @@ Java 9 improvements
           .collect(Collectors.toList());
 
 
+Java 16 Improvements
+--------------------
+- The aim is to reduce the boilerplate with some commonly used Stream collectors, such as Collectors.toList and Collectors.toSet:
+
+
+
+    .. code-block:: python
+        :linenos:
+
+        List<String> integersAsString = Arrays.asList("1", "2", "3");
+        List<Integer> ints = integersAsString.stream().map(Integer::parseInt).collect(Collectors.toList());
+        List<Integer> intsEquivalent = integersAsString.stream().map(Integer::parseInt).toList();
+
+
 :ref:`Go Back <java-development-streams-api-label>`.

@@ -11,5 +11,6 @@ Class and Objects
     inner-classes.rst
     interface.rst
     records.rst
+    hidden-class.rst
 
 :ref:`Go Back <java-development-label>`.

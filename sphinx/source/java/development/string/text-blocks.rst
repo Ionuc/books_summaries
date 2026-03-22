@@ -62,5 +62,8 @@ Java 14 improvement
 
     - it does not add a new line after dog;.
 
+Java 15 Improvements
+--------------------
+- now it will be part of production code and no more preview mode
 
 :ref:`Go Back <java-development-string-label>`.

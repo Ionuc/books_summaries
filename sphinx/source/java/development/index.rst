@@ -17,7 +17,8 @@ Java Development features
     generics/index.rst
     error-handling/index.rst
     serialization.rst
-    number/index.rst
     socket/index.rst
+    reflection/index.rst
+    format/index.rst
 
 :ref:`Go Back <java-label>`.
