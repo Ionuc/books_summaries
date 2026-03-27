@@ -18,8 +18,6 @@ Development Features
 :ref:`Strong Encapsulation <java-development-reflection-strong-encapsulation-label>`.
 
 
-
-
 Tools Features
 --------------
 

@@ -9,6 +9,7 @@ Java Development features
 
     class-object/index.rst
     data-structure/index.rst
+    data-type/index.rst
     concurrency/index.rst
     streams/index.rst
     function/index.rst

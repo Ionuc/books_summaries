@@ -20,4 +20,4 @@ Java 16 improvement
 
 
 
-:ref:`Go Back <java-development-function-label>`.
+:ref:`Go Back <java-development-format-label>`.

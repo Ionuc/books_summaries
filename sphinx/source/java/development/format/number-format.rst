@@ -38,4 +38,4 @@ Java 12 improvement
 
 
 
-:ref:`Go Back <java-development-function-label>`.
+:ref:`Go Back <java-development-format-label>`.

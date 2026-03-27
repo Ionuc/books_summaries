@@ -306,7 +306,7 @@ Parallel Streams
 Java 9 improvements
 -------------------
 - useful new methods were added to Stream api:
-    - dropDown (default method)
+    - dropWhile (default method)
     - takeWhile (default method)
     - iterate (static method)
     - ofNullable (static method)
@@ -355,6 +355,7 @@ Java 9 improvements
 - Stream API dropWhile Method
     - dropWhile() Method drops the longest prefix elements which matches the Predicate and returns the rest of elements
     - It behaves differently for Ordered and Unordered Streams
+    - dropWhile() excludes all elements up to, but not including, the first element that fails the predicate
 
     .. code-block:: python
         :linenos:
