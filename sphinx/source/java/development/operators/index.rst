@@ -1,13 +1,12 @@
-.. _java-development-number-label:
+.. _java-development-operators-label:
 
-Format
-======
+Operators
+=========
 
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
 
-    random-generator.rst
-    bigdecimal.rst
+    operators.rst
 
 :ref:`Go Back <java-development-label>`.

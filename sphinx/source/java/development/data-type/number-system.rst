@@ -17,6 +17,17 @@ Bynary Number System
         :align: center
 
 
+- in Java, a bynay number starts with prefix 0b:
+
+
+   .. code-block:: python
+        :linenos:
+
+        int dec = 152;
+        int bin = 0b10011000;
+
+
+
 Octo Number System
 ------------------
 
@@ -25,6 +36,17 @@ Octo Number System
 
     .. image:: ../../../images/java/development/data-types/number-system/base8.png
         :align: center
+
+
+- in Java, a octa number starts with prefix 0:
+
+
+   .. code-block:: python
+        :linenos:
+
+        int dec = 152;
+        int oct = 0230;
+
 
 
 Hexadecimal Number System
@@ -36,6 +58,15 @@ Hexadecimal Number System
     .. image:: ../../../images/java/development/data-types/number-system/base16.png
         :align: center
 
+
+- in Java, a hexadecimal number starts with prefix 0x:
+
+
+   .. code-block:: python
+        :linenos:
+
+        int dec = 152;
+        int hex = 0x98;
 
 
 :ref:`Go Back <java-development-data-type-label>`.

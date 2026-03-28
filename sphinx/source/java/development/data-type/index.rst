@@ -9,5 +9,6 @@ Data types
 
     primitive.rst
     number-system.rst
+    array.rst
 
 :ref:`Go Back <java-development-label>`.
