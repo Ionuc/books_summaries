@@ -8,7 +8,7 @@ Java Streams
     :caption: Contents:
 
     stream-api/index.rst
-    input-output-with-stream.rst
+    input-output-stream/index.rst
     reactive-streams.rst
 
 :ref:`Go Back <java-development-label>`.

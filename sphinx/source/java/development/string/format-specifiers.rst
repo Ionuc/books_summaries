@@ -1,4 +1,4 @@
-.. _format-specifiers:
+.. _java-development-string-format-specifiers:
 
 Format Specifiers
 =================
@@ -12,7 +12,7 @@ Format Specifiers
         - System.out.printf
         - Formatter.format
 
-Concatenation vs Fromatting
+Concatenation vs Formatting
 ---------------------------
 
     .. code-block:: python

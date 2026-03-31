@@ -22,4 +22,27 @@ Array
         }
 
 
+Comparing arrays
+----------------
+- the equals() implementation of the array is the one from Object, meaning it will compare the references
+- to compare the values, you can use Arrays.equals(ar1, ar2):
+
+
+
+   .. code-block:: python
+        :linenos:
+
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {1, 2, 3};
+
+        System.out.println("arr1 == arr2: " + (arr1 == arr2));
+        System.out.println("arr1.equals(arr2): " + (arr1.equals(arr2)));
+        System.out.println("Arrays.equals(arr1, arr2)): " + Arrays.equals(arr1, arr2));
+
+        // output:
+        // arr1 == arr2: false
+        // arr1.equals(arr2): false
+        // Arrays.equals(arr1, arr2)): true
+
+
 :ref:`Go Back <java-development-data-type-label>`.

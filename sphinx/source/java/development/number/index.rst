@@ -9,5 +9,6 @@ Format
 
     random-generator.rst
     bigdecimal.rst
+    math.rst
 
 :ref:`Go Back <java-development-label>`.

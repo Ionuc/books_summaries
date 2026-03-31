@@ -8,5 +8,6 @@ Operators
     :caption: Contents:
 
     operators.rst
+    expression.rst
 
 :ref:`Go Back <java-development-label>`.

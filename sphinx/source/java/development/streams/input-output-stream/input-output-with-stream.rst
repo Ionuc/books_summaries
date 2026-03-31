@@ -1,18 +1,87 @@
-.. _java-development-streams-input-output-label:
+.. _java-development-streams-input-output-stream-label:
 
 Input and Output with Streans and Files
 =======================================
 
 Streams overview
 ----------------
-    - represents an ordered sequence of data
-    - provides a common I/O model
-    - provides abstraction details of underlying source or destination ( memory, disk-based storage, networking)
-    - stream types are unidirectional:
-        - when you create an instance of a stream, you are either going to use it to read from or to write to
-    - there are 2 categories:
-        - byte stream: provides a binary representation of the data
-        - text streams : provides a character-based representation of the data
+- represents an ordered sequence of data
+- provides a common I/O model
+- provides abstraction details of underlying source or destination ( memory, disk-based storage, networking)
+- stream types are unidirectional:
+    - when you create an instance of a stream, you are either going to use it to read from or to write to
+- there are 2 categories:
+    - byte stream: provides a binary representation of the data
+    - text streams : provides a character-based representation of the data
+
+
+    .. image:: ../../../../images/java/development/streams/input-output-streams/all-input-output-hierarchy.png
+        :align: center
+
+
+- byte stream vs text stream:
+    - byte stream can work with data with size eight bits (which is one bite)
+        - all reading and writing oeprations works with eight bits
+        - these types were created since Java creation
+        - after that, were created types can be procesed as 2 bytes
+        - are widely used to reading and writing resources, like images
+    - character streams are used to work with text data
+        - in case you need to read or write text data, it is recommanded to character streams to ensure that you can read all characters from files 
+- you can process Unicode characters and describe them in 16 bits, that is 2 bytes
+
+Buffered Streams
+----------------
+- buffer is a region of phisical memory storage used to temporarily store data while it is being moved from one place to another
+- it is flushed automatically in bellow cases:
+    - when maximum size of the buffer is reached
+    - when stream is closed
+    - when the flush() methods is called
+- in case you wrote something to the buffer and not reached the max size and forget to close the stream, the data will not be moved to the file itself
+
+
+    .. code-block:: python
+       :linenos:
+
+        private static void noWriteWithoutFlush(String path, String textToWrite) throws IOException {
+            var bos = new BufferedOutputStream(new FileOutputStream(path));
+            bos.write(textToWrite.getBytes());
+            //bos.flush();
+        }
+
+
+- improve efficiency with files because:
+    - they buffer the content in memory
+    - performes reads/writes in large chunks
+    - reduces underlying stream interaction
+- There are available for all 4 stream types : BufferedReader, BufferedWriter, BufferedInputStream, BufferedOutputStream
+- using would be the same as with an InputStream
+
+
+    .. code-block:: python
+       :linenos:
+
+       try(BufferedReader br = new BufferedReader(new FileReader("file1.txt"))){
+           int intVal;
+           while((intVal = br.read()) >= 0){
+               char charVal = (char) intVal;
+               // do something with charVal
+           }
+       }
+
+Byte Streams
+------------
+- there are 2 main interfaces with multiple implementations:
+    - InputStream
+        - FileInputStream
+        - ByteArrayInputStream
+        - ObjectInputStream
+        - FilterInputStream
+    - OutputStream:
+        - FileOutputStream
+        - ByteArrayOutputStream
+        - OjectOutputStream
+        - FilterOutputStream
+
 
 Reading with byte streams
 -------------------------
@@ -49,6 +118,12 @@ Reading with byte streams
            }
        }
 
+FileOutputStream
+----------------
+- provides methods:
+        - void write(int b) -> write an individual byte
+        - void write(byte[] buff) -> write an array of bytes
+
 Writing to a bytes stream
 -------------------------
     - the base class for reading from a byte data is a class called OutputStream
@@ -59,12 +134,31 @@ Writing to a bytes stream
     .. code-block:: python
        :linenos:
 
-       OuputStream output = // create output stream
-       byte byteVal = 100;
-       output.write(byteVal);
+        String textToWrite = "Some text example " + System.lineSeparator() + "with Line separator and cyrylic "
+                + "characters: Тут кириллические символы" + System.lineSeparator();
 
-       byte[] bytebyff = {0, 63, 127};
-       output.write(bytebyff);
+        public static void writeFileToPathFileOutputStream(String path, String textToWrite)
+            throws FileNotFoundException, IOException {
+            FileOutputStream fos = null;
+            try {
+                fos = new FileOutputStream(path);
+                byte[] bytes = textToWrite.getBytes();
+                fos.write(bytes);
+            } finally {
+                if (fos != null) {
+                    fos.close();
+                }
+            }
+        }
+
+        public static void writeFileToPathFileOutputStreamWithBuffer(String path, String textToWrite)
+                throws FileNotFoundException, IOException {
+            try (var fbos = new BufferedOutputStream(new FileOutputStream(path))) {
+                fbos.write(textToWrite.getBytes());
+            }
+        }
+
+    - outside of the try-with-resource, blocked buffer will be flused automatically
 
 Reading with data streams
 -------------------------
@@ -138,8 +232,10 @@ Common Input/OutputStream Derived Classes
 
     - FileInputStream and FileOutputStream allows to create stream over files
 
-    .. image:: ../../../images/java/development/streams/input-output-streams/input-output-strea-common-input-output-stream.png
+
+    .. image:: ../../../../images/java/development/streams/input-output-streams/input-output-strea-common-input-output-stream.png
         :align: center
+
 
 Common Reader/Write Derived Classes
 -----------------------------------------
@@ -167,7 +263,7 @@ Common Reader/Write Derived Classes
 
     - FileReader and FileWriter allows as to have file-based content with a reader and writer over top of those
 
-    .. image:: ../../../images/java/development/streams/input-output-streams/input-output-strea-common-reader-writer.png
+    .. image:: ../../../../images/java/development/streams/input-output-streams/input-output-strea-common-reader-writer.png
         :align: center
 
 Stream Cleanup
@@ -185,29 +281,8 @@ File and Buffered Streams
 -------------------------
     - Accessing Files
         - common use of streams is for file-based I/O
-        - there is FilwReader, FileWriter, FileInputStream, FileOutputStream
-    - Buffered streams:
-        - improve efficiency with files because:
-            - they buffer the content in memory
-            - performes reads/writes in large chunks
-            - reduces underlying stream interaction
-        - There are available for all 4 stream types : BufferedReader, BufferedWriter, BufferedInputStream, BufferedOutputStream
-        - using would be the same as with an InputStream
+        - there is FileReader, FileWriter, FileInputStream, FileOutputStream
 
-    .. code-block:: python
-       :linenos:
-
-       try(BufferedReader br = new BufferedReader(new FileReader("file1.txt"))){
-           int intVal;
-           while((intVal = br.read()) >= 0){
-               char charVal = (char) intVal;
-               // do something with charVal
-           }
-       }
-
-		- deals with line breaks:
-            - Unix : \n
-            - Windows \r\n 
 
 Accessing files with Java 8
 ---------------------------
@@ -237,6 +312,73 @@ Accessing files with Java 8
                }
             }
        }
+
+File Object
+------------
+- File class is used to represent a file
+- is from package java.io which is alder version
+- creating a new instance of File will not create a real file in file system
+- the String given in the constructor is converted into abstract path name
+- constants:
+    - separator
+        - the file separator used
+    - pathSeparator:
+        - the separator used when defining multiple jar in the system env PATH
+
+- methods:
+    - mkdir()
+        - will create a new folder
+        - will return true in case is created or false in case is already existing
+
+    - mkdirs():
+        - will create directory and the corresponding subdirectories by specifiend the named join with the folder separator. It is better to us File.separator to be platforme independend
+
+
+    .. code-block:: python
+       :linenos:
+
+        file = new File("testDirectory3" + File.separator + "innerTestDirectory");   
+        if (file.mkdirs()) {
+            System.out.println("Success");
+        } else {
+            System.out.println("Files are exist");
+        }
+
+
+    - createNewFile():
+        - creates a new file
+    - exists()
+        - check if the files exists or not
+    - isDirectory():
+        - checks if the file is directory file type
+    - isFile():
+        - return if the file is a file type
+    - listFiles()
+        - returns array of Files (File[]) from the directory
+    - listFiles(FileFilter)
+        - return array of file which are passing the FileFilter
+
+
+    .. code-block:: python
+       :linenos:
+
+        File[] listFiles = file.listFiles(pathname -> pathname.getName().endsWith(".java"));
+
+
+    - getAbsolutePath():
+        - return the absolut path of the file instance (file or directory)
+    - getName():
+        - returns the name of the file
+    - canExecute():
+        - checks if the file is executable
+    - isHidden():
+        - returns if the file is hidden or not
+
+- in order to create a File contect with new lines, it is better to use System.lineSeparator()
+- in case the name from file is not absolute, it is relative to the project file (if running from ideea) or jar path
+
+
+Path object
 
 File Systems
 ------------
@@ -307,4 +449,4 @@ Java 12 improvments
             }
 
 
-:ref:`Go Back <java-development-streams-label>`.
+:ref:`Go Back <java-development-streams-input-output-label>`.

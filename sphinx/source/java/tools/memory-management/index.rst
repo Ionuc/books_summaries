@@ -9,6 +9,7 @@ Memory Management
 
     memory-type.rst
     string-pool.rst
+    integer-pool.rst
     garbage-collector/index.rst
     foreign-api-access.rst
 

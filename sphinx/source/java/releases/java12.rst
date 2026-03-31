@@ -10,7 +10,7 @@ Development Features
 
 :ref:`Files <java-development-streams-input-output-label>`
 
-:ref:`String <java-development-string-label>`
+:ref:`String <java-development-string-string-label>`
 
 :ref:`Streams Collectors <java-development-streams-api-collectors-label>`
 

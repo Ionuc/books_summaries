@@ -2,11 +2,44 @@
 
 Primitive types
 ===============
+- primitive types are:
+    - integers:
+        - byte
+        - short
+        - int
+        - long
+    - floating-point numbers:
+        - float
+        - double
+    - boolean:
+        - boolean
+    - characters:
+        - char
 
 
     .. image:: ../../../images/java/development/data-types/primitive/primitive.png
         :align: center
 
+
+Integers
+--------
+- default value for integers is 0
+- default type for the result after doing arithmetic operation on byte or short or int is int
+- operation implying long will result in long type
+
+
+   .. code-block:: python
+        :linenos:
+
+        byte b1 = 1;
+        byte b2 = 1;
+        byte b3 = b1 + b2 // compilation error as the expected type is int
+
+
+
+Floating-point Numbers
+----------------------
+- default type for teh result afte rdoing arithmetic operation on floating-pint number is double
 
 Converting types
 ----------------

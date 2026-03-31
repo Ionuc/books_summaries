@@ -74,6 +74,7 @@ Java 12 improvements
     :maxdepth: 2
     :caption: Contents:
 
+    string.rst
     string-joiner.rst
     format-specifiers.rst
     string-regular-expression.rst
