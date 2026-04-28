@@ -10,6 +10,7 @@ Garbage Collectors
     gc.rst
     serial-collector.rst
     parallel-collector.rst
+    concurrent-mark-sweep-gc.rst
     g1-gc.rst
     shenandoah-gc.rst
     zgc.rst

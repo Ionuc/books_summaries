@@ -12,5 +12,6 @@ Class and Objects
     interface.rst
     records.rst
     hidden-class.rst
+    cloning-objects.rst
 
 :ref:`Go Back <java-development-label>`.

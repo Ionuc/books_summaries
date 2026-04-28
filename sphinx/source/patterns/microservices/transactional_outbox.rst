@@ -25,15 +25,16 @@ Problem:
 
 Solution
 --------
+- The simple explanation of the pattern is in four steps:
 
+    1. The order data is inserted/updated/deleted into/from the ORDER table (here for simplicity the customer order data is kept). If the operation succeeds, the process continues with insertion into the OUTBOX table with a description of the operation made. This must be done in a DB transaction.
+    2. Message Relay reads the OUTBOX table record, processes it, and prepares the message that should be published to the Message Broker.
+    3. Message Relay publishes the prepared message in point 2.
 
-The simple explanation of the pattern is in four steps.
-1. The order data is inserted/updated/deleted into/from the ORDER table (here for simplicity the customer order data is kept). If the operation succeeds, the process continues with insertion into the OUTBOX table with a description of the operation made. This must be done in a DB transaction.
-2. Message Relay reads the OUTBOX table record, processes it, and prepares the message that should be published to the Message Broker.
-3. Message Relay publishes the prepared message in point 2.
 
     .. image:: ../../images/patterns/microservices/transactional_outbox/architectural_overview.png
         :align: center
+
 
 Participants
 -------------

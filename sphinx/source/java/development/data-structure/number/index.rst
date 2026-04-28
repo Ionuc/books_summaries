@@ -1,4 +1,4 @@
-.. _java-development-number-label:
+.. _java-development-data-structures-number-label:
 
 Format
 ======
@@ -11,4 +11,4 @@ Format
     bigdecimal.rst
     math.rst
 
-:ref:`Go Back <java-development-label>`.
+:ref:`Go Back <java-development-data-structures-label>`.

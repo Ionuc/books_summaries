@@ -62,5 +62,9 @@ Concurrent Collections
     data-structures.rst
     optional.rst
     collection.rst
+    data-type/index.rst
+    number/index.rst
+    string/index.rst
+    data-time/index.rst
 
 :ref:`Go Back <java-development-label>`.

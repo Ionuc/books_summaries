@@ -1,4 +1,4 @@
-.. _java-development-string-text-blocks:
+.. _java-development-data-structures-string-text-blocks:
 
 String Text Blocks
 ==================
@@ -66,4 +66,4 @@ Java 15 Improvements
 --------------------
 - now it will be part of production code and no more preview mode
 
-:ref:`Go Back <java-development-string-label>`.
+:ref:`Go Back <java-development-data-structures-string-label>`.

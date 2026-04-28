@@ -2,6 +2,7 @@
 
 Garbage First Collector
 =======================
+- it can be enabled by addug the -XX:+G1GC flag to your JVM application startup parameters
 - The G1 (Garbage-First) garbage collector is a sophisticated generational GC designed to improve heap management and offer predictable pause times
 - Unlike traditional collectors that divide memory into large contiguous regions, G1 partitions the Java heap into many fixed-size regions, each of which can belong to the Eden, Survivor, Old, or Humongous spaces
 - This region-based design provides greater flexibility in managing memory and enables incremental collection of parts of the heap, especially the old generation
@@ -17,7 +18,7 @@ Garbage First Collector
 - This approach helps the collector maintain predictable pause times by focusing work where it’s most effective
 - While G1 includes some concurrent phases (such as marking the old generation), the majority of its operations—including object evacuation—remain stop-the-world
 - As a result, G1 is better classified as a throughput-oriented collector with bounded latency, rather than a true low-latency GC
-
+- to enable, add XX:+G1GC to JVM application startup parameters
 
 How is working
 --------------

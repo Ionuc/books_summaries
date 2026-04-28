@@ -1,4 +1,4 @@
-.. _java-development-data-type-array-label:
+.. _java-development-data-structures-data-type-array-label:
 
 Array
 =====
@@ -45,4 +45,4 @@ Comparing arrays
         // Arrays.equals(arr1, arr2)): true
 
 
-:ref:`Go Back <java-development-data-type-label>`.
+:ref:`Go Back <java-development-data-structures-data-type-label>`.

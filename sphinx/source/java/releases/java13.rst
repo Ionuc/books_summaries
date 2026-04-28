@@ -20,7 +20,7 @@ Preview Features
 
 :ref:`Switch <java-development-keywords-switch-label>`
 
-:ref:`String <java-development-string-label>`
+:ref:`String <java-development-data-structures-string-label>`
 
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java-releases-label>`.

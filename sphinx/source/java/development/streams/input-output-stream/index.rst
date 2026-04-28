@@ -11,6 +11,9 @@ Input Output Streams
     new/index.rst
     input-stream/index.rst
     output-stream/index.rst
+    reader/index.rst
+    writer/index.rst
     input-output-with-stream.rst
+    serialization.rst
 
 :ref:`Go Back <java-development-streams-label>`.

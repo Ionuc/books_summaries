@@ -8,7 +8,7 @@ Development Features
 
 :ref:`Improvements Optional <java-development-datastructure-optional-label>`
 
-:ref:`String <java-development-string-string-label>`.
+:ref:`String <java-development-data-structures-string-string-label>`.
 
 :ref:`Files <java-development-streams-input-output-label>`.
 

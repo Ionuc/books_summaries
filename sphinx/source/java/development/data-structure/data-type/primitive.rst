@@ -17,7 +17,7 @@ Primitive types
         - char
 
 
-    .. image:: ../../../images/java/development/data-types/primitive/primitive.png
+    .. image:: ../../../../images/java/development/data-structures/data-types/primitive/primitive.png
         :align: center
 
 

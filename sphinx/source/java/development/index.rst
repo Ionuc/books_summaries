@@ -8,9 +8,6 @@ Java Development features
     :caption: Contents:
 
     data-structure/index.rst
-    data-type/index.rst
-    string/index.rst
-    number/index.rst
     operators/index.rst
     class-object/index.rst
     reflection/index.rst
@@ -20,8 +17,8 @@ Java Development features
     function/index.rst
     generics/index.rst
     error-handling/index.rst
-    serialization.rst
     socket/index.rst
     format/index.rst
+    logging/index.rst
 
 :ref:`Go Back <java-label>`.

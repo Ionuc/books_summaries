@@ -1,4 +1,4 @@
-.. _java-development-string-string-label:
+.. _java-development-data-structures-string-string-label:
 
 String
 ======
@@ -185,4 +185,4 @@ Java 12 improvements
             }
 
 
-:ref:`Go Back <java-development-string-label>`.
+:ref:`Go Back <java-development-data-structures-string-label>`.

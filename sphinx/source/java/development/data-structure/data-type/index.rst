@@ -1,4 +1,4 @@
-.. _java-development-data-type-label:
+.. _java-development-data-structures-data-type-label:
 
 Data types
 ==========
@@ -11,4 +11,4 @@ Data types
     number-system.rst
     array.rst
 
-:ref:`Go Back <java-development-label>`.
+:ref:`Go Back <java-development-data-structures-label>`.

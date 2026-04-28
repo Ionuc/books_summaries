@@ -1,9 +1,9 @@
-.. _java-development-streams-input-output-input-stream-label:
+.. _java-development-streams-input-output-reader-label:
 
-InputStream
-===========
+Reader
+======
 
-- the base class for reading from a binary data is a class called InputStream
+- the base class for reading from a character data is a class called Reader
     - provides methods:
         - int read()
             - return the value read , or -1 if no one found
@@ -40,14 +40,9 @@ InputStream
        }
 
 
-FileInputStream
+FileReader
 ---------------
-- it read file by bites until the read() method will return -1, meaning it is the end of the file
-- to print to console, it needs to convert the integer value to char
-- issue:
-    - you can read only first 256 characters from Unicode table
-    - Cyrillic symbols won't be read
-    - because it will read only characters with 1 byte and not with 2 bytes
+-
 
     .. code-block:: python
        :linenos:
@@ -71,41 +66,29 @@ FileInputStream
         //
 
 
-BufferedInputStream
+BufferedReader
 -------------------
-- you can read data not byte by byte, but line by line
+- you can read data not char by char, but line by line
 
     .. code-block:: python
        :linenos:
 
-        private static void printFileWithFileInputStreamWithBuffer(String path) throws IOException, FileNotFoundException {
-            try (var fis = new FileInputStream(path);
-                var bis = new BufferedInputStream(fis);
-                var dis = new DataInputStream(bis);
-        //      DataInputStream dis2 = new DataInputStream(new BufferedInputStream(new FileInputStream(path)))  
-                ) {
-                    int i;    
-                    while (dis.available() != 0) {
-        //              int intValue = dis.readInt();
-                        System.out.print(dis.readLine());
-                        System.out.println();
-                    }
+        private static void printFileWithBuffer(String path) throws FileNotFoundException, IOException {
+            try (var br = new BufferedReader(new FileReader(path))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
                 }
             }
+        }
 
 
-ByteArrayInputStream
---------------------
-
-ObjectInputStream
+InputStreamReader
 -----------------
 
-FilterInputStream
------------------
-
-DataInputStream
+CharArrayReader
 ---------------
-- allows you to read sepcific data type, like :
-    - readInt()
+
+
 
 :ref:`Go Back <java-development-streams-input-output-stream-label>`.

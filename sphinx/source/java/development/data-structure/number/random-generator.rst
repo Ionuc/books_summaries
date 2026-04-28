@@ -1,4 +1,4 @@
-.. _java-development-number-random-generator-label:
+.. _java-development-data-structures-number-random-generator-label:
 
 Random Generator
 ================
@@ -46,4 +46,4 @@ Java 17 improvement
 - Legacy random classes, such as java.util.Random, SplittableRandom and SecureRandom now extend the new RandomGenerator interface
 
 
-:ref:`Go Back <java-development-number-label>`.
+:ref:`Go Back <java-development-data-structures-number-label>`.
