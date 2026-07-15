@@ -4,6 +4,7 @@ Liskow Substituion Principle
 ============================
     - tals about polymorphism
     - the idea is that substypes must be substitutable for their base types
+    - objects in a program should be replaceble with instances of their subtypes without altering the correctness of the program
     - other definition would be : Consume any implementation without changing the correctness of the system:
         - you can think about the correctness of the system as all the correct behavior that a system might exhibit
         - is specific to application
@@ -13,6 +14,7 @@ Liskow Substituion Principle
 
     - how to violate LSP:
         - when the code throws NotSupportedException
+            => solution: split the interface into smaller one, so the class throwing NotSupportedException to not be force to override that method
         - if you have a lot of downcasts
         - extracted interfaces
         - is often violated by attempts to remove features

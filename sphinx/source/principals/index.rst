@@ -11,5 +11,8 @@ Principals
     postel-law.rst
     acid.rst
     solid/index.rst
+    kiss.rst
+    yagni.rst
+    dry.rst
 
 :ref:`Go Back <index-label>`.

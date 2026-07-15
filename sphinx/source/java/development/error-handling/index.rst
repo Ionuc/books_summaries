@@ -7,6 +7,7 @@ Error handling
     :maxdepth: 2
     :caption: Contents:
 
+    error-type.rst
     try-with-resource.rst
     npe.rst
 

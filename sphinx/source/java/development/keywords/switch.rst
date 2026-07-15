@@ -2,6 +2,17 @@
 
 Switch keyword
 ==============
+- the expression type should be either:
+    - byte
+    - short
+    - char
+    - int
+    - String
+    - enum type
+
+- default option is optional
+- break is used to exist the statement:
+    - in case the swtich statement is executed and does not have the break keyword, it will continue to execute the next statemenets until it will get to the break or eithere is not other statements to execute
 
 Java 12 Improvement (preview)
 -----------------------------

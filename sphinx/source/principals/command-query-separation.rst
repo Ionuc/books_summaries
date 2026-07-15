@@ -1,4 +1,4 @@
-.. _command-query-separation-label:
+.. __principals-command-query-separation-label:
 
 Command Query Separation
 =========================

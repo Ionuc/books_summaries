@@ -1,4 +1,4 @@
-.. _postel-law-label:
+.. __principals-postel-law-label:
 
 Postel's Law
 ============

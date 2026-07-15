@@ -1,19 +1,21 @@
-.. _java-development-string-regular-expression:
+.. _java-development-data-structures-string-regular-expression:
 
 String Regular Expression
 =========================
-    - String provides some methods which are supporting regular expression like:
-        - replaceFirst()
-            - returns new updating String based on existing String
-            - pattern identifies which parts to change
-        - replaceAll()
-            - returns new updating String based on existing String
-            - pattern identifies which part to change
-        - split()
-            - Splits String into an array
-            - Pattern is the separator between values
-        - match()
-            - identifies if String matches the pattern
+- regulare expression is a sequence of characters taht defines a search pattern
+
+- String provides some methods which are supporting regular expression like:
+    - replaceFirst()
+        - returns new updating String based on existing String
+        - pattern identifies which parts to change
+    - replaceAll()
+        - returns new updating String based on existing String
+        - pattern identifies which part to change
+    - split()
+        - Splits String into an array
+        - Pattern is the separator between values
+    - match()
+        - identifies if String matches the pattern
 
     .. code-block:: python
        :linenos:
@@ -35,4 +37,4 @@ Regular expression considerations
     - Matcher class:
         - Applies compiled expression to a String
 
-:ref:`Go Back <java-development-string-label>`.
+:ref:`Go Back <java-development-data-structures-string-label>`.

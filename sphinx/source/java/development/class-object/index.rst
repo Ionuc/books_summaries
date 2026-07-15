@@ -7,9 +7,14 @@ Class and Objects
     :maxdepth: 2
     :caption: Contents:
 
+
+    methods/index.rst
+    interface.rst
+    class.rst
+    constructor.rst
     object.rst
     inner-classes.rst
-    interface.rst
+    enum.rst
     records.rst
     hidden-class.rst
     cloning-objects.rst

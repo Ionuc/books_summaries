@@ -4,6 +4,10 @@ Interface
 =========
 
 
+Constants
+---------
+- constants can be defined in interface. These are: public, static, final
+
 Private methods
 ---------------
     - with java 8 we can provide method implementation in Interface using default and static methods
@@ -121,5 +125,24 @@ Private methods
 - Why do we need private methods in Interface ?
     - no need to write duplicate code
     - we got the choice to expose only our intended methods implementations to clients
+
+Default Methods
+---------------
+- are methods defined in interface which are having a body
+- these methods can be overriden from child classes, but it is mandatory
+- in case a class is extending multiple interface which are having default methods with the same signature, a compilation error
+  will be thrown in the concret class in order to specify which default implementation should be use
+
+Interface vs Abstract class
+---------------------------
+- interface:
+    - "implements" keyoword
+    - all fields are constants
+    - can be implemented together with other interfaces
+- abstract class:
+    - "extends" keyword
+    - can have fields with all possible modifiers
+    - can't be extended simultaneosly with other classes
+
 
 :ref:`Go Back <java-development-class-object-label>`.

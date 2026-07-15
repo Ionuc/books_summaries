@@ -1,6 +1,6 @@
 .. _java-development-logging-label:
 
-Java Development Keywords
+Java Development Logging
 =========================
 
 .. toctree::

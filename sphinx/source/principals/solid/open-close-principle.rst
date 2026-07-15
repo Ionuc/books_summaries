@@ -9,4 +9,11 @@ Open Close principle
     - the strategy pattern allows to open a class for extensibility, but close it for modification
     - close for modification means that you can't really update or delete the class
 
+    - open for extension:
+      - means the module is available for extension
+      - how to violate this principal: final classes, final methods, static fields and methods
+    - close for modification:
+      - means the class is defined with enough level of abstraction to extend if and create new types on the basis of it
+      - means that extending the behavior of a module doesn't resultin changes in the source code of the module
+
 :ref:`Go Back <solid-principals-label>`.

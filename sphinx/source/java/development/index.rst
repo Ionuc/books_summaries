@@ -9,6 +9,7 @@ Java Development features
 
     data-structure/index.rst
     operators/index.rst
+    iteration-statements/index.rst
     class-object/index.rst
     reflection/index.rst
     keywords/index.rst
@@ -20,5 +21,7 @@ Java Development features
     socket/index.rst
     format/index.rst
     logging/index.rst
+    jdbc/index.rst
+    oop/index.rst
 
 :ref:`Go Back <java-label>`.
