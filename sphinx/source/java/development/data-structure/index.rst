@@ -3,6 +3,27 @@
 Java Data structures
 ====================
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
+
+
+    collection.rst
+    list.rst
+    set.rst
+    map.rst
+    queue.rst
+    iterable.rst
+    data-structures.rst
+    optional.rst
+    data-type/index.rst
+    number/index.rst
+    string/index.rst
+    data-time/index.rst
+
+
+Overview
+--------
     - Collections came in four basic flavors:
         - Lists -> List of things
         - Sets -> Unique things
@@ -49,22 +70,5 @@ Concurrent Collections
     - But the Iterator for a concurrent collection is weakly consistent. This mean when you iterate through the elements,
       other thread can add / remove the existing iterator, resulting wrong size
 
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-
-    list.rst
-    set.rst
-    map.rst
-    queue.rst
-    data-structures.rst
-    optional.rst
-    collection.rst
-    data-type/index.rst
-    number/index.rst
-    string/index.rst
-    data-time/index.rst
 
 :ref:`Go Back <java-development-label>`.

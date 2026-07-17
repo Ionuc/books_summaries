@@ -18,5 +18,6 @@ Class and Objects
     records.rst
     hidden-class.rst
     cloning-objects.rst
+    reference.rst
 
 :ref:`Go Back <java-development-label>`.

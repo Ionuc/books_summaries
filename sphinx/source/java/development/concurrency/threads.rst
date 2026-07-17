@@ -2,6 +2,26 @@
 
 Threads
 =======
+
+What is a process
+-----------------
+- process is an instance of a computer program,
+- a computer progam is just a set of instructions for a machine
+- a process is the execution of these istructions
+- a process has a self-contained execution environment:
+    - has its own memory space
+- most Operating systems support inter-process communication resources used to interract between different processes:
+    - pipes
+    - sockets
+
+What is a thread of execution
+-----------------------------
+- each process may be executed in one or more threads of execution:
+    - some instructions are executed in parallel
+- in computer sciente, concurrency is the ability of different parts or units of a program, algorithm or problem to e executed out of order at the same time simultaneously without affecting the final result
+
+What is a thread
+-----------------
 What is exactly a thread ? In java, “thread” means two different things :
     - An instance of class java.lang.Thread -> is just an object with variables & methods and lives and dies on the heap
     - A thread of execution -> is an individual process that has its own call stack
