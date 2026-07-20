@@ -5,16 +5,27 @@ Thread problems
 
 Race Conditions
 ---------------
-    - incorrect behavior caused by threads interleaving and executing code in an unintended order despite the data
+- incorrect behavior caused by threads interleaving and executing code in an unintended order despite the data
       being correctly synchronized
 
-    - presence of a potential race condition means the code is not thread-safe
-    - can be demonstrated with code using:
-        - putting code in a loop
-        - using sleeps
-        - using a CountDownLatch
-        - CyclicBarrier
-        - Phaser
+- presence of a potential race condition means the code is not thread-safe
+- can be demonstrated with code using:
+    - putting code in a loop
+    - using sleeps
+    - using a CountDownLatch
+    - CyclicBarrier
+    - Phaser
+
+Potential impacts
+-----------------
+- memory leak
+- inconsistent data:
+    - lost update:
+        - multiple threads updating in the same time the same resource
+    - dirty reads:
+        - reading outdate date
+- deadlock
+- livelock
 
 Critical Section
 ----------------

@@ -7,7 +7,8 @@ Concurrency
     :maxdepth: 2
     :caption: Contents:
 
-    threads.rst
+    thread.rst
+    process.rst
     synchronize-locks.rst
     immutability-final.rst
     synchronizing-data.rst
@@ -15,5 +16,6 @@ Concurrency
     thread-problems.rst
     process-api.rst
     completable-future.rst
+    timeunit.rst
 
 :ref:`Go Back <java-development-label>`.
