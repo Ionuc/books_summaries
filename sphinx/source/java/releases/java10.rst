@@ -30,4 +30,4 @@ Tools Features
 
 
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java-releases-label>`.

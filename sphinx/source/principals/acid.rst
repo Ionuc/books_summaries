@@ -1,4 +1,4 @@
-.. _acid-label:
+.. _principals-acid-label:
 
 ACID
 ====

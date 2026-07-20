@@ -1,4 +1,4 @@
-.. _synchronizing-data:
+.. _java-development-concurrency-synchronizing-data:
 
 Synchronizing Data
 ==================
@@ -38,4 +38,4 @@ How to share memory safely and avoid data races
         - so may read a value never assigned (only one operation carried out)
     - use instead AtomicLong, Long or Double wrappers ( 64 bit references always safe )
 
-:ref:`Go Back <java-concurrency-label>`.
+:ref:`Go Back <java-development-concurrency-label>`.

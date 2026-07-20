@@ -75,6 +75,9 @@ Java 16 improvements
             // => will ALLOW to use setAccessible(true) for private or public fields or methods
 
 
+Java 17 Improvements
+--------------------
+- it removes the flag –illegal-access. The platform will ignore the flag, and if the flag is present, the console will issue a message informing the discontinuation of the flag
 
 
 :ref:`Go Back <java-development-reflection-label>`.

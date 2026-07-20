@@ -25,11 +25,11 @@ Tools Features
 Preview Features
 ----------------
 
-:ref:`Text Blocks <java-development-string-text-blocks>`
+:ref:`Text Blocks <java-development-data-structures-string-text-blocks>`
 
 :ref:`Instance-of pattern matching <java-development-keywords-instance-of-label>`
 
 :ref:`Records <java-development-class-object-records>`
 
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java-releases-label>`.

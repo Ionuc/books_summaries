@@ -1,4 +1,4 @@
-.. _solid-principals-label:
+.. _principals-solid-label:
 
 SOLID
 =====

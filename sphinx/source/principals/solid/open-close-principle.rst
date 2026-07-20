@@ -16,4 +16,4 @@ Open Close principle
       - means the class is defined with enough level of abstraction to extend if and create new types on the basis of it
       - means that extending the behavior of a module doesn't resultin changes in the source code of the module
 
-:ref:`Go Back <solid-principals-label>`.
+:ref:`Go Back <principals-solid-label>`.

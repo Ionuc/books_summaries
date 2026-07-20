@@ -94,4 +94,4 @@ Depency Inversion Principle
         }
 
 
-:ref:`Go Back <solid-principals-label>`.
+:ref:`Go Back <principals-solid-label>`.

@@ -50,7 +50,7 @@ Java 11 improvement
 
 Java 21 improvements
 --------------------
-- it was introduced the Sequence Collections, Sequence Set, Sequence Map
+- it was introduced the SequenceCollection, SequenceSet, SequenceMap
 - why:
     - no unified interface for ordered/sequence-aeare collctions
     - common tasks required boilerplate (ex: first/last, reverse)

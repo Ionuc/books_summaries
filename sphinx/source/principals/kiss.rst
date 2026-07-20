@@ -59,5 +59,8 @@ Kiss Principal
     - document clearly and concisely:
         - ensure documents are up-to-date
         - avoid excesive details
+    - automate and simplify testing
+    - continuous integration and deployment:
+        - use Ci/CD pipelines ti automate build, tests and deployment process
 
 :ref:`Go Back <principals-label>`.

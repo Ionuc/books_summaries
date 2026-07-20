@@ -64,7 +64,7 @@ Map Data Structures
 
 
 Hashtable
--------
+---------
 - consist of buckets containing ojects with the same hashcode
 - buckets are represented as linked lists
 - load factor is a value that tells when our Hashtable has to be resized and increased
@@ -334,7 +334,10 @@ Java 21 improvements
     - firstEntry()
     - lastEntry()
     - reverse()
-- existing implementation for SequenceMap: LinkedHashMap
+- existing implementation for SequenceMap: LinkedHashMap, TreeMap, Map.of()
+- read-only operation works well: first(), last(), reverse()
+- write operation (addFirst(), addLast()) might throw UnsupportedOperationException based on the implementation itself:
+    - Map.of() is creting an unmodifield collection => will throw exception when calling addFirst() or addLast()
 
     .. code-block:: python
         :linenos:

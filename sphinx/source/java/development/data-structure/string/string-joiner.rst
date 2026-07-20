@@ -1,4 +1,4 @@
-.. _java-development-string-joiner:
+.. _java-development-data-structures-string-joiner:
 
 String Joiner
 =============
@@ -20,4 +20,4 @@ String Joiner
         - adding no values
     - can specify a special string for empty case. String joiner consider empty only if .add() method was not called
 
-:ref:`Go Back <java-development-string-label>`.
+:ref:`Go Back <java-development-data-structures-string-label>`.

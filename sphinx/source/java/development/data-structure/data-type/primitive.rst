@@ -1,4 +1,4 @@
-.. _java-development-data-type-primitive-label:
+.. _java-development-data-structures-data-type-primitive-label:
 
 Primitive types
 ===============
@@ -51,7 +51,7 @@ Converting types
 - widening conversion: changes a smaller data type to a larger data type (e.g., int to double or byte to short).
 
 Autoboxing vs unboxing
-----------
+----------------------
 - Autoboxing is automatic conversion between primitive to their wrapper types
 
 
@@ -76,4 +76,4 @@ Default Values
     - for double => 0.0
     - for boolean => false
 
-:ref:`Go Back <java-development-data-type-label>`.
+:ref:`Go Back <java-development-data-structures-data-type-label>`.

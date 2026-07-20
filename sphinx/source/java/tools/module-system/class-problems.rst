@@ -1,4 +1,4 @@
-.. _java-module-system-classpath-problems-label:
+.. _java-tools-module-system-classpath-problems-label:
 
 Classpath problems
 ==================
@@ -8,4 +8,4 @@ Classpath problems
       with different version
     - there is no encapsulation, meaning any class from the classpath can access other classes
 
-:ref:`Go Back <java-module-system-label>`.
+:ref:`Go Back <java-tools-module-system-label>`.

@@ -1,4 +1,4 @@
-.. _java-development-number-math-label:
+.. _java-development-data-structures-number-math-label:
 
 Math class
 ==========
@@ -57,4 +57,4 @@ Math class
             System.out.println( 100 + (int)Math.random() * 100) // generate a number between [100,200]
 
 
-:ref:`Go Back <java-development-number-label>`.
+:ref:`Go Back <java-development-data-structures-number-label>`.

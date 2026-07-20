@@ -19,4 +19,4 @@ Liskow Substituion Principle
         - extracted interfaces
         - is often violated by attempts to remove features
 
-:ref:`Go Back <solid-principals-label>`.
+:ref:`Go Back <principals-solid-label>`.

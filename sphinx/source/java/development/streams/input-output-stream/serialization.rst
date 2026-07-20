@@ -103,7 +103,9 @@ Transient Fields
 
 Externalizable
 --------------
+- it extends interface Serializable
 - interface used to do extra processing (like encrypting the password) before serialization and after deserialization
+- you have to read properties in the same sequence you wrote them
 - it provides 2 methods:
     - writeExternal(ObjectOutput out)
     - readExternal(ObjectInput in)

@@ -1,4 +1,4 @@
-.. _java9-label:
+.. _java-releases-9-label:
 
 Java 9
 ======
@@ -37,4 +37,5 @@ Features
 
 
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java-releases-label>`.
+

@@ -1,4 +1,4 @@
-.. _java-development-data-type-number-system-label:
+.. _java-development-data-structures-data-type-number-system-label:
 
 Number systems
 ==============
@@ -69,4 +69,4 @@ Hexadecimal Number System
         int hex = 0x98;
 
 
-:ref:`Go Back <java-development-data-type-label>`.
+:ref:`Go Back <java-development-data-structures-data-type-label>`.

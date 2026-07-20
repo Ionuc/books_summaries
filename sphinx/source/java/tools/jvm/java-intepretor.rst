@@ -61,4 +61,4 @@ Java 11 improvement
             Hello Java 11!
 
 
-:ref:`Go Back <java-jvm-label>`.
+:ref:`Go Back <java-tools-jvm-label>`.

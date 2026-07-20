@@ -1,4 +1,4 @@
-.. _architectural-patterns-label:
+.. _patterns-architectural-label:
 
 Architectural Patterns
 ======================

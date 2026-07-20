@@ -60,20 +60,7 @@ Boxing, ==, and equals()
         - Character from \u0000 to \uoo7f( 7f is 127 in decimal )
         - Short and Integer from -128 to 127
 
-The Java 7 “Diamond” Syntax
----------------------------
 
-    .. code-block:: python
-       :linenos:
-
-        Instead of writing :
-        List<Dog> myDogs = new ArrayList<Dog>()or
-        Map<String, Dog> dogMap = new HashTable<String, Dog>();
-
-        you can write:
-
-        List<Dog> myDogs = new ArrayList<>();
-        Map<String, Dog> dogMap = new HashTable<>();
 
 The Comparable Interface
 ------------------------

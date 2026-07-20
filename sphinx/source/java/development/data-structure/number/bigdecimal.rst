@@ -1,4 +1,4 @@
-.. _java-development-number-bigdecimal-label:
+.. _java-development-data-structures-number-bigdecimal-label:
 
 BigDecimal
 ==========
@@ -27,4 +27,4 @@ BigDecimal
             BigDecima bd4 = BigDecimal.valueOf("1.21").setScale(2);
             System.out.println(bd3.substract(bd4)) // => will print 1.89
 
-:ref:`Go Back <java-development-number-label>`.
+:ref:`Go Back <java-development-data-structures-number-label>`.

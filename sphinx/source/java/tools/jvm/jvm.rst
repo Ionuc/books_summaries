@@ -2,6 +2,12 @@
 
 JVM
 ===
+- is written in C++
+- is responsible for converting byte code to machine specific code
+- you compile your java code to byte code and execute it on JVM
+- is used for both: 
+    - translate the bytecode into the machine language for a particular computer
+    - execute the machine language instructions
 
 Code Reordering
 ---------------

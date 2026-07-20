@@ -1,13 +1,13 @@
-.. _java-releases-14-label:
+.. _java-releases-15-label:
 
-Java 14
+Java 15
 ========
 
 
 Development Features
 --------------------
 
-:ref:`Text Blocks <java-development-string-text-blocks>`
+:ref:`Text Blocks <java-development-data-structures-string-text-blocks>`
 
 :ref:`NPE <java-development-error-handling-npe-label>`
 

@@ -9,4 +9,4 @@ Interface Segregation Principle
         - a Header interface is extracted from a concrete clas and has lots of members(the name came from the old-fashion Header files)
         - a Role interface is an interface that defines very few members
 
-:ref:`Go Back <solid-principals-label>`.
+:ref:`Go Back <principals-solid-label>`.

@@ -1,4 +1,4 @@
-.. _java-module-system-label:
+.. _java-tools-module-system-label:
 
 Module System
 =============
@@ -20,4 +20,4 @@ Module System
     tenets-modularity.rst
     module.rst
 
-:ref:`Go Back <java-label>`.
+:ref:`Go Back <java-tools-label>`.

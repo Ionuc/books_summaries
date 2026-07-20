@@ -1,4 +1,4 @@
-.. _java-development-string-format-specifiers:
+.. _java-development-data-structures-string-format-specifiers:
 
 Format Specifiers
 =================
@@ -15,6 +15,7 @@ Format Specifiers
 Concatenation vs Formatting
 ---------------------------
 
+
     .. code-block:: python
        :linenos:
 
@@ -22,7 +23,11 @@ Concatenation vs Formatting
        String s1 = "My nephes are " + david + ", " + dawson + ", " + dillon + ", and " + gordon + " years old";
        String s2 = String.format("My nephews are %d, %d, %d, and %d years old", david, dawson, dillon, gordon);
 
+
     - It can also be used to format:
+        - adding only one value
+        - adding no values
+
 
     .. code-block:: python
        :linenos:
@@ -34,8 +39,8 @@ Concatenation vs Formatting
        String s2 = String.format("The average age between each is %.1f years", avgDiff);
        // will print-> The average age between each is 3.7 years
 
-        - adding only one value
-        - adding no values
+
+
     - can specify a special string for empty case. String joiner consider empty only if .add() method was not called
 
 Parts of Format Specifier
@@ -67,4 +72,4 @@ Writing formatted content to a Stream
             }
        }
 
-:ref:`Go Back <java-development-string-label>`.
+:ref:`Go Back <java-development-data-structures-string-label>`.
