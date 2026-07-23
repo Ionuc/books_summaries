@@ -17,5 +17,7 @@ Java releases
     java15.rst
     java16.rst
     java17.rst
+    java19.rst
+    java21.rst
 
 :ref:`Go Back <java-development-label>`.

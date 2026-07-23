@@ -226,6 +226,7 @@ Deamon Threads
 
 - example of running thread in deamon: the process will be closed after main thread printing the last line because t1 is daemon
 
+
     .. code-block:: python
        :linenos:
 
@@ -317,106 +318,21 @@ ThreadGroup
             } 
         }
 
-ThreadLocal
------------
-    - want to avoid global variables:
-        - cause additional coupling
-        - modifications can cause problems
-    - but useful:
-        - to not have to pass values for formatters and loggers
-        - for threads to have their own copy accessed via same global reference
-    - to use ThreadLocal we simply create an instance of a ThreadLocal per a variable we wish to use in this way
-    - we use to set method, set a value, get to get the value back and remove to clear it out
-    - if 2 threads manipulate the same variable, they can use the same ThreadLocal instance safely since the value set and returned will be
-      specific to the thread that it set it
 
-    - beaware:
-        - data persists untul thread dies or no instances of ThreadLocal left
-        - danger with long-lived threads to not have memory leaks:
-            - if task finishes/dies without lcearing out Threadlocal objects, the thread might still exist and a Threadlocal may stil exist elswhere
-            - lost knowledge that the thread stored an object
-            - one way ot be safe is by capturing all exception and by calling Remove on any ThreadLocal we maye have stored data in
+Java 21 improvements
+--------------------
+- new implemention of Virtual Threads which extends Threads:
+    - Thread.startVirtualThread(Runnable)
+        - will start and run a virtual thread
 
-Thread Schedular
-----------------
-- Thread Scheduler is the part of JVM that decides which thread should run at any given moment and also takes threads out of the run state.
-- only threads which are in runnable state can be selected to be the next thread which will be executed.
-- Threads always run with some priority, usually represented as a number between 1 - 10.
-
-- decision making factors:
-    - priority: 
-        - threads with higher priority will be taken first
-        - Don’t rely on thread priorities when designing your multithreaded application because thread-scheduling priority behavior is not guaranteed.
-        - What is also not guaranteed is the behavior when thread in the pool are having the same priority.
-        - during initialization, child thread take the same priority as the parent
-    - arrival time:
-        - the thread scheduler also will take into account the fac when thread arrived and how long each of them were waiting
-        - in case with similar priority of threads, arrival time is one of the factrs that will be considered
-
-- Scheduling algorithms
-    - when threads are executed concurrently, processor allocates a small amount of time that is usually called time slice to each thread
-    - the task of thread scheduler is to verify each thread and make a decision what thread will get processors
-    - algorithms:
-        1) preemtive-priority scheduling:
-            - if a thread enters the runnable state and has a higher priority than any of the threads in the pool and a higher priority than the current running thread, the lower-priority thread will be bumped back to runnable and the higher-priority thread will be chosen to run.
-            - the scheduler in most JMVs uses preemptive, priority-based scheduling
-            - other threads can be executed if:
-                - in case other threads has higher priority of current thread
-                - current thread went to waiting state
-                - current thread was interrupted
-                - or with the help of yield method
 
     .. code-block:: python
-       :linenos:
+           :linenos:
 
-        public class PriorityDemo {
-
-            
-            public static void main(String[] args) {
-                var t0 = new Thread(PriorityDemo::execute);
-                var t1 = new Thread(PriorityDemo::execute);
-                var t2 = new Thread(PriorityDemo::execute);
-                var t3 = new Thread(PriorityDemo::execute);
-                var t4 = new Thread(PriorityDemo::execute);
-                var t5 = new Thread(PriorityDemo::execute);
-                
-                t0.setPriority(1);
-                t1.setPriority(10);
-                t2.setPriority(10);
-                t3.setPriority(3);
-                t4.setPriority(6);
-                t5.setPriority(4);
-                
-                t0.start();
-                t1.start();
-                t2.start();
-                t3.start();
-                t4.start();
-                t5.start();
-                // running multiple time you will see t0 will be executed first and in some cases t1 or t2 will be executed last
-            }
-            
-            public static void execute() {
-                System.out.println(Thread.currentThread().getName());
-            }
-            
-        }
+            Thread vThread = Thread.startVirtualThread(() -> {
+                System.out.println("Hello from a virtual thread (Thread.startVirtualThread)");
+            });
 
 
-        2) First Come Frist Server scheduling (FCFS):
-            - thread scheduler assigns CPU time to the threads that appear to be the one who request it first
-        3) Time-slicing scheduling:
-            - each thread gets executed cyclically one after another
-            - the scheduler will track whether thread is finished his execution within a time slice or no
-            - in case thread finished, it will be removed from queue and thread scheduler will work with other threads only
-
-Thread interaction
-------------------
-    - The Object class has three methods : wait(), notify(), notifyAll() that help threads communicate the status of an event that the threads care about
-    - All 3 methods must be called within a synchronized context, because a thread can’t invoke a wait method on an object unless it owns that object’s lock
-    - Every object can have a list of threads that are waiting for a signal ( a notification ) from the object.
-      A thread gets in that waiting list by executing the wait() method of the target object.
-      From that moment, it doesn’t execute any further instructions until the notify() method of the target object is called.
-      If many threads are waiting on the same object, only one will be chosen to proceed its execution. If no threads are waiting, no action is taken.
 
 :ref:`Go Back <java-development-concurrency-label>`.

@@ -16,6 +16,7 @@ JVM
     class-loaders.rst
     class-data-sharing.rst
     java_flight_record.rst
+    jcmd.rst
     instruction-set/index.rst
 
 :ref:`Go Back <java-tools-label>`.

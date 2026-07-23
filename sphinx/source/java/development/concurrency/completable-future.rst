@@ -2,13 +2,17 @@
 
 Completable Future
 ==================
-- Java 8 introduced the CompletableFuture class. Along with the Future interface, it also implemented the CompletionStage interface. This interface defines the contract for an asynchronous computation step that we can combine with other steps.
+- Java 8 introduced the CompletableFuture class.
+- Along with the Future interface, it also implemented the CompletionStage interface.
+- This interface defines the contract for an asynchronous computation step that we can combine with other steps.
 - Usually, we want to think of any computation as a series of steps, but in the case of asynchronous computation, actions represented as callbacks tend to be either scattered across the code or deeply nested inside each other
 - Things get even worse when we need to handle errors that might occur during one of the steps.
 
 Using CompletableFuture as a Simple Future
 ------------------------------------------
 - the CompletableFuture class implements the Future interface so that we can use it as a Future implementation but with additional completion logic
+- complete() method will return directly a value and finish makr the CompletableFuture as done
+    - it can be used to return a default value in case of failure
 
     .. code-block:: python
         :linenos:
@@ -60,6 +64,8 @@ CompletableFuture With Encapsulated Computation Logic
         // ...
 
         assertEquals("Hello", future.get());
+
+        CompletableFuture.runAsync(() -> System.out.println("Hello"));
 
 
 Processing Results of Asynchronous Computations
@@ -126,6 +132,7 @@ Combining Futures
 
 
 - If we want to execute two independent Futures and do something with their results, we can use the thenCombine method that accepts a Future and a Function with two arguments to process both results
+    - it also an overloaded method thenCombinaAsync() which can have a dedicate ExecutorService or the default ForkJoinExecutorService
 
 
    .. code-block:: python
@@ -153,6 +160,9 @@ thenApply() vs thenCompose()
         - CompletableFuture<Integer> finalResult = compute().thenApply(s-> s + 1);
 
 
+    - in case you combine more CompletableFuture and you need the result, you will have to call multiple times get() method to retrieve it
+
+
 - thenCompose:
     - The thenCompose() is similar to thenApply() in that both return a new CompletionStage.
     - However, thenCompose() uses the previous stage as the argument.
@@ -169,90 +179,185 @@ thenApply() vs thenCompose()
         CompletableFuture<Integer> finalResult = compute().thenCompose(this::computeAnother);
 
 
+
+   .. code-block:: python
+        :linenos:
+
+        public static void main(String[] args) throws InterruptedException, ExecutionException {
+            CompletableFuture<CompletableFuture<Double>> result = getUserDetailById(125)
+                    .thenApply(user -> getCreditRating(user));
+
+            System.out.println(result.get().get());
+
+            CompletableFuture<Double> result2 = getUserDetailById(125)
+                    .thenCompose(user -> getCreditRating(user));
+            System.out.println(result2.get());
+        }
+
+        private static CompletableFuture<String> getUserDetailById(int userId) {
+            return CompletableFuture.supplyAsync(() -> {
+                return "user details string";
+            }); 
+        }
+
+        private static CompletableFuture<Double> getCreditRating(String userDetails) {
+            return CompletableFuture.supplyAsync(() -> {
+                return 110.98;
+            });
+        }
+
+
 Running multiple Futures in parallel
 ------------------------------------
-- When we need to execute multiple Futures in parallel, we usually want to wait for all of them to execute and then process their combined results.
-- The CompletableFuture.allOf static method allows to wait for the completion of all of the Futures provided as a var-arg:
+- CompletableFuture.allOf()
+    - When we need to execute multiple Futures in parallel, we usually want to wait for all of them to execute and then process their combined results.
+    - The CompletableFuture.allOf static method allows to wait for the completion of all of the Futures provided as a var-arg:
 
-   .. code-block:: python
-        :linenos:
+       .. code-block:: python
+            :linenos:
 
-        CompletableFuture<String> future1  
-          = CompletableFuture.supplyAsync(() -> "Hello");
-        CompletableFuture<String> future2  
-          = CompletableFuture.supplyAsync(() -> "Beautiful");
-        CompletableFuture<String> future3  
-          = CompletableFuture.supplyAsync(() -> "World");
+            CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello");
+            CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> "Beautiful");
+            CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> "World");
 
-        CompletableFuture<Void> combinedFuture 
-          = CompletableFuture.allOf(future1, future2, future3);
+            CompletableFuture<Void> combinedFuture = CompletableFuture.allOf(future1, future2, future3);
 
-        // ...
+            // ...
 
-        combinedFuture.get();
+            combinedFuture.get();
 
-        assertTrue(future1.isDone());
-        assertTrue(future2.isDone());
-        assertTrue(future3.isDone());
+            assertTrue(future1.isDone());
+            assertTrue(future2.isDone());
+            assertTrue(future3.isDone());
 
 
-- Notice that the return type of the CompletableFuture.allOf() is a CompletableFuture<Void>.
-- The limitation of this method is that it does not return the combined results of all Futures. Instead, we have to get results from Futures manually. Fortunately, CompletableFuture.join() method and Java 8 Streams API makes it simple:
+    - Notice that the return type of the CompletableFuture.allOf() is a CompletableFuture<Void>.
+    - The limitation of this method is that it does not return the combined results of all Futures. Instead, we have to get results from Futures manually. Fortunately, CompletableFuture.join() method and Java 8 Streams API makes it simple:
 
 
-   .. code-block:: python
-        :linenos:
+       .. code-block:: python
+            :linenos:
 
-        String combined = Stream.of(future1, future2, future3)
-          .map(CompletableFuture::join)
-          .collect(Collectors.joining(" "));
+            String combined = Stream.of(future1, future2, future3)
+              .map(CompletableFuture::join)
+              .collect(Collectors.joining(" "));
 
-        assertEquals("Hello Beautiful World", combined);
+            assertEquals("Hello Beautiful World", combined);
 
 
-- The CompletableFuture.join() method is similar to the get method, but it throws an unchecked exception in case the Future does not complete normally.
-- This makes it possible to use it as a method reference in the Stream.map() method.
+    - The CompletableFuture.join() method is similar to the get method, but it throws an unchecked exception in case the Future does not complete normally.
+    - This makes it possible to use it as a method reference in the Stream.map() method.
+
+- CompletableFuture.anyOf()
+    - returns a new CompletbleFuture that is completed when any of the given CompletaleFuture is completed 
+
+
+       .. code-block:: python
+            :linenos:
+
+            public static void main(String[] args) {
+                List<String> messages = Arrays.asList("a", "b", "c");
+                List<CompletableFuture> futures = messages.stream()
+                        .map(msg -> CompletableFuture.completedFuture(msg)
+                                .thenApply(Demo11::delayedUpperCase))
+                        .collect(Collectors.toList());
+                CompletableFuture.anyOf(futures.toArray(new CompletableFuture[futures.size()]))
+                        .whenComplete((res, th) -> {
+                            if (th == null) {
+                                System.out.println(res);
+                            }
+                });
+            }
+
+            static String delayedUpperCase(String s) {
+                randomSleep();
+                return s.toUpperCase();
+            }
+
+            static void randomSleep() {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(new Random().nextInt(1000));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
 
 Handling errors
 ---------------
-- Instead of catching an exception in a syntactic block, the CompletableFuture class allows us to handle it in a special handle method.
-- This method receives two parameters: a result of a computation (if it finished successfully) and the exception thrown (if some computation step did not complete normally).
+- errors are handle using 2 methods:
+    - handle(CompletableFuture, Throwable)
+        - Instead of catching an exception in a syntactic block, the CompletableFuture class allows us to handle it in a special handle method.
+        - This method receives two parameters: a result of a computation (if it finished successfully) and the exception thrown (if some computation step did not complete normally).
 
 
-   .. code-block:: python
-        :linenos:
+        .. code-block:: python
+            :linenos:
 
-        String name = null;
-        // ...
+            String name = null;
+            // ...
 
-        CompletableFuture<String> completableFuture
-          =  CompletableFuture.supplyAsync(() -> {
-              if (name == null) {
-                  throw new RuntimeException("Computation error!");
-              }
-              return "Hello, " + name;
-          }).handle((s, t) -> s != null ? s : "Hello, Stranger!");
+            CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
+                    if (name == null) {
+                        throw new RuntimeException("Computation error!");
+                    }
+                    return "Hello, " + name;
+            }).handle((s, t) -> s != null ? s : "Hello, Stranger!");
 
-        assertEquals("Hello, Stranger!", completableFuture.get());
-
-
-- if we want to complete with exception, we can use completeExceptionally:
+            assertEquals("Hello, Stranger!", completableFuture.get());
 
 
-   .. code-block:: python
-        :linenos:
+        - if we want to complete with exception, we can use completeExceptionally:
 
 
-        CompletableFuture<String> completableFuture = new CompletableFuture<>();
+        .. code-block:: python
+            :linenos:
 
-        // ...
 
-        completableFuture.completeExceptionally(
-          new RuntimeException("Calculation failed!"));
+            CompletableFuture<String> completableFuture = new CompletableFuture<>();
+            // ...
+            completableFuture.completeExceptionally(
+              new RuntimeException("Calculation failed!"));
+            // ...
+            completableFuture.get(); // ExecutionException
 
-        // ...
 
-        completableFuture.get(); // ExecutionException
+    - exceptionally():
+        - has one parameter: a function where the parameter is the error:
+
+
+        .. code-block:: python
+            :linenos:
+
+            public static void main(String[] args) throws InterruptedException, ExecutionException {
+                CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> {
+                    int i = 5;
+                    i /= 0;
+                    return i++;
+                }).handle((result, exc) -> {
+                    if (exc != null) {
+                        System.out.println("Exception happend during the execution: " + exc.getClass());
+                        System.out.println("Exception is caused by: " + exc.getCause());
+                    }
+                    return result;
+                });
+
+                System.out.println(future.get());
+
+                CompletableFuture<Integer> future2 = CompletableFuture.supplyAsync(() -> {
+                    int i = 5;
+                    i /= 0;
+                    return i++;
+                }).exceptionally((exc) -> {
+                    if (exc != null) {
+                        System.out.println("Exception happend during the execution: " + exc.getClass());
+                        System.out.println("Exception is caused by: " + exc.getCause());
+                    }
+                    return 10; // default value
+                });
+
+                System.out.println(future2.get());
+            }
 
 
 Async methods

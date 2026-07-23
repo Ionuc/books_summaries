@@ -1,6 +1,6 @@
-.. _java-development-concurrency-synchronize-locks:
+.. _java-development-concurrency-synchronize-label:
 
-Synchronize and Locks
+Synchronize
 =====================
 
 Critical Section
@@ -69,106 +69,6 @@ Monitor
     - condition variable: is a container of threads that are waiting for a certain condition
 - provide a mechanism for threads to temporarily give up exclusive access in order to wait for some condition fo be met before regaining exclusive access and resuimg their task
 
-Locks
------
-- Locks are used  for creating segments of code that require exclusive execution: a mechanism that enforces limits on access to resource
-- usually, mutexes are provided y the operating system kernel
-- usually, libraries and frameworks simply provide an interface to invoke mutex
-- this makes them heavy weight slower, but alows us ot achieve the expected result to synchronize threads
-- they are used to optain a lock in one method and release it in another
-- multiple wait/notify/notifyAll pools per block - threads can select which pool (Condition) they wait on
-- provides ability to acquire a lock and take an alternative action if locking fails
-- implementations : ReetrantLock, ReetrantReadWriteLock
-
-
-    .. code-block:: python
-       :linenos:
-
-        Object obj = new Object();
-        synchronized(obj){ // traditional locking, blocks until acquired
-		             // work
-        } // release lock automatically
-        is equivalent with :
-        Lock lock = new ReentrantLock()
-        lock.lock(); // locks until acquired
-        try{
-           // do work here
-        } finally {
-           lock.unlock;
-        }
-
-
-- It is recommended that you follow the lock() method with a try-finally blocks, which release the blocks
-- One of the very powerful feature is the ability to attempt ( and fail) to acquire a lock
-
-
-    .. code-block:: python
-       :linenos:
-
-        Lock lock = new ReentrantLock()
-        boolean locked = lock.tryLock(); // try without locking
-        if (locked){
-           try{
-              // do work here
-           } finally {
-              lock.unlock;
-           }
-        }
-
-
-- You can process a different resource and come back to the failed lock later.. Another benefit of the tryLock  is deadlock avoidance
-- With traditional synchronization wout must acquire the same order across all threads.
-      You should not unlock a Lock if it wasn’t acquired else an IllegalMonitorStateException will be thrown
-
-Conditions
-----------
-- A Condition provides the equivalent of the traditional wait(), notify() and notifyAll()
-- The traditional wait and notify methods allow developers to implement an await/signal pattern
-- You use an await/signal pattern when you would use locking, but with the added stipulation of trying to avoid spinning ( endless checking if it is okay to do something )
-
-ReetrantReadWriteLock
----------------------
-- A ReetrantReadWriteLoc is not actually a Lock. it implements the ReadWriteLock interface
-- It produce two specialized instances, one to a read lock and the other one to a write lock:
-
-
-    .. code-block:: python
-       :linenos:
-
-        ReentrantReadWriteLock rwl = new ReetrantReadWriteLock();
-        Lock readLock = rwl.readLock();
-        Lock writeLock = rwl.writeLock();
-
-
-- These two locks are a matched set - one cannot be held at the same time as the other ( by different threads )
-- What makes this lock unique is that multiple threads can hold the read lock at the same time, but only one thread can hold the write lock at a time
-
-
-    .. code-block:: python
-       :linenos:
-
-        public class MaxValueCoolection{
-            private List<Integer> integers = new ArrayList<>();
-            private ReetrantReadWriteLock rwl = new ReetranReadWriteLock();
-
-            public void add(Integer i){
-                rwl.writeLock.lock(); // one at a time
-                try{
-                    integers.add(i);
-                } finally {
-                    rwl.writeLock().unlock();
-                }
-            }
-
-            public int findMax(){
-                rwl.readLock.lock(); // many at once
-                try{
-                    return Collections.max(integers);
-                } finally{
-                    rwl.readLock.unlock();
-                }
-            }
-        }
 
 
 Synchornization
@@ -211,9 +111,15 @@ Synchornization
                }
            }
 
+Thread interaction
+------------------
+- The Object class has three methods : wait(), notify(), notifyAll() that help threads communicate the status of an event that the threads care about
+- All 3 methods must be called within a synchronized context, because a thread can’t invoke a wait method on an object unless it owns that object’s lock
+- Every object can have a list of threads that are waiting for a signal ( a notification ) from the object.
+- A thread gets in that waiting list by executing the wait() method of the target object.
+- From that moment, it doesn’t execute any further instructions until the notify() method of the target object is called.
+- If many threads are waiting on the same object, only one will be chosen to proceed its execution. If no threads are waiting, no action is taken.
 
-Wait, Notify, Notify All
-------------------------
 - wait():
     - release current locks/monitor in order for other theads to use them
     - you can call this method only in a syncrhonized section (block or method) or else a RuntimeException is thrown that thread is not an ownert of a monitor
@@ -305,5 +211,8 @@ Threads interaction with synchronize
     - threads calling non-static synchronized methods in the same class will only block each other if they are invoked using the same instance
     - threads calling static synchronized methods will always block each other as they lock the same class
     - a static synchronized method and a non-static synchronized method will never block each other
+
+
+
 
 :ref:`Go Back <java-development-concurrency-label>`.

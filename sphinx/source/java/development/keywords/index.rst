@@ -8,10 +8,11 @@ Java Development Keywords
     :caption: Contents:
 
     static.rst
-    var.rst
     switch.rst
     instance-of.rst
     native.rst
+    volatile.rst
+    var.rst
     sealed.rst
 
 :ref:`Go Back <java-development-label>`.
