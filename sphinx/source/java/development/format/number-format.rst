@@ -39,4 +39,34 @@ Java 12 improvement
 
 
 
+Java 14 Improvements
+--------------------
+- currency formatting using local and currencies
+
+
+    .. code-block:: python
+           :linenos:
+
+        System.out.println("===== Currency format support =====");
+        // Create a Locale for the United States
+        Locale usLocale = new Locale("en", "US");
+
+        // Create a Currency instance for the US Dollar
+        Currency usd = Currency.getInstance("USD");
+
+        // Create a NumberFormat instance for accounting currency formatting
+        NumberFormat accountingFormat = NumberFormat.getCurrencyInstance(usLocale);
+
+        // Set the currency to USD and enable accounting formatting
+        accountingFormat.setCurrency(usd);
+        accountingFormat.setMaximumFractionDigits(2); // Set maximum fraction digits
+
+        // Sample monetary value
+        double amount = 1234567.89;
+
+        // Format and display the amount using accounting currency format
+        String formattedAmount = accountingFormat.format(amount);
+        System.out.println("Accounting Currency Format: " + formattedAmount);
+
+
 :ref:`Go Back <java-development-format-label>`.

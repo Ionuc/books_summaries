@@ -11,6 +11,7 @@ Development Features
 
 :ref:`NPE Enhance <java-development-error-handling-npe-label>`
 
+:ref:`Compact NumberFormat <java-development-format-number-format-label>`
 
 Tools Features
 --------------

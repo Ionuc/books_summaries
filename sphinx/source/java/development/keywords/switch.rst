@@ -19,7 +19,9 @@ Java 12 Improvement (preview)
     - are more compact and readable
     - remove the need for break statements. The code execution will not fall through after the first match
     - we can assign a switch statement directly to the variable.
-    - it’s also possible to execute code in switch expressions without returning any value:
+    - it’s also possible to execute code in switch expressions without returning any value.
+
+
     - old way of using switch:
 
     .. code-block:: python

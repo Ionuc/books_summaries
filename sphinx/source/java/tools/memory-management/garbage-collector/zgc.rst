@@ -79,6 +79,17 @@ Java 13 improvements
     - it won't shrink bellow the minimum heap size
     - is enabled by default
     - if MinHeapSize == MaxHepaSize, then this feature is disabled
+- ZGC -XX:SoftMaxHeapSize=<bytes> option:
+    - GC avoids growing the heap beyond the specified size unless necessary to prvent OutOfMemoryError
+    - cannot exccep maximum heap size
+    - used only by ZGC (together with option -XX:+UseZGC) 
+
+
+    .. code-block:: python
+           :linenos:
+
+            java -XX:+USeZGC -XX:SoftMaxHeapSize=512m -Xmx2g -jar YourApplicatiton.jar
+
 
 Java 14 Improvements
 --------------------
