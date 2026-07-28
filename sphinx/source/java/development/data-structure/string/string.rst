@@ -114,13 +114,90 @@ Escape sequence
             System.out.println("My favourite book is \""Test\" by Ionut"); // My favourite book is "Test" by Ionut
 
 
+Java 9 improvements
+-------------------
+- compact Strings
+    - aims to minimize the memory usage of String objects
+    - prior to JAva 8, String used a char[] to stire characters, which could be inefficient for Strings with limited character set
+    - Compact String optimizes memory for string primarily composed of Latin-1 characters (ASCII range 0-127)
+    - there are 2 representations:
+        - Latin-1: 
+            - Strings with only Latin-1 characters use a more memory-efficient byte[] representation
+            - covers the first 256 Unicode code points
+            - 1 byte per character
+        - UTF-16:
+            - String with non-Latin-1 or supplementary characters maintain the existing UTF-16 representation using char
+            - 2 or 4 bytes per character
+    - the runtime dynamically selects the represnetation based on the actual content of the String
+    - is backward compabitility with older version
+    - is enabled by default
+    - how is working
+        - there is only byte[] field together with compactString of type boolean
+        - for Latin-1 representation, byte[] holds directly byte values
+        - there are 2 coding schemes:
+            - Latin-1 coding scheme: direct yte representation of characters in the latin-1 character set
+            - UTF-16 coding scheme: used for non-Latin-1 characters or suplementary charactes
+
 
 Java 11 improvements
 --------------------
-- new methods were added to String: iBlank(), lines(), strip(), stipLeading(), stipTrailing() and repeat()
+- new methods were added to String: iBlank(), lines(), strip(), stripLeading(), stipTrailing() and repeat()
+    - repeat()
+        - create a new String message by repeating the argument by the specified number
+        - in case count is 0, then empty string is return
+
+
+    .. code-block:: python
+           :linenos:
+
+
+    - isBlank():
+        - checks if String is empty or contains only whitespace characters
+        - comparing to isEmpty(), isEmpty() checks only the size of string
+
+    .. code-block:: python
+           :linenos:
+
+        String emptyString = "";
+        String whitespaceString = "   ";
+        String nonEmptyString = "Java";
+
+        System.out.println(emptyString.isBlank()); // Output: true
+        System.out.println(whitespaceString.isBlank()); // Output: true
+        System.out.println(nonEmptyString.isBlank()); // Output: false
+        System.out.println(whitespaceString.isEmpty()); // Output: false
+
+
     - strip()
        - remove leading and trailing spaces
        - is unicode whitespace aware
+       - comparing with trim(), trim() will remove leading and trailing ASCII spaces (code with Unicode value less or equal to U20)
+
+    - stripLeading()
+        - remove only leading whitespaces, including Unicode chars
+    - stripTrailing()
+        - remove only trailing whitespaces, including Unicode chars
+
+
+    .. code-block:: python
+           :linenos:
+
+        String stringWithSpaces = "   Java 11   ";
+        String strippedString = stringWithSpaces.strip();
+        System.out.println(strippedString); // Output: Java 11
+        
+        String stringWithNonBreakingSpace = "\u2000 abc \u2000";
+        String strippedString2 = stringWithNonBreakingSpace.strip();
+        String trimmedString = stringWithNonBreakingSpace.trim();
+
+        System.out.println("Original String: '" + stringWithNonBreakingSpace + "'");    => "  abc  "
+        System.out.println("Stripped String: '" + strippedString2 + "'");               => "abc"
+        System.out.println("Trimmed String: '" + trimmedString + "'");                  => "  abc  "
+
+
+    - lines()
+        - returns a stream of lines from the original String, breking it at line terminator
+
 
     .. code-block:: python
            :linenos:
@@ -141,6 +218,13 @@ Java 12 improvements
     - adjusts the indentation of each line based on the integer parameter.
     - if the parameter is greater than zero, new spaces will be inserted at the beginning of each line
     - if the parameter is less than zero, it removes spaces from the begging of each line. If a given line does not contain sufficient white space, then all leading white space characters are removed
+    - how is work:
+        - step 1: the orignal string is split into lines
+        - step 2: each line is adjusted based on the integer argument
+            - if argument is greter than 0, then spaces are added at the beginning of each line
+            - if argument is lower then 0, whitespaces are removed from the beginning of each line
+        - step 3: resulting lines are concatenated and returned as a new String
+
 
     .. code-block:: python
            :linenos:

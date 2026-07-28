@@ -1,4 +1,4 @@
-.. _java-development-serialization:
+.. _java-development-serialization-label:
 
 Serialization
 =============

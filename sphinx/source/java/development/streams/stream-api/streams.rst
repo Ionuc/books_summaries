@@ -159,6 +159,7 @@ Stream Pipeline
 - If we need more than one modification, we can chain intermediate operations.
 - A stream by itself is worthless; the user is interested in the result of the terminal operation, which can be a value of some type or an action applied to every element of the stream
 - We can only use one terminal operation per stream.
+- you cannot reuse the stream after an terminal operation was performed
 - The correct and most convenient way to use streams is by a stream pipeline, which is a chain of the stream source, intermediate operations, and a terminal operation:
 
 

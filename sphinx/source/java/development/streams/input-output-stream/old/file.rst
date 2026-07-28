@@ -2,7 +2,7 @@
 
 File class
 ==========
-
+- File class is used to represent a file
 - it is inside package java.io (input output), which is older version
 - java.io is build on File abstraction
 

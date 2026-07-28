@@ -8,6 +8,7 @@ Java 12 improvement
 -------------------
 - a new number formatting was added : CompactNumberFormat
     - it’s designed to represent a number in a shorter form, based on the patterns provided by a given locale
+    - extends NumberFormat class
 
     .. code-block:: python
            :linenos:

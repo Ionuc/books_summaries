@@ -20,12 +20,23 @@ Variable Type
            var message = "With java 10";
            assertThat(message, "With java 10")
 
-    - this feature is available only for local variables with initalization. It cannot be used for members
-      of the class, method parameter, return type, etc. With the initialization, the compile will detect
-      the corresponding type
-    - to be backword compatible with programs who where already using word "var", in Java 10, "var" is a reserved type name,
-      just like "int" or "double".
+    - this feature is available only for local variables with initalization. It cannot be used for:
+        - members of the class
+        - method parameter
+        - return type
+        - lambda expression (before Java 11)
+        - etc.
+    - With the initialization, the compile will detect the corresponding type
+    - to be backword compatible with programs who where already using word "var", in Java 10, "var" is a reserved type name, just like "int" or "double".
     - also, there is no runtime processing for "var" definitions
+    - a variables assigned with var cannot be reassigned to another types (expect the initial one)
+    - a var variable have to be initialized with a concrete value (different than NULL, or array)
+
+When to use
+-----------
+- use it when types is obivious
+- use "var" in enhanced for-loops
+- dealing with complex generic types
 
 Illegal usages of "var"
 -----------------------

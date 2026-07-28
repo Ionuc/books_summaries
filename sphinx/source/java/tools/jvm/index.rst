@@ -18,5 +18,7 @@ JVM
     java_flight_record.rst
     jcmd.rst
     instruction-set/index.rst
+    jshell.rst
+    jvm-options.rst
 
 :ref:`Go Back <java-tools-label>`.

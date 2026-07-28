@@ -39,14 +39,22 @@ Collection Interface
 Java 11 improvement
 -------------------
 
-- new method was added to Collection interface to make easier to create a collection from a list
+- new method was added to Collection interface to make easier to create an array from a list
+    - it has the generic InFunction argument which will create the array having the specified lenght and type
+    - no need to cast manually the result
+
 
     .. code-block:: python
            :linenos:
 
-            List sampleList = Arrays.asList("Java", "Kotlin");
-            String[] sampleArray = sampleList.toArray(String[]::new);
-            assertThat(sampleArray).containsExactly("Java", "Kotlin");
+            List<String> stringList = new ArrayList<>();
+            stringList.add("Java");
+            stringList.add("Python");
+            stringList.add("C++");
+            
+            String[] stringArray = stringList.toArray(size -> new String[size]);
+            stringArray = stringList.toArray(String[]::new);
+
 
 Java 21 improvements
 --------------------

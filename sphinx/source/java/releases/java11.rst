@@ -10,7 +10,7 @@ Development Features
 
 :ref:`String <java-development-data-structures-string-string-label>`.
 
-:ref:`Files <java-development-streams-input-output-label>`.
+:ref:`Files <java-development-streams-input-output-new-files-path-label>`.
 
 :ref:`Collection interface <java-development-data-structure-collection-label>`.
 
@@ -20,6 +20,12 @@ Development Features
 
 :ref:`Inner class <java-development-class-object-inner-classes>`.
 
+:ref:`String <java-development-data-structures-string-string-label>`.
+
+:ref:`HttpClient <java-development-http-request-http-client-label>`.
+
+:ref:`Nest-Based Access Control <java-development-class-object-class-label>`.
+
 
 Tools Features
 --------------
@@ -28,7 +34,7 @@ Tools Features
 
 :ref:`Java Flight Recorder <java-tools-jvm-flight-recorder-label>`.
 
-:ref:`Java Flight Recorder <java-tools-jvm-instruction-set-constant-dynamic-label>`.
+:ref:`Constant dynamic instruction <java-tools-jvm-instruction-set-constant-dynamic-label>`.
 
 
 :ref:`Go Back <java-releases-label>`.

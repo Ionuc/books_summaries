@@ -13,35 +13,34 @@ Reader
     .. code-block:: python
        :linenos:
 
-       InputeStream input = // create input stream
+       Reader reader = // create reader
        int intVal;
-       while((intVal = input.read()) >= 0) {
-           byte b = (byte) intVal;
+       while((intVal = reader.read()) >= 0) {
+           char c = (char) intVal;
            ...
        }
 
 
-        - int read(byte[] buff)
-            - returns the number of values read
-            - will read up to the number of values that will fir in the array, but if stream doesn't have enought, it will
-              populate with the remaining values
+- int read(char[] buff)
+    - returns the number of values read
+    - will read up to the number of values that will fir in the array, but if stream doesn't have enought, it will populate with the remaining values
 
 
     .. code-block:: python
        :linenos:
 
-       InputeStream input = // create input stream
+       Reader reader = // create input stream
        int lenght;
-       byte[] byteBuff = new byte[10];
-       while((lenght = input.read(byteBuff)) >= 0) {
+       char[] charBuff = new char[10];
+       while((lenght = input.read(charBuff)) >= 0) {
            for ( int i = 0; i < length; i++){
-             byte byteValue = byteBuff[i]; // do something with it
+             char charValue = charBuff[i]; // do something with it
            }
        }
 
 
 FileReader
----------------
+----------
 -
 
     .. code-block:: python

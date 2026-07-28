@@ -23,5 +23,6 @@ Java Development features
     logging/index.rst
     jdbc/index.rst
     oop/index.rst
+    http-request/index.rst
 
 :ref:`Go Back <java-label>`.

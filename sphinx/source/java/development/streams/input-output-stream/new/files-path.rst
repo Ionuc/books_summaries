@@ -1,8 +1,7 @@
-.. _java-development-streams-input-output--new-path-label:
+.. _java-development-streams-input-output-new-files-path-label:
 
-Path class
-==========
-
+Files Path class
+================
 - it is inside package java.nio (new input output), which is newest version
 - java.io is build on Path abstraction
 
@@ -122,5 +121,84 @@ Searching for file
                 .forEach(System.out::println);
         }
 
+
+
+Java 11 Improvements
+--------------------
+
+ - new methods were added to Files: 
+    - readString()
+        - uses UTF 8 by default for decoding from bytes to characters
+        - an overloaded method was added to specify also the Charset used for decoding
+        - handles the opening and closing of the unerdlying file stream internally => no need to explicitly close the resources
+
+
+    .. code-block:: python
+       :linenos:
+
+        Path filePath = Path.of("test_text.txt");
+        try {
+            String content = Files.readString(filePath);
+            System.out.println("File Content:\n" + content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    - writeString()
+        - writes a sequence of characters to a file
+        - uses UTF 8 by default for encoding the characters into bytes
+        - an overloaded method was added to specify also:
+            - the Charset used for encoding
+            - OpenOptions => provide more flexibility when writing to a file
+        - handles the opening and closing of the unerdlying file stream internally => no need to explicitly close the resources
+
+
+    .. code-block:: python
+           :linenos:
+
+            Files.writeString(Paths.get("Java_11_test.txt"), "Java 11 - Demo Lesson", 
+                StandardOpenOption.CREATE, StandardOpenOption.DSYNC, StandardOpenOption.APPEND);
+
+
+Java 12 improvments
+-------------------
+- new methods were added to Files: mismatch()
+    - the method is used to compare two files and find the position of the first mismatched byte in their contents.
+    - the return value will be in the inclusive range of 0L up to the byte size of the smaller file or -1L if the files are identical.
+        - first it is checking if it is the path.
+        - then it reads files using Files.newInputStream() method, which uses a buffer to read chunks of bytes from both files
+
+
+    .. code-block:: python
+           :linenos:
+
+            // Example 1
+            @Test
+            public void givenIdenticalFiles_thenShouldNotFindMismatch() {
+                Path filePath1 = Files.createTempFile("file1", ".txt");
+                Path filePath2 = Files.createTempFile("file2", ".txt");
+                Files.writeString(filePath1, "Java 12 Article");
+                Files.writeString(filePath2, "Java 12 Article");
+
+                long mismatch = Files.mismatch(filePath1, filePath2);
+                assertEquals(-1, mismatch);
+            }
+
+
+    .. code-block:: python
+           :linenos:
+
+            // Example 2
+            @Test
+            public void givenDifferentFiles_thenShouldFindMismatch() {
+                Path filePath3 = Files.createTempFile("file3", ".txt");
+                Path filePath4 = Files.createTempFile("file4", ".txt");
+                Files.writeString(filePath3, "Java 12 Article");
+                Files.writeString(filePath4, "Java 12 Tutorial");
+
+                long mismatch = Files.mismatch(filePath3, filePath4);
+                assertEquals(8, mismatch);
+            }
 
 :ref:`Go Back <java-development-streams-input-output-old-label>`.

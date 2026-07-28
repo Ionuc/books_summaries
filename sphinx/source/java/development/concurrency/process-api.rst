@@ -6,9 +6,15 @@ Process API
 JAva 9 Improvements
 -------------------
 
-    - new classes were created:
-        - java.lang.ProcessHandle
-        - java.lang.ProcessHandle.Info
+- new classes were created:
+    - ProcessBuilder:
+        - to create an instance of a Process
+    - java.lang.ProcessHandle
+        - provides methods to query information about the process, such as:
+            - process Id
+            - parent process
+            - is alive
+            - etc 
 
 
     .. code-block:: python
@@ -24,8 +30,26 @@ JAva 9 Improvements
         Optional<Duration> cpuUsage = procInfo.totalCpuDuration();
 
 
-    - destroying processes
+    .. code-block:: python
+        :linenos:
 
+
+        System.out.println("===== Process API Updates =====");
+        ProcessBuilder processBuilder = new ProcessBuilder("notepad.exe");
+        Process process = processBuilder.start();
+        ProcessHandle processHandle = process.toHandle();
+
+        // Get process information
+        System.out.println("Process ID: " + processHandle.pid());
+        System.out.println("Parent Process: " + processHandle.parent().get());
+        System.out.println("Is process alive: " + processHandle.isAlive());
+
+- destroying processes
+    - 2 methods were added to terminate the associated process:
+        - destroy():
+            - sends a request to the process to terminate gracefully
+        - destroForcibly():
+            - attempts to forcibly terminate the process
 
     .. code-block:: python
         :linenos:

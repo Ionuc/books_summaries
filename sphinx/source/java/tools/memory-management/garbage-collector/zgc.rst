@@ -71,6 +71,15 @@ Remapping and Load Barriers
     3. Now we know that the object we want to access was the target of relocation. The only question is whether the relocation happened or not? If the object has been relocated, we skip to the next step. Otherwise, we relocate it now and create an entry in the forwarding table, which stores the new address for each relocated object. After this, we continue with the next step.
     4. Now we know that the object was relocated. Either by ZGC, us in the previous step, or the load barrier during an earlier hit of this object. We update this reference to the new location of the object (either with the address from the previous step or by looking it up in the forwarding table), set the remap bit, and return the reference.
 
+Java 13 improvements
+--------------------
+- ZGC Uncommit Unused memory:
+    - enable JVM to release unused memory back to the operating system
+    - implement mechanism for JVM to dynamically adjust commited memory based on application requiremenets
+    - it won't shrink bellow the minimum heap size
+    - is enabled by default
+    - if MinHeapSize == MaxHepaSize, then this feature is disabled
+
 Java 14 Improvements
 --------------------
 - only supported platform was Linux/x64.

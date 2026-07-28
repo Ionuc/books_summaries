@@ -7,6 +7,6 @@ New File interraction
     :maxdepth: 2
     :caption: Contents:
 
-    path.rst
+    files-path.rst
 
 :ref:`Go Back <java-development-streams-input-output-label>`.

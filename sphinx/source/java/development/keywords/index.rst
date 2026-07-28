@@ -8,6 +8,7 @@ Java Development Keywords
     :caption: Contents:
 
     static.rst
+    final.rst
     switch.rst
     instance-of.rst
     native.rst

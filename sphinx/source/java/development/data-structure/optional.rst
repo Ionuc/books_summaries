@@ -301,6 +301,12 @@ Chaining Optionals
                 assertEquals(createOptional("hello"), found);
             }
 
+When to use
+-----------
+- avoiding NullPointerException
+- expressive Null Checks
+- functional programming
+
 Misuse of Optionals
 -------------------
 - passing an Optional parameter to a method:

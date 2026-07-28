@@ -21,12 +21,18 @@ OutputStream
 
 FileOutputStream
 ----------------
-
+- the base class for reading from a byte data is a class called OutputStream
+- provides methods:
+    - void write(int b) -> write an individual byte
+    - void write(byte[] buff) -> write an array of bytes
 
     .. code-block:: python
        :linenos:
 
-       public static void writeFileToPathFileOutputStream(String path, String textToWrite)
+        String textToWrite = "Some text example " + System.lineSeparator() + "with Line separator and cyrylic "
+                + "characters: Тут кириллические символы" + System.lineSeparator();
+
+        public static void writeFileToPathFileOutputStream(String path, String textToWrite)
             throws FileNotFoundException, IOException {
             FileOutputStream fos = null;
             try {
@@ -39,6 +45,16 @@ FileOutputStream
                 }
             }
         }
+
+        public static void writeFileToPathFileOutputStreamWithBuffer(String path, String textToWrite)
+                throws FileNotFoundException, IOException {
+            try (var fbos = new BufferedOutputStream(new FileOutputStream(path))) {
+                fbos.write(textToWrite.getBytes());
+            }
+        }
+
+
+- outside of the try-with-resource, blocked buffer will be flused automatically
 
 
 BufferedOutputStream

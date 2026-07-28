@@ -385,22 +385,142 @@ Java 9 features
 ---------------
 - Java 9 introduced new instance methods that improve flexibility and ease of use when working with asynchronous computing:
     - Executor defaultExecutor()
+        - returns the default executor for asynchronous execution of tasks
+
+
+   .. code-block:: python
+        :linenos:
+
+        Executor defaultExecutor = new CompletableFuture().defaultExecutor();
+        System.out.println(defaultExecutor.getClass());
+        future = CompletableFuture.supplyAsync(() -> "Result");
+        future.thenAcceptAsync(r -> System.out.println(r), defaultExecutor);
+
+
     - CompletableFuture<U> newIncompleteFuture()
+        - create a new incomplete CompletableFuture instance that is initially neither completed nor exceptionally completed
+        - usefull when you manually control the completion of CompletableFuture to either return value or thrown exception
+
+
+   .. code-block:: python
+        :linenos:
+
+        CompletableFuture<String> incompleteFuture = new CompletableFuture().newIncompleteFuture();
+        // Perform some asynchronous operation (e.g., fetching data from a remote service)
+        // and complete the CompletableFuture when the operation is done
+        performAsyncOperation(incompleteFuture);
+        // Wait for the result and handle it
+        String resultString = incompleteFuture.join();
+        System.out.println("Result: " + resultString);
+
+        private static void performAsyncOperation(CompletableFuture<String> future) {
+            // Simulate an asynchronous operation
+            new Thread(() -> {
+                try {
+                    // Simulate a delay
+                    TimeUnit.SECONDS.sleep(2);
+
+                    // Complete the CompletableFuture with a result
+                    future.complete("Async Operation Result");
+                } catch (InterruptedException e) {
+                    // Handle exception (if needed)
+                    future.completeExceptionally(e);
+                }
+            }).start();
+        }
+
+
     - CompletableFuture<T> copy():
         - The copy() method returns a new CompletableFuture. This new CompletableFuture completes normally if the original CompletableFuture completes normally. If the original completes with an exception, then the new one also completes with an exception. In this case, it completes with a CompletionException that contains the original exception as its cause.
+
+
+   .. code-block:: python
+        :linenos:
+
+        CompletableFuture<String> original = CompletableFuture.supplyAsync(() -> "Original Result");
+        CompletableFuture<String> copy = original.copy();
+
+
     - CompletionStage<T> minimalCompletionStage()
-        - The minimalCompletionStage() method returns a new CompletionStage which behaves in the same way as described by the copy method, however, such a new instance throws UnsupportedOperationException in every attempt to retrieve or set the resolved value
+        - returns a CompletionStage view of the current CompletableFuture
+        - allows to work with a broader completion stage API, like interract with libraris which works with more general completion stage
+        - it is a way to bridge between specific featured of CompletableFuture and the more general completion stage
+
+
+   .. code-block:: python
+        :linenos:
+
+        CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> "Hello");
+        // Using minimalCompletionStage to obtain a CompletionStage view
+        CompletionStage<String> completionStage = completableFuture.minimalCompletionStage();
+        // Interact with libraries or methods expecting CompletionStage
+        processWithCompletionStage(completionStage);
+
+        ...
+        private static void processWithCompletionStage(CompletionStage<String> completionStage) {
+            // Use the CompletionStage API
+            completionStage.thenApply(String::toUpperCase)
+                          .thenAccept(System.out::println)
+                          .exceptionally(ex -> {
+                              System.err.println("Exception: " + ex);
+                              return null;
+                          });
+        }
+
+
     - CompletableFuture<T> completeAsync(Supplier<? extends T> supplier, Executor executor)
     - CompletableFuture<T> completeAsync(Supplier<? extends T> supplier)
         - The completeAsync() method should be used to complete the CompletableFuture asynchronously using the value given by the Supplier provided
     - CompletableFuture<T> orTimeout(long timeout, TimeUnit unit)
         - The orTimeout()  method is used to automatically complete the CompletableFuture with a TimeoutException if not completed with a specified timeout period:
+
+
+   .. code-block:: python
+        :linenos:
+
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+            // Simulate a long-running operation
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            return "Result";
+        });
+        CompletableFuture<String> resultFuture = future.orTimeout(2, TimeUnit.SECONDS);
+        try {
+            resultFuture.get();
+        } catch (InterruptedException | ExecutionException e) {
+            System.out.println("Timeout Exception caught: " + e.getCause().getClass());
+        }
+
+
     - CompletableFuture<T> completeOnTimeout(T value, long timeout, TimeUnit unit)
         - The completeOnTimeout() completes the CompletableFuture normally with the specified value unless it’s completed before the specified timeout
+
+
+   .. code-block:: python
+        :linenos:
+
+        future = CompletableFuture.supplyAsync(() -> {
+            // Simulate a long-running operation
+             try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+             return "Result";
+        });
+        
+        resultFuture = future.completeOnTimeout("Default", 2, TimeUnit.SECONDS);
+        System.out.println(resultFuture.get());
+
 
 - Java 9 enhancements also added support for creating and managing instances of  CompletableFuture with static utility methods:
     - Executor delayedExecutor(long delay, TimeUnit unit, Executor executor)
     - Executor delayedExecutor(long delay, TimeUnit unit)
+        - create an Executor which adds a delay before executing tasks
+        - usefull when a delay is needed before performaing an asynchornous operation
     - <U> CompletionStage<U> completedStage(U value)
     - <U> CompletionStage<U> failedStage(Throwable ex)
     - <U> CompletableFuture<U> failedFuture(Throwable ex)

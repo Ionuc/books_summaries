@@ -108,4 +108,8 @@ DataInputStream
 - allows you to read sepcific data type, like :
     - readInt()
 
+PipedInputStream
+----------------
+- works as produce / consumer, where one part of the program can use PipedOutputStream and write content into it and a different part of program can use the PipedInputStream and read the content back out
+
 :ref:`Go Back <java-development-streams-input-output-stream-label>`.

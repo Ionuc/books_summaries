@@ -325,7 +325,13 @@ Java 10 improvements
 
 Java 12 improvements
 --------------------
- - a new teeing collector was introduced in Java 12 as an addition to the Collectors class:
+ - a new teeing collector was introduced in Java 12 as an addition to the Collectors class
+ - steps:
+    - collector creation:
+        - 2 downstreams are provided:
+            - downstream 1: collect T into a result of R1
+            - downstream 2: coolect T into a result of R2
+        - merge function will merge R1 and R2 into R
 
 
     .. code-block:: python

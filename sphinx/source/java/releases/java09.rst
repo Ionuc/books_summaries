@@ -8,6 +8,8 @@ Features
 
 - Development
 
+:ref:`Class.getPackageName() <java-development-class-object-class-label>`
+
 :ref:`Streams <java-development-streams-api-label>`
 
 :ref:`Immutable List <java-development-data-structure-list>`
@@ -18,13 +20,17 @@ Features
 
 :ref:`Diamond Operator with Anonymous <java-development-generics-diamond-operator-label>`
 
-:ref:`Interface - Private methods <java-development-class-object-interface>`
+:ref:`Interface - Private methods <java-development-class-object-interface-label>`
 
 :ref:`Process API improvements <java-development-concurrency-process-api-label>`
 
 :ref:`Try with Resource improvement<java-development-error-handling-try-with-resource-label>`
 
 :ref:`Improvement for CompleataleFuture<java-development-concurrency-completale-future-label>`
+
+:ref:`StackWalker<java-development-concurrency-stack-walker-label>`
+
+:ref:`String <java-development-data-structures-string-string-label>`.
 
 
 - Tools
@@ -35,6 +41,9 @@ Features
 
 :ref:`Default G1 Collector <java-tools-memory-management-garbage-collector-gc-g1-collector-label>`
 
+:ref:`Jlink <java-tools-jvm-jlink-label>`
+
+:ref:`JShell <java-tools-jvm-jshell-label>`
 
 
 :ref:`Go Back <java-releases-label>`.

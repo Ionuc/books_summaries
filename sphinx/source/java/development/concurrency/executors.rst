@@ -12,7 +12,7 @@ Executor
 - can execute asynchronous tasks and tipically manage a pool of threads
 
 ThreadPool
----------
+----------
 - is a software design patter in multi-threading programming
 - maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervision program
 - threads are reused and not recreated always

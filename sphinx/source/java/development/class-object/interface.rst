@@ -8,11 +8,36 @@ Constants
 ---------
 - constants can be defined in interface. These are: public, static, final
 
-Private methods
+
+
+Interface vs Abstract class
+---------------------------
+- interface:
+    - "implements" keyoword
+    - all fields are constants
+    - can be implemented together with other interfaces
+- abstract class:
+    - "extends" keyword
+    - can have fields with all possible modifiers
+    - can't be extended simultaneosly with other classes
+
+
+
+Java 8 features
 ---------------
-    - with java 8 we can provide method implementation in Interface using default and static methods
-    - private methods were introduced to avoid redundant code and more re-usability
-    - it was introduced private method and private static methods.
+- Default Methods
+    - are methods defined in interface which are having a body
+    - these methods can be overriden from child classes, but it is mandatory
+    - in case a class is extending multiple interface which are having default methods with the same signature, a compilation error will be thrown in the concret class in order to specify which default implementation should be use
+    - Diamond Problem
+        - is the problem when 2 interfaces declare the same signature for a default methods and a third interface extends both of them: 
+            - the problem is that the third interface does not know which implementation to take for the default method and a is thrown a compilation error
+            - solution: third interface must override the default method and provide the implementation
+
+
+- static methods
+    - static methods can be defined on interface
+    - they are public
 
 - with Java 7:
     - in Java 7 or earlier, an interface can have only 2 kinds of things:
@@ -76,7 +101,17 @@ Private methods
             // Any other abstract, default, static methods
         }
 
-- with Java 9
+
+- FunctionalInterface
+    - was introduced to support lambda expression and method reference
+    - is an interface which has only one abstract method
+    - it can have multiple default methods
+    - it is recommanded to add annotation @FunctionalInterface to force a compilation error in case multiple abstract methods are added
+
+
+Java 9 features
+---------------
+- private methods:
     - it was introduced private methods and private static methods, this means we can have:
         - constant variables
         - abstract methods
@@ -84,6 +119,8 @@ Private methods
         - static public methods
         - private methods
         - private static methods
+    - cannot be override or access from other classes
+
 
     .. code-block:: python
         :linenos:
@@ -118,6 +155,7 @@ Private methods
             // Any other abstract, static, default methods
         }
 
+
 - Rules to define private methods
     - no private and abstract modifiers together => will result in compile error
     - private methods must contain body
@@ -125,24 +163,5 @@ Private methods
 - Why do we need private methods in Interface ?
     - no need to write duplicate code
     - we got the choice to expose only our intended methods implementations to clients
-
-Default Methods
----------------
-- are methods defined in interface which are having a body
-- these methods can be overriden from child classes, but it is mandatory
-- in case a class is extending multiple interface which are having default methods with the same signature, a compilation error
-  will be thrown in the concret class in order to specify which default implementation should be use
-
-Interface vs Abstract class
----------------------------
-- interface:
-    - "implements" keyoword
-    - all fields are constants
-    - can be implemented together with other interfaces
-- abstract class:
-    - "extends" keyword
-    - can have fields with all possible modifiers
-    - can't be extended simultaneosly with other classes
-
 
 :ref:`Go Back <java-development-class-object-label>`.

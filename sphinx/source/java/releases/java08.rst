@@ -8,11 +8,13 @@ Features
 
 - Development
 
+:ref:`Method reference & Functional interface <java-development-class-object-methods-label>`
+
 :ref:`Streams <java-development-streams-api-label>`
 
 :ref:`Input Output Streams <java-development-streams-input-output-label>`
 
-:ref:`Interface - Private methods <java-development-class-object-interface>`
+:ref:`Interface - Default methods <java-development-class-object-interface-label>`
 
 :ref:`Optional <java-development-datastructure-optional-label>`
 

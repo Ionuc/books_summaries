@@ -10,7 +10,7 @@ Concurrency
     thread.rst
     process.rst
     synchronize-locks.rst
-    immutability-final.rst
+    immutability-data-structures.rst
     synchronizing-data.rst
     thread-problems.rst
     process-api.rst
@@ -25,5 +25,6 @@ Concurrency
     syncronizers/index.rst
     virtual-threads.rst
     scoped-values.rst
+    stack-walker.rst
 
 :ref:`Go Back <java-development-label>`.

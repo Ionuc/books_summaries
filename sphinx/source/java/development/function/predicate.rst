@@ -6,7 +6,8 @@ Predicate
 
 Java 11 improvement
 -------------------
-- A static not method has been added to the Predicate interface. We can use it to negate an existing predicate, much like the negate method:
+- A static not method has been added to the Predicate interface
+- We can use it to negate an existing predicate, much like the negate method:
 
 
     .. code-block:: python

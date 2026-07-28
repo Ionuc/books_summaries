@@ -8,7 +8,7 @@ Development Features
 
 :ref:`Variable Type <java-development-keywords-var-label>`.
 
-:ref:`Streams <java-development-streams-api-label>`
+:ref:`Collectors improvements <java-development-streams-api-collectors-label>`
 
 :ref:`copyOf List <java-development-data-structure-list>`
 
@@ -16,7 +16,7 @@ Development Features
 
 :ref:`copyOf Map <java-development-data-structure-map>`
 
-:ref:`Improvements Optional <java-development-datastructure-optional-label>`
+:ref:`Optional.orElseThrow() <java-development-datastructure-optional-label>`
 
 
 Tools Features
@@ -28,6 +28,7 @@ Tools Features
 
 :ref:`Class Data Sharing <java-tools-jvm-jvm-label>`
 
+:ref:`JVM options <java-tools-jvm-options-label>`
 
 
 :ref:`Go Back <java-releases-label>`.

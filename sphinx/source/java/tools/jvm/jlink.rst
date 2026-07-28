@@ -5,6 +5,7 @@ Jlink
 - introduced with Java 9
 - jlink is a tool that generates a custom Java runtime image that contains only the platform modules that are required for a given application.
 - Such a runtime image acts exactly like the JRE but contains only the modules we picked and the dependencies they need to function
+- specific modules can be included or excluded
 
 
 How is working
@@ -94,6 +95,19 @@ Building Custom Java Runtime Images
            :linenos:
 
             java --module jlinkModule/com.baeldung.jlink.HelloWorld
+
+When to use
+-----------
+- microservices deployment
+    - custom runtime images for microservices with only the required modules, reducing the overall resource consumption
+- embedded systems
+    - minumal runtime image for embedded systems
+    - includes essential components only
+    - address resource constraints
+- client-side application
+    - standalone runtime image for desktop applications
+    - simplifies deployment for end-users
+    - include necessary modules for client-side functionality
 
 Java 14 improvement
 -------------------

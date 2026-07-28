@@ -56,5 +56,100 @@ Variable Length Arguments
             return sum;
         }
 
+Java 8 improvements
+-------------------
+
+- Lambda Expressions
+    - introduced with Java 8
+    - provides a way to express instances of single method interfaces (functional interfaces)
+    - has 3 main components:
+        - parameters (without explicit types)
+            - parameters are separated by comma
+        - arrow token (or lambda operator) : "->"
+            - separates parameters by body
+        - body
+
+       .. code-block:: python
+            :linenos:
+
+
+            // Before Java 8
+            Collections.sort(myList, new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1.compareTo(s2);
+                }
+            });
+            
+            // After Java 8 with Lambda expression
+            Collections.sort(myList, (s1, s2) -> s1.compareTo(s2));
+            Collections.sort(myList, (String s1, String s2) -> s1.compareTo(s2));
+
+    - lambda expression can reference variables from surounding scope but have a restricton that they can only capture variables that are effectively final or final:
+        - this restriction is in place to ensure lambda expression can safely capture variables from the enclosing scope without unexpected changes
+        - ensures the lambda expression behave predictably and don't introduce side effects
+
+       .. code-block:: python
+            :linenos:
+
+
+            // Effectively final variable
+            int effectivelyFinalVariable = 20;
+
+            // Lambda expression using effectively final variable
+            MyInterface myFunc = () -> {
+                System.out.println("Effectively Final Variable: " + effectivelyFinalVariable);
+            };
+
+
+- Method Reference
+    - was introduced in Java 8
+    - provide a short annotation for expressing lambda expression that directly invoke a method or contrusctor
+    - allows to replace lamda expression with a reference to an existing method
+    - there are 4 main types of method references:
+        - reference to a static method
+
+
+       .. code-block:: python
+            :linenos:
+
+            Function<String, Integer> parseIntLambda = s -> Integer.parseInt(s);
+            Function<String, Integer> parseIntReference = Integer::parseInt;
+
+
+        - reference to an instance method of particular object
+
+
+       .. code-block:: python
+            :linenos:
+
+            List<String> words = Arrays.asList("apple", "banana", "orange");
+            words.forEach(s -> System.out.println(s.toUpperCase()));
+            // Method reference
+            words.forEach(System.out::println);
+
+
+        - reference to an instance method of an arbitrary object of a particular type
+
+
+       .. code-block:: python
+            :linenos:
+
+            // Lambda expression
+            Comparator<String> lengthComparatorLambda = (s1, s2) -> s1.length() - s2.length();
+            // Method reference
+            Comparator<String> lengthComparatorReference = Comparator.comparing(String::length);
+
+
+        - reference to a constructor
+
+       .. code-block:: python
+            :linenos:
+
+            // Lambda expression
+            Supplier<List<String>> listSupplierLambda = () -> new ArrayList<>();
+            // Method reference
+            Supplier<List<String>> listSupplierReference = ArrayList::new;
+
 
 :ref:`Go Back <java-development-class-object-label>`.
