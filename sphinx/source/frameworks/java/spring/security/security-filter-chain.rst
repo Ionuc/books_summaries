@@ -3,6 +3,12 @@
 SecurityFilterChain
 ===================
 - acts as the entry point for all incoming HTTP requests in Spring Security
+- every request passes through a chain of filters such as UsernamePasswordAuthenticaionFilter and BasicAuthenticationFilter
+- handles:
+    - authentication
+    - authorization
+    - CSRF protection
+    - session Management
 - is used to do authorization
 - is used to specify which user can access which endpoint
 - methods from AbstractRequestMatcherRegistry can be used to specify:

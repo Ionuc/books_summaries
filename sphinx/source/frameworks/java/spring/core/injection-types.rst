@@ -7,6 +7,7 @@ Injection Types
         - use this when you have required dependencies
         - generally recommended by the spring.io development team as a first choise
 
+
     .. code-block:: python
         :linenos:
 

@@ -197,7 +197,7 @@ Error Handling
 --------------
 - By default, when RestClient encounters a 4xx or 5xx status code in the HTTP response, it raises an exception that’s a subclass of RestClientException.
 - We can override this behavior by implementing our own status handler using the onStatus() method
-
+    - For handling multiple error statuses, we can chain the onStatus() method. This allows us to intercept specific error codes and throw custom domain exceptions instead of the generic Spring exceptions
 
     .. code-block:: python
         :linenos:

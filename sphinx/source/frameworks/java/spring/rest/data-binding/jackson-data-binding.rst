@@ -93,5 +93,8 @@ Annotations
             // getters & setters
         }
 
+        // result of a simple GET:
+        [{"id": 1,"dob":"1998-05-20","email":"ionut.mesaros@gmail.com","full_name":"Ionut Mesaros"}]
+
 
 :ref:`Go Back <frameworks-java-spring-rest-data-binding-label>`.

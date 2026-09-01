@@ -15,6 +15,19 @@ Use Cases
     - Modifying Model/View: Adjust the model or view before sending a response to the client.
     - Adding Common Attributes: Include shared data (e.g., user details) in all responses.
 
+Key points
+----------
+- Execution Point:
+    - Interceptors execute before and after a controller method, working only within Spring MVC.
+- Scope:
+    - Interceptors work within Spring MVC, affecting only controller-specific requests.
+- Access to Srping Beans:
+    - Interceptors can inject and use Spring beans (@Autowired) since they are within the Spring context.
+- Request Type:
+    - Interceptors apply only to Spring MVC controller requests and exclude static files
+- Modifying Request/Response:
+    - Interceptors cannot directly modify the request or response body but can change the model and view before returning a response.
+- 
 
 Example
 -------
