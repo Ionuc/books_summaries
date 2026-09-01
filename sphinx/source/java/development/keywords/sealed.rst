@@ -1,4 +1,4 @@
-.. _java-development-keywords-sealed:
+.. _java-development-keywords-sealed-label:
 
 Sealed keyword
 ==============

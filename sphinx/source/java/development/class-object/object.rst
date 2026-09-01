@@ -1,4 +1,4 @@
-.. _java-development-class-object-object:
+.. _java-development-class-object-object-label:
 
 Object class
 ============

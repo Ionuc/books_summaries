@@ -1,4 +1,4 @@
-.. _java-development-class-object-enum:
+.. _java-development-class-object-enum-label:
 
 Enum type
 =============

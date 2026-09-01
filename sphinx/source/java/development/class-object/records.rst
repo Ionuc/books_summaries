@@ -1,4 +1,4 @@
-.. _java-development-class-object-records:
+.. _java-development-class-object-records-label:
 
 Record class
 ============
@@ -78,6 +78,7 @@ Constructor
 Getters
 -------
 - We also receive public getters methods, whose names match the name of our field, for free.
+- getter methods are not started with "get", but are having the same name as the fields
 
 
     .. code-block:: python
@@ -211,18 +212,31 @@ Constructors
 
 Static Variables & Methods
 --------------------------
-- we can also include static variables and methods in our records.
+- we can also include static variables, static methods and static initialization in our records.
 
 
     .. code-block:: python
-           :linenos:
+        :linenos:
 
-            public record Person(String name, String address) {
-                public static String UNKNOWN_ADDRESS = "Unknown";
-                public static Person unnamed(String address) {
-                    return new Person("Unnamed", address);
-                }
+        public record IonutUser(String firstName, String lastName) {
+
+            private static String NAME;
+            static {
+                NAME = "Ionut Name";
             }
+
+            public IonutUser(){
+                this("", "");
+            }
+
+            public String getFullName() {
+                return firstName + lastName;
+            }
+            
+            public String getName() {
+                return NAME;
+            }
+        }
 
 
 Restrictions
@@ -231,8 +245,10 @@ Restrictions
     - The superclass of a record is always java.lang.Record, similar to how the superclass of an enum is always java.lang.Enum
 - A record is implicitly final, and cannot be abstract
     - These restrictions emphasize that the API of a record is defined solely by its state description, and cannot be enhanced later by another class or record
+- All fields are final
 - A record cannot explicitly declare instance fields, and cannot contain instance initializers
     - These restrictions ensure that the record header alone defines the state of a record value
+    - you cannot declare initialization block
 - The implicitly declared fields corresponding to the record components of a record class are final and moreover are not modifiable via reflection
 - Any explicit declarations of a member that would otherwise be automatically derived must match the type of the automatically derived member exactly,
 - A record cannot declare native methods
@@ -279,6 +295,20 @@ Local records
     - in turn, this avoids capturing an immediately enclosing instance which would silently add state to the record
 - The fact that local records are implicitly static is in contrast to local classes, which are not implicitly static.
     - In fact, local classes are never static -- implicitly or explicitly -- and can always access variables in the enclosing method.
+
+
+Disadvatanges of Records
+------------------------
+- limited framework integrations:
+    - because there are no setters, no default constructor and different naming convetion (getter methods are not starting with "get")
+- small data focus:
+    - records excel with a small number of fields, but handling large data structure lacks framework. One class with a lot of fields may need to initialize some of them later using setters, which are not allowed in Records
+- specific use case:
+    - are tailored for modeling immutable data structures
+- cannot be extended:
+    - because record class is final
+- cannot modify fields
+    - because fields are final
 
 Java 16 Improvements
 --------------------

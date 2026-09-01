@@ -49,7 +49,7 @@ Challenges
     - It might, for example, crash after publishing a message but before recording the fact that it has done so
     - When it restarts, it will then publish the message again
     - As a result, a message consumer must be idempotent, perhaps by tracking the IDs of the messages that it has already processed
-    - mesasge consumers usually need to be idempotent (should not be a problem if the message is sent multiple times)
+    - message consumers usually need to be idempotent (should not be a problem if the message is sent multiple times)
 - message versioning:
     -  Let’s have an environment where a message could have more than one version, the message with version X is processing but the service has already processed a moment ago version X+1. In that case, the message could be rejected because might have outdated information
 - Having multiple Active-Active Message Relay instances allows higher availability but increases the probability of publishing duplicates and unordering

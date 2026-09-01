@@ -46,6 +46,8 @@ How is working
 - A hidden class can be unloaded when it is no longer reachable, or it can share the lifetime of a class loader so that it is unloaded only when the class loader is garbage collected
 - Optionally, a hidden class can be created as a member of an access control nest.
 
+
+
 Creating a hidden class
 -----------------------
 - a normal class is created by invoking ClassLoader::defineClass
@@ -67,6 +69,62 @@ Hidden classes and class loaders
 
 - a hidden class is deemed to have a defining class loader. This is necessary to resolve types used by the hidden class's own fields and methods
 - In particular, a hidden class has the same defining class loader, runtime package, and protection domain as the lookup class, which is the class that originally obtained the lookup object on which Lookup::defineHiddenClass is invoked.
+
+
+Example
+-------
+- there are 2 options for ClassOption:
+    - NESTMATE:
+        - specified that a hidden class should be added to the nest of a lookup class as a nestmate
+        - a hidden nestmate class has access to the private members of all classes and interfaces in the same nest
+    - STRONG:
+        - specifies that a hidden class has a strong relationship with the class loader
+        - the hidden class may be unloaded only it its defining loader is not reachable and may be reclaimed by a Garbage Collector
+
+    .. code-block:: python
+       :linenos:
+
+       public class Java15 {
+            public static void main(String[] args){
+                // Obtain a Lookup object with private access
+                Lookup lookup = MethodHandles.privateLookupIn(Java15.class, MethodHandles.lookup());
+
+                byte[] bytes = getByteArrayOfClass(Java15.class);
+                // Define a hidden class
+                Class<?> hiddenClass = lookup.defineHiddenClass(bytes, true, ClassOption.NESTMATE).lookupClass();
+
+                // Instantiate the hidden class
+                Object instance = hiddenClass.getDeclaredConstructor().newInstance();
+
+                // Output the name of the hidden class
+                System.out.println("Hidden Class Name: " + hiddenClass.getName());
+            }
+
+            private static byte[] getByteArrayOfClass(Class<?> clazz) throws IOException {
+                String className = clazz.getName();
+                String classAsPath = className.replace('.', '/') + ".class";
+                InputStream stream = clazz.getClassLoader().getResourceAsStream(classAsPath);
+                byte[] bytes = convertInputStreamToByteArray(stream);
+                return bytes;
+            }
+            
+            public static byte[] convertInputStreamToByteArray(InputStream inputStream) throws IOException {
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    byteArrayOutputStream.write(buffer, 0, bytesRead);
+                }
+
+                return byteArrayOutputStream.toByteArray();
+            }
+        }
+
+
+
+
+
 
 
 :ref:`Go Back <java-development-class-object-label>`.

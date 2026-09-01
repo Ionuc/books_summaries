@@ -1,4 +1,4 @@
-.. _cqrs-event_sourcing-pattern-label:
+.. _patterns-architectural-event-sourcing-label:
 
 Event Sourcing Pattern
 ======================
@@ -86,7 +86,7 @@ Example of Event Sourcing
             }
         }
 
-2. Registration Ssytem using Event Sourcing
+2. Registration Sytem using Event Sourcing
     - Instead of directly updating the database, the system processes commands to create and cancel registrations and generates events for each action.
     - Each state change is represented by an event, providing a clear audit trail of user actions.
     - Notifications are handled through event subscribers, ensuring users are promptly informed about their registration status changes.

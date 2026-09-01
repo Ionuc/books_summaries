@@ -7,12 +7,12 @@ Stability Microservices Patterns
     :maxdepth: 2
     :caption: Contents:
 
-    retry_pattern.rst
-    rate_limiting.rst
-    throtelling.rst
-    circuit_breaker.rst
     bulkhead_pattern.rst
+    circuit_breaker.rst
     fallback_pattern.rst
+    rate_limiting.rst
+    retry_pattern.rst
+    throtelling.rst
 
 
 :ref:`Go Back <microservices_patterns-label>`.

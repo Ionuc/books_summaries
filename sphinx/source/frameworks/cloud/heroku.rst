@@ -1,4 +1,4 @@
-.. _frameworks-heroku-label:
+.. _frameworks-cloud-heroku-label:
 
 Heroku
 ======
@@ -11,4 +11,4 @@ Heroku
         -> --buildpack <name> set the specific name to the app created      
 
 
-:ref:`Go Back <frameworks-label>`.
+:ref:`Go Back <frameworks-cloud-label>`.

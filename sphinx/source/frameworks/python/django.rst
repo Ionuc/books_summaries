@@ -1,3 +1,4 @@
+.. _frameworks-python-django-label:
 
 Django
 ======
@@ -18,4 +19,4 @@ Django
         - python manage.py 
 
 
-:ref:`Go Back <frameworks-label>`.
+:ref:`Go Back <frameworks-python-label>`.

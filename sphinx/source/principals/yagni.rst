@@ -50,7 +50,7 @@ How to apply
 - Refactor and Simplify Constinuously
 - Prioritize Delivering Value
     - Value-Driven development
-    - jsut in time decision: postpone decisions about future features until are necessary to avoid wasted effort
+    - just in time decision: postpone decisions about future features until are necessary to avoid wasted effort
 - avoind premature optimization
 - use agile practices
 - validate assumptions:
@@ -64,8 +64,8 @@ Yagni vs KISS
     - focus on immediate requirements
         - implemet only features necessary for the current iteration or immediate requirements
         - avoid adding functionalities based on anticipated future needs
-    - avoid over-engenerring:
-        - avoid premature optimization and over-engenering
+    - avoid over-engineering:
+        - avoid premature optimization and over-engineering
     - iterative development:
         - software development is based on real user feedback
         - add feature incrementlly as they are validated by user needs

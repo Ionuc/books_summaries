@@ -28,7 +28,7 @@ SQL Injection
             return true, result[id], result[fullname]
 
 
-- in the above example, here are same example of how it cane be used:
+- here are same example of how it can be used:
     - Username = "root" and password ="root"
         -> SELECT id,Fullname FROM users WHERE Password ='63a9f0ea7bb98050796b649e85481845' AND Username ='root'
     - Username = "root’ or 1=1 limit 1;–" and Password = "":
@@ -58,7 +58,7 @@ Types of SQL injections
             - leverage the UNION SQL operator to combine the result of two or more SELECT statements into a single result which is then returned as part of the HTTP response
 - Inferential SQLI (BLind SQLI)
     - it may take longer for an attacker to exploit
-    - no data is actually transferred via the web application and the attacker would not be able to see th result of an attach
+    - no data is actually transferred via the web application and the attacker would not be able to see the result
     - instead, an attacker is able to reconstruct the database structure by sending payloads, observing the web application's response and the resulting behavior of that DB server
     - types:
         - Boolean-based Blind SQLI

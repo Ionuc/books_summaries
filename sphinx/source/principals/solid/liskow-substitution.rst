@@ -1,4 +1,4 @@
-.. _liskow-substitution-label:
+.. _principal-solid-liskow-substitution-label:
 
 Liskow Substituion Principle
 ============================

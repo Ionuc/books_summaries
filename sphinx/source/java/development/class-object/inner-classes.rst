@@ -1,4 +1,4 @@
-.. _java-development-class-object-inner-classes:
+.. _java-development-class-object-inner-classes-label:
 
 Inner classes
 =============
@@ -88,18 +88,18 @@ Java 11 Improvement
 
 
     .. code-block:: python
-           :linenos:
+        :linenos:
 
-            assertThat(MainClass.class.isNestmateOf(MainClass.NestedClass.class)).isTrue();
+        assertThat(MainClass.class.isNestmateOf(MainClass.NestedClass.class)).isTrue();
 
 
     - nested classes are linked to the NestMembers attribute, while the outer class is linked to the NestHost attribute:
 
 
     .. code-block:: python
-           :linenos:
+        :linenos:
 
-            assertThat(MainClass.NestedClass.class.getNestHost()).isEqualTo(MainClass.class);
+        assertThat(MainClass.NestedClass.class.getNestHost()).isEqualTo(MainClass.class);
 
 
     - JVM access rules allow access to private members between nestmates; however, in previous Java versions, the reflection API 
@@ -108,13 +108,37 @@ Java 11 Improvement
 
 
     .. code-block:: python
-           :linenos:
+        :linenos:
 
-            Set<String> nestedMembers = Arrays.stream(MainClass.NestedClass.class.getNestMembers())
-                .map(Class::getName)
-                .collect(Collectors.toSet());
-            assertThat(nestedMembers).contains(MainClass.class.getName(), MainClass.NestedClass.class.getName());
+        Set<String> nestedMembers = Arrays.stream(MainClass.NestedClass.class.getNestMembers())
+            .map(Class::getName)
+            .collect(Collectors.toSet());
+        assertThat(nestedMembers).contains(MainClass.class.getName(), MainClass.NestedClass.class.getName());
 
+
+Java 16 Improvements
+--------------------
+- before java 16, static fields & methods on inner classes were not allowed, resulting in compilation error, only static constants
+- with JAva 16, it is possible
+
+    .. code-block:: python
+        :linenos:
+
+        public class Java16 {
+            class Test {
+                // Compilation error before Java 16
+                static int intValue;
+
+                // Allowed: Static constant variable in an anonymous inner class
+                public static final int CONSTANT = 1;
+                
+                // Compilation error before Java 16
+                public static void callStaticMethod() {
+                    System.out.println("Static method is invoked");
+                }
+            };
+
+        }
 
 
 :ref:`Go Back <java-development-class-object-label>`.

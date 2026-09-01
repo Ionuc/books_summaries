@@ -6,7 +6,7 @@ Partitioning
 Overview
 --------
 
-- data partitioning is the process of splitting a dataset into more manageable, smaller pieces in orde rto improve efficiency, scalability and performance
+- data partitioning is the process of splitting a dataset into more manageable, smaller pieces in order to improve efficiency, scalability and performance
 - It can be accomplished by either vertical partitioning, which separates data into columns, or horizontal partitioning, which divides data into rows according to particular criteria
 - This method is especially helpful in databases, big data processing frameworks, and machine learning applications since it enables quicker query execution, simpler management of massive datasets, and better resource use
 
@@ -83,7 +83,7 @@ Method of Data Partitioning
 
 
 - Pros:
-    - even distribution: stores data with the same key togethr for efficient lookups
+    - even distribution: stores data with the same key together for efficient lookups
     - scalability enables parallel processing across partitions
     - load balacing: distributes worload to avoid performance bottleneks
 

@@ -1,4 +1,4 @@
-.. _concurrency_control-db-label:
+.. _db-concurrency_control-label:
 
 Concurrency Control
 ===================

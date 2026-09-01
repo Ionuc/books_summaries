@@ -1,4 +1,4 @@
-.. _mvcc-concurrency_control-db-label:
+.. _db-concurrency_control-mvcc-label:
 
 Multi Version Concurrency Control
 =================================
@@ -9,7 +9,7 @@ Overview
 - when using 2PL, every read requires a shared lock acquisition, while a write operation requires taking an exclusive lock:
     - a shared lock blocks Writers, but it allows other Readers to acquire the same shared lock
     - an exclusive lock blocks both Readers and Writers concurring for the same lock
-- but the 2PL approach, the contention affects calability, so we need another approach which:
+- but the 2PL approach, the contention affects scalability, so we need another approach which:
     - Readers don’t block Writers
     - Writers don’t block Readers
     - The only use case that can still generate contention is when two concurrent transactions try to modify the same record since, once modified, a row is always locked until the transaction that modified this record either commits or rolls back.
@@ -67,4 +67,4 @@ Updating a record
     - Under default Read Committed isolation level, until Bob manages to commit his transaction, Alice can still see the previous record version
     - After Bob has committed, Alice can now see the new row version that was updated by Bob
 
-:ref:`Go Back <db-label>`.
+:ref:`Go Back <db-concurrency_control-label>`.

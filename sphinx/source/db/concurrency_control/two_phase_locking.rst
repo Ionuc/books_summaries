@@ -1,4 +1,4 @@
-.. _2pl_concurrency_control-db-label:
+.. _db-concurrency-control-2pl-label:
 
 Two Phase Locking Protocol
 ==========================
@@ -52,4 +52,4 @@ Drawbacks
 - Lock Contention: Too many transactions competing for the same locks can slow down the system, especially when many users are working at the same time.
 - Limited Concurrency: The strict rules of 2PL can reduce how many transactions can run at once, resulting in slower performance and longer wait times.
 
-:ref:`Go Back <db-label>`.
+:ref:`Go Back <db-concurrency_control-label>`.

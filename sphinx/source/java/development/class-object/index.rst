@@ -19,5 +19,6 @@ Class and Objects
     hidden-class.rst
     cloning-objects.rst
     reference.rst
+    value-based-class.rst
 
 :ref:`Go Back <java-development-label>`.

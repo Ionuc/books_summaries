@@ -35,7 +35,7 @@ Features
 
 - Tools
 
-:ref:`Java Module Systems <java-module-system-label>`
+:ref:`Java Module Systems <java-tools-module-system-module-label>`
 
 :ref:`REPL <java-tools-repl-label>`
 

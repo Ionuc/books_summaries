@@ -10,4 +10,4 @@ Architectural Patterns
     cqrs.rst
     event_sourcing.rst
 
-:ref:`Go Back <design-patterns-label>`.
+:ref:`Go Back <patterns-label>`.

@@ -37,7 +37,7 @@ GIN index
 - are inverted indexes
 - are suiteble for composite values, such as arrays, JSONB data and full-text search
 - stores a separate entry for each component
-- it can handle queries that cehck for the existence of a specific component
+- it can handle queries that check for the existence of a specific component
 
 GiST index
 ----------

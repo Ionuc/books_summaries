@@ -1,7 +1,17 @@
-.. _orm-db-label:
+.. _db-orm-label:
 
 Object Relational Mapping (ORM)
 ===============================
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Implementation:
+
+    hibernate.rst
+
+General
+-------
+
 
 - Object Relational Mapping (ORM) is a technique used in creating a "bridge" between object-oriented programs and, in most cases, a relational database
 - When interacting with a database using OOP languages, you'll have to perform different operations like creating, reading, updating, and deleting (CRUD) data from a database
@@ -10,7 +20,7 @@ Object Relational Mapping (ORM)
 - brings the gap between two fundamentally different paradigms:
     - Object-Oriented Paradigm:
         - works with objects, inheritance, polymorphism, encapsulation
-    - Relational PAradigm:
+    - Relational Paradigm:
         - works with tables, rows, columns and relationships
 - without ORM, you will have to write code to translate between objects and database raws
 
@@ -49,7 +59,7 @@ How ORM works
 
 
     - Result Transformation:
-        - once the database returns the results, the ORM coverts those results back into objects that can use in your code
+        - once the database returns the results, the ORM converts those results back into objects that can use in your code
 
 
         .. image:: ../../images/db/orm/result_transformation.png
@@ -62,7 +72,7 @@ ORM Relationships
     - each record in table A relates to exatly one record in table B
 
 
-    .. image:: ../../images/db/orm/result_transformation.png
+    .. image:: ../../images/db/orm/one-to-one.png
        :align: center
 
 
@@ -70,7 +80,7 @@ ORM Relationships
     - each record in table A relates to multiple records in table B
 
 
-    .. image:: ../../images/db/orm/result_transformation.png
+    .. image:: ../../images/db/orm/one-to-many.png
        :align: center
 
 
@@ -78,7 +88,7 @@ ORM Relationships
     - Records in table A relate to multiple records in table B and vice versa
 
 
-    .. image:: ../../images/db/orm/result_transformation.png
+    .. image:: ../../images/db/orm/many-to-many.png
        :align: center
 
 
@@ -86,7 +96,7 @@ Performance Considerations
 --------------------------
 - Performance:
     - N_+ 1 Query Problem:
-        - loading a collection of objects can result in one wuery for the parent and N additional queries for each child:
+        - loading a collection of objects can result in one query for the parent and N additional queries for each child:
             - use eager loading with join fetches
             - implement batch fetching strategies
     - lazy loading:
@@ -96,7 +106,7 @@ Performance Considerations
     - Caching:
         - ORM provides multiple levels of caching to improve performance:
             - First-level (session) cache
-            - SEcond-level (application) cache
+            - Second-level (application) cache
     - Query Optimization
         - ORMs may generte suboptimal SQL for complex operations
             - use native queries for complex operations
@@ -104,13 +114,13 @@ Performance Considerations
 
 ORM Best Practices
 ------------------
-- Database DEsign First
+- Database Design First
     - design your database schema before implementing ORM entities
         - ensure proper data modeling
         - prevents performance issues later
 - Monitor Generated SQL:
     - regularly check the SQL queries your ORM genertes
-        - use logging frameworks to campture queries
+        - use logging frameworks to capture queries
         - optimize inefficient queries
 - Use Transactions
     - wrap related operations in transactions to maintain data integrity
@@ -123,13 +133,13 @@ ORM Best Practices
 
 Advantages
 ----------
-- abstraction: ORM hides the complexity of SQL allowing developers to work with familiar object-oriented cod
+- abstraction: ORM hides the complexity of SQL allowing developers to work with familiar object-oriented code
 - security:
     - ORM helps prevents SQL injection attacks through parameterized queries
     - do inputs sanitizations
 - productivity:
     - reduce boilerplate code
-    - allows faster developerment with build-in create, read ,update and delete oeprations
+    - allows faster developerment with build-in create, read ,update and delete operations
 - database agnostic
     - you can switch between different database systems with minima code changes
 
@@ -137,12 +147,7 @@ Disadvantages
 -------------
 - Learning how to use ORM tools can be time consuming.
 - They are likely not going to perform better when very complex queries are involved.
-- Performance:
+- Performance
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
-
-    hibernate.rst
 
 :ref:`Go Back <db-label>`.

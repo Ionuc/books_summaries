@@ -7,7 +7,9 @@ Java 15
 Development Features
 --------------------
 
-:ref:`Text Blocks <java-development-data-structures-string-text-blocks>`
+:ref:`Text Blocks <java-development-data-structures-string-text-blocks-label>`
+
+:ref:`String features <java-development-data-structures-string-string-label>`
 
 :ref:`NPE <java-development-error-handling-npe-label>`
 
@@ -27,11 +29,11 @@ Tools Features
 Preview Features
 ----------------
 
-:ref:`Records <java-development-class-object-records>`
+:ref:`Records <java-development-class-object-records-label>`
 
 :ref:`Instance-of Pattern Matching <java-development-keywords-instance-of-label>`.
 
-:ref:`Sealed <java-development-keywords-sealed>`.
+:ref:`Sealed <java-development-keywords-sealed-label>`.
 
 :ref:`Hidden class <java-development-class-object-hidden-class-label>`.
 

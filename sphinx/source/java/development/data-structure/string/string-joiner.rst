@@ -1,4 +1,4 @@
-.. _java-development-data-structures-string-joiner:
+.. _java-development-data-structures-string-joiner-label:
 
 String Joiner
 =============

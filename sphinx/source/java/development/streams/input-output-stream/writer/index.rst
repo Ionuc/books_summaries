@@ -2,7 +2,23 @@
 
 OutputStream
 ===========
-- the base class for writing characters to a source 
+- the base class for reading from a text data is a class called Write
+- provides methods:
+    - void write(int b) -> write an individual char
+    - void write(char[] buff) -> write an array of char
+    - void write(String str) -> write astring
+
+    .. code-block:: python
+       :linenos:
+
+       Write output = // create output stream
+       char charVal = 'a';
+       output.write(charVal);
+
+       char[] charbyff = {'a', 'b', 'c'};
+       output.write(charbyff);
+
+       output.write("Hello World");
 
 
 FileWriter

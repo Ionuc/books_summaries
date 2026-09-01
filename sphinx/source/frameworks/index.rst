@@ -7,9 +7,10 @@ Frameworks
     :maxdepth: 2
     :caption: Contents:
 
-    django.rst
-    heroku.rst
     libraries/index.rst
+    python/index.rst
+    java/index.rst
+    cloud/index.rst
 
 
 :ref:`Go Back <index-label>`.

@@ -3,7 +3,7 @@
 Rest Parameters
 ===============
 
-- there are 3 types of parameters:
+- there are 4 types of parameters:
     - Path parameters
     - Query parameters
     - Request body parameters

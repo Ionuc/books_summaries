@@ -22,4 +22,5 @@ Welcome to Ionut's documentation!
     os/index.rst
     seo/index.rst
     rest/index.rst
+    z_todo/index.rst
 

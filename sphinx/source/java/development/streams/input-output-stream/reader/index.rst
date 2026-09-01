@@ -68,6 +68,10 @@ FileReader
 BufferedReader
 -------------------
 - you can read data not char by char, but line by line
+- improve efficiency with files because:
+    - they buffer the content in memory
+    - performes reads/writes in large chunks
+    - reduces underlying stream interaction
 
     .. code-block:: python
        :linenos:

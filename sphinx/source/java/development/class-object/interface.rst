@@ -1,4 +1,4 @@
-.. _java-development-class-object-interface:
+.. _java-development-class-object-interface-label:
 
 Interface
 =========

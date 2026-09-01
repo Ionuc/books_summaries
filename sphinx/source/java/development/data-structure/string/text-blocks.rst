@@ -1,11 +1,11 @@
-.. _java-development-data-structures-string-text-blocks:
+.. _java-development-data-structures-string-text-blocks-label:
 
 String Text Blocks
 ==================
-    - is introduced with Java 13
-    - it was introduced the Text Blocks
-    - is used for multi-lines Strings such as embedded JSON, XML, HTML, etc
-    - with old version, to embed JSON in code, the String would have been created as 
+- is introduced with Java 13
+- it was introduced the Text Blocks
+- is used for multi-lines Strings such as embedded JSON, XML, HTML, etc
+- with old version, to embed JSON in code, the String would have been created as 
 
     .. code-block:: python
            :linenos:
@@ -14,7 +14,7 @@ String Text Blocks
 
 
 
-    - these JSON can be rewriten as 
+- these JSON can be rewriten as 
 
 
     .. code-block:: python
@@ -28,8 +28,8 @@ String Text Blocks
             """;
 
 
-    - there is no need to escape double quotes or to add a carriage return 
-    - all String functions are available for text blocks
+- there is no need to escape double quotes or to add a carriage return 
+- all String functions are available for text blocks
 
 
     .. code-block:: python
@@ -42,11 +42,12 @@ String Text Blocks
                 assertThat(TEXT_BLOCK_JSON.length()).isGreaterThan(0);
             }
 
+
 Java 14 improvement
 -------------------
 - text blocks now have 2 new escape sequances:
         - \: to indicate the end of the line, so that a new line character is not introduced
-        - \s: to indicate a single space
+        - \s: to indicate to keep the spaces from the original string for that line
 
     .. code-block:: python
            :linenos:

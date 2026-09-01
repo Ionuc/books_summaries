@@ -5,7 +5,7 @@ Collection Interface
 
 - Collection vs Array:
     - collection:
-        - dynamic zie
+        - dynamic size
         - altorithms for data manipulations
         - single API
         - can work only with reference types

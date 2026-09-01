@@ -1,4 +1,4 @@
-.. _java-development-class-object-cloning-objects:
+.. _java-development-class-object-cloning-objects-label:
 
 Cloning Objects
 ===============

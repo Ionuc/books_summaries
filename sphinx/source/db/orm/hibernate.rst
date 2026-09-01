@@ -1,10 +1,10 @@
-.. _hibernate_orm_-label:
+.. _db-orm-hibernate-label:
 
 
-Hiernate
-========
-- implementes Japa Persistence API (JPA)
+Hibernate
+=========
+- implements Japa Persistence API (JPA)
 - lazy loading
 - object caching
 
-:ref:`Go Back <orm-db-label>`.
+:ref:`Go Back <db-orm-label>`.

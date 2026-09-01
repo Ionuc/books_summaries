@@ -1,4 +1,4 @@
-.. _single-responsibility-label:
+.. _principal-solid-single-responsibility-label:
 
 Single Responsibility
 =====================

@@ -1,4 +1,4 @@
-.. _interface-segregation-principle-label:
+.. _principal-solid-interface-segregation-principle-label:
 
 Interface Segregation Principle
 ===============================

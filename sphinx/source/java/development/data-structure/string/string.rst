@@ -268,5 +268,47 @@ Java 12 improvements
                 assertEquals("gnudleaB", transformed);
             }
 
+Java 15 improvements
+--------------------
+- new methods were added to String: 
+    - formatted()
+        - is an enhancement to the existing format() method
+        - you can inject direct values in the corresponding template
+
+    .. code-block:: python
+           :linenos:
+
+        System.out.println("***formatted():");
+        String formattedString = "Hello %s! Today is %s.".formatted("User", "Monday");
+        System.out.println(formattedString);
+
+
+    - stripIndent()
+        - removes whitespaces from beginning and ending
+
+    .. code-block:: python
+           :linenos:
+
+
+        System.out.println("***stripIndent():");
+        String indentedString = "   This is a string with indentation   ";
+        String strippedString = indentedString.stripIndent();
+        System.out.println(indentedString);
+        System.out.println(strippedString);
+
+
+    - translateExcapes()
+        - is used to handle escape sequences in a string
+        - it interprets escape sequences within the string and replaces them with their actual characters
+
+
+    .. code-block:: python
+           :linenos:
+
+        System.out.println("***translateEscapes():");
+        String escapedString = "This is a string with \\n new line.";
+        String translatedString = escapedString.translateEscapes();
+        System.out.println(escapedString);      // will print "this is a string with \n new line"
+        System.out.println(translatedString);   // \n is converted into new line separator
 
 :ref:`Go Back <java-development-data-structures-string-label>`.

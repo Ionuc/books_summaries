@@ -1,4 +1,4 @@
-.. _2pc_concurrency_control-db-label:
+.. _db-concurrency-control-2pc-label:
 
 Two Phase Commit
 ================
@@ -25,7 +25,7 @@ Overview
 The problem
 ------------
 - As traffic grows, we may need to shard our database, meaning the rows involved in a transaction could be stored on different database instances or even separate servers
-- In such cases, a single locked transaction won’t work because the changes invloves multiple independent databases
+- In such cases, a single locked transaction won’t work because the changes involves multiple independent databases
 
 How is working
 --------------
@@ -126,4 +126,4 @@ Optimizations
     - Unlike 2PC, Saga breaks a transaction into smaller, independent steps where each step has a compensating action in case of failure.
     - Its non-blocking, scales well but can lead to potential inconsistency.
 
-:ref:`Go Back <db-label>`.
+:ref:`Go Back <db-concurrency_control-label>`.

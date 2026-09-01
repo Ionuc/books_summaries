@@ -42,7 +42,7 @@ Query
 
     - all these methods return something
     - if a method returns something, then it must be a query
-    - queries are idempotent (if you invoke an operation once or if you invoke an operation n times, it shouldn't change the state of hte system compared to the first time you
+    - queries are idempotent (if you invoke an operation once or if you invoke an operation n times, it shouldn't change the state of the system compared to the first time you
       invoke the operation
     - it is safe to invoke this query once on many times
 

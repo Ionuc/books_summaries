@@ -15,7 +15,7 @@ ACID
     - Atomicity: Guarantees that all parts of a transaction are completed successfully. If any part fails, the entire transaction is rolled back
     - Consistency: Ensures that a transaction can only bring the database from one valid state to another, maintaining database invariants
     - Isolation: Provides the illusion that each transaction is the only one interacting with the database, thereby preventing transactions from interfering with each other
-    - Duability: Once a transaction has been committed, it will remain so, even in the event of a system failure
+    - Durability: Once a transaction has been committed, it will remain so, even in the event of a system failure
 
 Key Transaction Commands in PostgreSQL
 --------------------------------------

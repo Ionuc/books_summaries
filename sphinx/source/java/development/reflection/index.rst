@@ -11,5 +11,6 @@ Reflection
     dynamic-proxy.rst
     strong-encapsulation.rst
     annotation.rst
+    proxy.rst
 
 :ref:`Go Back <java-development-label>`.

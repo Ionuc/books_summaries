@@ -1,4 +1,4 @@
-.. _cqrs-architectural-pattern-label:
+.. _patterns-architectural-cqrs-architectural-pattern-label:
 
 CQRS - Command Query Responsibility Segregation
 ===============================================
@@ -104,7 +104,7 @@ Benefits of using CQRS
 
 Challenges of using CQRS
 ------------------------
--   Complexity:
+- Complexity:
     - Your system may become more comple
     - it can be difficult to coordinate data synchronization, manage distinct read and write models, and guarantee consistency between the two
 - Consistency:

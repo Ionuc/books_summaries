@@ -1,4 +1,4 @@
-.. _java-development-data-structures-string-regular-expression:
+.. _java-development-data-structures-string-regular-expression-label:
 
 String Regular Expression
 =========================

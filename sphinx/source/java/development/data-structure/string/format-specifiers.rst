@@ -1,4 +1,4 @@
-.. _java-development-data-structures-string-format-specifiers:
+.. _java-development-data-structures-string-format-specifiers-label:
 
 Format Specifiers
 =================

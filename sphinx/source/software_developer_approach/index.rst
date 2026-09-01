@@ -8,5 +8,6 @@ Software Developer approach
     :caption: Contents:
 
     ddd.rst
+    aop.rst
 
 :ref:`Go Back <index-label>`.

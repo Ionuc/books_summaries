@@ -6,7 +6,7 @@ Replication
 Overview
 --------
 
-- database replication means creating and maintaining multiple copies of the same datbse on different servers
+- database replication means creating and maintaining multiple copies of the same database on different servers
 - it is used to improve high availability, reliability, scalability and data accessibility
 - if one database server fails, another replica can continue serving requests
 
@@ -34,8 +34,8 @@ Types of replication
 --------------------
 
 1. Master-Slave replication
-2. Mster-Master replication
-3. Snapsot Replication
+2. Master-Master replication
+3. Snapshot Replication
 4. Transactional Replication
 5. Merge Replication
 
@@ -71,7 +71,7 @@ Pros:
 
 Cons:
     - Replication Lag: Data inconsistencies may result from a latency between the time a change is performed on the master and when it is replicated to slaves
-    - Single Point of Failure: the master datavase act as a single point offailure: if it goes down, the system may stop functioning until another db is promoted as the new master
+    - Single Point of Failure: the master database act as a single point of failure: if it goes down, the system may stop functioning until another db is promoted as the new master
     - Limited Write Scalability: Since write operation as limited to the master DB, it can become a bottleneck for write-heavy applcations
 
 2.Master-Master replication

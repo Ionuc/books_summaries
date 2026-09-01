@@ -22,7 +22,7 @@ New solution
 ------------
 - each microservices owns its own database
 - gives full control of its data schema and how it sotres or retrieves information 
-- each microservices can be developed deployed and scal independently
+- each microservices can be developed deployed and scale independently
 - it is eliminated the risk of changing one DB in one service affecting others
 - each microservice will access the db using API and not database direct access
 

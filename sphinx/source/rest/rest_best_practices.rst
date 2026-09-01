@@ -33,7 +33,7 @@ Versioning Strategies
     2. Header Versioning:
         - Example: GET /users with Accept: application/vnd.example.v1+json
         - Pros: Cleaner URLs. Versioning information is abstracted from the URI.
-        - Cons: Less visible and harder to test with simple tools like cURL.
+        - Cons: Less visible and harder to test with simple tools like CURL.
 
     3. Query Parameter Versioning:
         - Example: /users?version=1

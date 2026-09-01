@@ -8,7 +8,7 @@ Observability
 - Observability is important because it allows teams to evaluate, monitor, and improve the performance of distributed IT systems
 - The three pillars of observability are logs, metrics, and traces.
 
-- observability hels organizations:
+- observability helps organizations:
    - Discover and analyze the significance of performance incidents to their business
    - Increase the efficiency of software development life cycles
    - Accelerate problem resolution and root cause analysis
@@ -25,7 +25,7 @@ Observability vs. APM vs. Monitoring
    - But issues are less predictable on more complex cloud-native applications where numerous dependencies are in play
 
 - APM
-   - Application PErformance Monitor (APM)
+   - Application Performance Monitor (APM)
    - is often considered a subset of observability
    - is a type of monitoring used to get in-depth insight into application code and dependencies
    - A key feature of APM is distributed tracing.
