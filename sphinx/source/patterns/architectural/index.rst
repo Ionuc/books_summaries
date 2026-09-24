@@ -8,6 +8,7 @@ Architectural Patterns
     :caption: Contents:
 
     cqrs.rst
-    event_sourcing.rst
+    event-sourcing.rst
+    backend-for-frontend.rst
 
 :ref:`Go Back <patterns-label>`.
